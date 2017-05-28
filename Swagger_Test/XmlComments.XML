@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Swagger_Test</name>
+    </assembly>
+    <members>
+        <member name="T:Swagger_Test.Controllers.TestEnumController">
+            <summary>
+            Testing enums ...
+            </summary>
+        </member>
+        <member name="M:Swagger_Test.Controllers.TestEnumController.Get(Swagger_Test.Controllers.TestEnumController.CustomEnum)">
+            <summary>
+            Simple GET echoing the given param
+            </summary>
+            <param name="value">CustomEnum</param>
+            <returns>CustomEnum</returns>
+        </member>
+        <member name="M:Swagger_Test.Controllers.TestEnumController.Post(Swagger_Test.Controllers.TestEnumController.CustomEnum)">
+            <summary>
+            Test POST lorem ipsum
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
