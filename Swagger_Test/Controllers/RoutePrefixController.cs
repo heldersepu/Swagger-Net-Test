@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using Swagger_Test.Models;
+using System.Web.Http;
 
 namespace Swagger_Test.Controllers
 {
@@ -21,6 +22,18 @@ namespace Swagger_Test.Controllers
         public string GetByIdByName(string id, string name)
         {
             return "value " + id + " " + name;
+        }
+
+        [Route("PostTest1")]
+        public IHttpActionResult PostTest1(test1 x)
+        {
+            return Ok(x);
+        }
+
+        [Route("PostTest2")]
+        public IHttpActionResult PostTest2(test2 x)
+        {
+            return Ok(x);
         }
     }
 }
