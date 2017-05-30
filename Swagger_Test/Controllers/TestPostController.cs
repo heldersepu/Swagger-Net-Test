@@ -15,5 +15,10 @@ namespace Swagger_Test.Controllers
         {
             return test;
         }
+
+        public int? Get(int? x)
+        {
+            return x;
+        }
     }
 }
