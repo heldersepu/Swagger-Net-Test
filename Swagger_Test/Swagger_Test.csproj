@@ -112,6 +112,7 @@
     <Compile Include="Controllers\RoutePrefixController.cs" />
     <Compile Include="Controllers\TestEnumController.cs" />
     <Compile Include="Controllers\TestPostController.cs" />
+    <Compile Include="Controllers\ValueProviderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
