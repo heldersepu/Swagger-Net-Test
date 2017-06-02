@@ -7,6 +7,8 @@ using System.Web.Http.Description;
 using WebActivatorEx;
 using System;
 using System.Collections.Generic;
+using System.Xml.XPath;
+using System.Reflection;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -14,10 +16,10 @@ namespace Swagger_Test
 {
     public class SwaggerConfig
     {
+        public static Assembly thisAssembly { get { return typeof(SwaggerConfig).Assembly; } }
+
         public static void Register()
         {
-            var thisAssembly = typeof(SwaggerConfig).Assembly;
-
             GlobalConfiguration.Configuration
                 .EnableSwagger(c =>
                     {
@@ -102,8 +104,7 @@ namespace Swagger_Test
                         // those comments into the generated docs and UI. You can enable this by providing the path to one or
                         // more Xml comment files.
                         //
-                        if (System.IO.File.Exists($@"{AppDomain.CurrentDomain.BaseDirectory}\XmlComments.xml"))
-                            c.IncludeXmlComments($@"{AppDomain.CurrentDomain.BaseDirectory}\XmlComments.xml");
+                        c.IncludeXmlComments(embeddedXmlComments);
 
                         // Swashbuckle makes a best attempt at generating Swagger compliant JSON schemas for the various types
                         // exposed in your API. However, there may be occasions when more control of the output is needed.
@@ -249,13 +250,18 @@ namespace Swagger_Test
                     });
         }
 
+        private static XPathDocument embeddedXmlComments()
+        {
+            return new XPathDocument(thisAssembly.GetManifestResourceStream("Swagger_Test.XmlComments.XML"));
+        }
+
         private class ApplyDocumentVendorExtensions : IDocumentFilter
         {
             public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
             {
                 schemaRegistry.GetOrRegister(typeof(ExtraType));
                 //schemaRegistry.GetOrRegister(typeof(BigClass));
-                
+
                 var paths = new Dictionary<string, PathItem>(swaggerDoc.paths);
                 swaggerDoc.paths.Clear();
                 foreach (var path in paths)

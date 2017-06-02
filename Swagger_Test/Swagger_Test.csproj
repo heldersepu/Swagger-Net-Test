@@ -97,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <EmbeddedResource Include="XmlComments.XML" />
     <EmbeddedResource Include="Styles.css" />
     <Content Include="Web.config" />
   </ItemGroup>
