@@ -109,6 +109,7 @@
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\DictionaryController.cs" />
     <Compile Include="Controllers\IHttpActionResultController.cs" />
+    <Compile Include="Controllers\RecursiveParamController.cs" />
     <Compile Include="Controllers\RoutePrefixController.cs" />
     <Compile Include="Controllers\TestEnumController.cs" />
     <Compile Include="Controllers\TestPostController.cs" />
