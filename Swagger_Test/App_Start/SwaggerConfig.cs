@@ -166,7 +166,7 @@ namespace Swagger_Test
                         // the Swagger 2.0 spec. - https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md
                         // before using this option.
                         //
-                        //c.DocumentFilter<ApplyDocumentVendorExtensions>();
+                        c.DocumentFilter<TestDocumentFilter>();
 
                         // In contrast to WebApi, Swagger 2.0 does not include the query string component when mapping a URL
                         // to an action. As a result, Swashbuckle will raise an exception if it encounters multiple actions
@@ -253,6 +253,21 @@ namespace Swagger_Test
         private static XPathDocument embeddedXmlComments()
         {
             return new XPathDocument(thisAssembly.GetManifestResourceStream("Swagger_Test.XmlComments.XML"));
+        }
+
+        private class TestDocumentFilter : IDocumentFilter
+        {
+            public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
+            {
+                swaggerDoc.info.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+                foreach (var path in swaggerDoc.paths)
+                {
+                    if (path.Key.Contains("foo") && path.Value.get != null)
+                    {
+                        path.Value.put = path.Value.get;
+                    }
+                }
+            }
         }
 
         private class ApplyDocumentVendorExtensions : IDocumentFilter
