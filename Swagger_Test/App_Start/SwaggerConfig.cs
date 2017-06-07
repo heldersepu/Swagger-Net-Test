@@ -16,7 +16,7 @@ namespace Swagger_Test
 {
     public class SwaggerConfig
     {
-        public static Assembly thisAssembly { get { return typeof(SwaggerConfig).Assembly; } }
+        public static Assembly ThisAssembly { get { return typeof(SwaggerConfig).Assembly; } }
 
         public static void Register()
         {
@@ -186,7 +186,7 @@ namespace Swagger_Test
                         // The file must be included in your project as an "Embedded Resource", and then the resource's
                         // "Logical Name" is passed to the method as shown below.
                         //
-                        c.InjectStylesheet(thisAssembly, "Swagger_Test.Styles.css");
+                        c.InjectStylesheet(ThisAssembly, "Swagger_Test.Styles.css");
 
                         // Use the "InjectJavaScript" option to invoke one or more custom JavaScripts after the swagger-ui
                         // has loaded. The file must be included in your project as an "Embedded Resource", and then the resource's
@@ -223,7 +223,7 @@ namespace Swagger_Test
                         // in your project as an "Embedded Resource", and then the resource's "Logical Name" is passed to
                         // the method as shown below.
                         //
-                        //c.CustomAsset("index", containingAssembly, "YourWebApiProject.SwaggerExtensions.index.html");
+                        c.CustomAsset("custom", ThisAssembly, "Swagger_Test.custom.html");
 
                         // If your API has multiple versions and you've applied the MultipleApiVersions setting
                         // as described above, you can also enable a select box in the swagger-ui, that displays
@@ -252,7 +252,7 @@ namespace Swagger_Test
 
         private static XPathDocument embeddedXmlComments()
         {
-            return new XPathDocument(thisAssembly.GetManifestResourceStream("Swagger_Test.XmlComments.XML"));
+            return new XPathDocument(ThisAssembly.GetManifestResourceStream("Swagger_Test.XmlComments.XML"));
         }
 
         private class TestDocumentFilter : IDocumentFilter
