@@ -97,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="custom.html" />
+    <EmbeddedResource Include="custom.js" />
     <Content Include="Global.asax" />
     <EmbeddedResource Include="XmlComments.XML" />
     <EmbeddedResource Include="Styles.css" />
