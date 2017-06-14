@@ -32,6 +32,12 @@ namespace Swagger_Test.Controllers
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
+        /// <remarks>
+        /// <ul>
+        /// <li><b>Item 1</b> - description 1</li>
+        /// <li><b>Item 2</b> - description 2</li>
+        /// </ul>
+        /// </remarks>
         public CustomEnum Post(CustomEnum value)
         {
             return value;
