@@ -30,7 +30,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;HAVE_MEMORY_BARRIER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>XmlComments.XML</DocumentationFile>
@@ -40,7 +40,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;HAVE_MEMORY_BARRIER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -112,6 +112,7 @@
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\DictionaryController.cs" />
     <Compile Include="Controllers\IHttpActionResultController.cs" />
+    <Compile Include="Controllers\MemoryBarrierController.cs" />
     <Compile Include="Controllers\RecursiveParamController.cs" />
     <Compile Include="Controllers\RoutePrefixController.cs" />
     <Compile Include="Controllers\RoutesController.cs" />
