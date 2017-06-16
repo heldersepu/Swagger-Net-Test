@@ -47,11 +47,11 @@ namespace Swagger_Test.Controllers
         /// <summary>
         ///  Testing a [FromUri]
         /// </summary>
-        /// <param name="value">ViewModelTest</param>
+        /// <param name="viewModelTest">ViewModelTest</param>
         /// <returns>ViewModelTest</returns>
-        public ViewModelTest Put([FromUri] ViewModelTest value)
+        public ViewModelTest Put([FromUri] ViewModelTest viewModelTest)
         {
-            return value;
+            return viewModelTest;
         }
     }
 }
