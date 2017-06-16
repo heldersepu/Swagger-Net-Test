@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using Swagger_Test.Models;
+using System.Web.Http;
 
 namespace Swagger_Test.Controllers
 {
@@ -39,6 +40,16 @@ namespace Swagger_Test.Controllers
         /// </ul>
         /// </remarks>
         public CustomEnum Post(CustomEnum value)
+        {
+            return value;
+        }
+
+        /// <summary>
+        ///  Testing a [FromUri]
+        /// </summary>
+        /// <param name="value">ViewModelTest</param>
+        /// <returns>ViewModelTest</returns>
+        public ViewModelTest Put([FromUri] ViewModelTest value)
         {
             return value;
         }

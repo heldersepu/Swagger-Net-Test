@@ -125,6 +125,7 @@
     <Compile Include="Models\BigClass.cs" />
     <Compile Include="Models\ExtraType.cs" />
     <Compile Include="Models\TestClasses.cs" />
+    <Compile Include="Models\ViewModelTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
