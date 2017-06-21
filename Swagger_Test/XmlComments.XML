@@ -33,7 +33,7 @@
             <summary>
              Testing a [FromUri]
             </summary>
-            <param name="value">ViewModelTest</param>
+            <param name="viewModelTest">ViewModelTest</param>
             <returns>ViewModelTest</returns>
         </member>
         <member name="T:Swagger_Test.Models.ViewModelTest">
