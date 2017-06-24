@@ -4,6 +4,12 @@
         <name>Swagger_Test</name>
     </assembly>
     <members>
+        <member name="P:Swagger_Test.Controllers.Feature.Title">
+            <summary>We all need a Title</summary>
+        </member>
+        <member name="P:Swagger_Test.Controllers.ImageFeature.ImageUrl">
+            <summary>Here goes your image URL</summary>
+        </member>
         <member name="T:Swagger_Test.Controllers.TestEnumController">
             <summary>
             Testing enums ...
