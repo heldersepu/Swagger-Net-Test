@@ -84,6 +84,8 @@ namespace Swagger_Test
                         // Set this flag to omit descriptions for any actions decorated with the Obsolete attribute
                         //c.IgnoreObsoleteActions();
 
+                        c.AccessControlAllowOrigin("*");
+
                         // Each operation be assigned one or more tags which are then used by consumers for various reasons.
                         // For example, the swagger-ui groups operations according to the first tag of each operation.
                         // By default, this will be controller name but you can use the "GroupActionsBy" option to
@@ -104,7 +106,7 @@ namespace Swagger_Test
                         // those comments into the generated docs and UI. You can enable this by providing the path to one or
                         // more Xml comment files.
                         //
-                        c.IncludeXmlComments(embeddedXmlComments);
+                        c.IncludeAllXmlComments(ThisAssembly, AppDomain.CurrentDomain.BaseDirectory);
 
                         // Swashbuckle makes a best attempt at generating Swagger compliant JSON schemas for the various types
                         // exposed in your API. However, there may be occasions when more control of the output is needed.
@@ -182,6 +184,11 @@ namespace Swagger_Test
                     })
                 .EnableSwaggerUi(c =>
                     {
+                        // Use the "DocumentTitle" option to change the Document title.
+                        // Very helpful when you have multiple Swagger pages open, to tell them apart.
+                        //
+                        c.DocumentTitle("Swagger_Test");
+
                         // Use the "InjectStylesheet" option to enrich the UI with one or more additional CSS stylesheets.
                         // The file must be included in your project as an "Embedded Resource", and then the resource's
                         // "Logical Name" is passed to the method as shown below.
@@ -248,11 +255,6 @@ namespace Swagger_Test
                         //
                         //c.EnableApiKeySupport("apiKey", "header");
                     });
-        }
-
-        private static XPathDocument embeddedXmlComments()
-        {
-            return new XPathDocument(ThisAssembly.GetManifestResourceStream("Swagger_Test.XmlComments.XML"));
         }
 
         private class TestDocumentFilter : IDocumentFilter
