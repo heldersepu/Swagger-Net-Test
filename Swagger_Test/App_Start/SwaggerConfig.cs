@@ -169,6 +169,7 @@ namespace Swagger_Test
                         // before using this option.
                         //
                         c.DocumentFilter<TestDocumentFilter>();
+                        c.DocumentFilter<ApplyDocumentFilter_ChangeCompany>();
 
                         // In contrast to WebApi, Swagger 2.0 does not include the query string component when mapping a URL
                         // to an action. As a result, Swashbuckle will raise an exception if it encounters multiple actions
@@ -272,6 +273,21 @@ namespace Swagger_Test
             }
         }
 
+        private class ApplyDocumentFilter_ChangeCompany : IDocumentFilter
+        {
+            public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
+            {
+                if (swaggerDoc.definitions != null)
+                {
+                    swaggerDoc.definitions.Add("Company123", swaggerDoc.definitions["Company"]);
+                }
+                if (swaggerDoc.paths != null)
+                {
+                    swaggerDoc.paths["/api/Company"].get.responses["200"].schema.@ref = "#/definitions/Company123";
+                }
+            }
+        }
+
         private class ApplyDocumentVendorExtensions : IDocumentFilter
         {
             public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
@@ -326,5 +342,6 @@ namespace Swagger_Test
                 }
             }
         }
+
     }
 }
