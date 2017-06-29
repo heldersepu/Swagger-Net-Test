@@ -2,6 +2,7 @@
 using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Swagger_Test
 {
@@ -10,6 +11,7 @@ namespace Swagger_Test
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+            config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
             config.Formatters.Clear();
             config.Formatters.Add(new BrowserJsonFormatter());
             // Web API routes
