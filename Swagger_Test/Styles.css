@@ -1,9 +1,13 @@
-﻿.info_title {
-    color:red;
+﻿.title {
+    color:red !important;
 }
-#header {
+.topbar {
     background-color: lightblue !important;
 }
+.scheme-container {
+    display: none !important;
+}
+
 
 @keyframes animImg {
 	from {
@@ -28,14 +32,14 @@
     96% { color:black; }
 }
 
-.logo__img {
+.topbar-wrapper img {
 	animation-duration: 1s;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 	animation-name: animImg;
     position: absolute;
 }
-.logo__title {
+.topbar-wrapper span {
 	animation-duration: 10s;
 	animation-iteration-count: infinite;
 	animation-name: animTitle;
