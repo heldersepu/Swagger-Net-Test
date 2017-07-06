@@ -70,11 +70,11 @@ namespace Swagger_Test
                         //    .Name("apiKey")
                         //    .In("header");
                         //
-                        //c.OAuth2("oauth2")
-                        //    .Description("OAuth2 Implicit Grant")
-                        //    .Flow("implicit")
-                        //    .AuthorizationUrl("http://petstore.swagger.wordnik.com/api/oauth/dialog")
-                        //    //.TokenUrl("https://tempuri.org/token")
+                        c.OAuth2("oauth2")
+                            .Description("OAuth2 Implicit Grant")
+                            .Flow("accessCode")
+                            .AuthorizationUrl("http://www.facebook.com/dialog/oauth/?client_id=113455642165175&redirect_uri=http://hayageek.com/examples/facebook-oauth/callback.php&scope=email,read_friendlists&state=11111")
+                            .TokenUrl("https://graph.facebook.com/oauth/access_token")
                         //    .Scopes(scopes =>
                         //    {
                         //        scopes.Add("read", "Read access to protected resources");
