@@ -12,8 +12,9 @@ namespace Swagger_Test.Controllers
             return Ok(new string[] { "value1", "value2" });
         }
 
-        public void Post([FromBody]string value)
+        public long Post([FromBody]string value)
         {
+            return DateTime.Now.Ticks;
         }
 
         private class MyValueProviderFactory: ValueProviderFactory
