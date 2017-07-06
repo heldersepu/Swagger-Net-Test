@@ -4,9 +4,9 @@
 .topbar {
     background-color: lightblue !important;
 }
-.scheme-container {
+/*.scheme-container {
     display: none !important;
-}
+}*/
 
 
 @keyframes animImg {
