@@ -74,7 +74,7 @@ namespace Swagger_Test
                             .Description("OAuth2 Implicit Grant")
                             .Flow("accessCode")
                             .AuthorizationUrl("http://www.facebook.com/dialog/oauth/?client_id=113455642165175&redirect_uri=http://hayageek.com/examples/facebook-oauth/callback.php&scope=email,read_friendlists&state=11111")
-                            .TokenUrl("https://graph.facebook.com/oauth/access_token")
+                            .TokenUrl("https://graph.facebook.com/oauth/access_token");
                         //    .Scopes(scopes =>
                         //    {
                         //        scopes.Add("read", "Read access to protected resources");
@@ -243,13 +243,13 @@ namespace Swagger_Test
                         // If your API supports the OAuth2 Implicit flow, and you've described it correctly, according to
                         // the Swagger 2.0 specification, you can enable UI support as shown below.
                         //
-                        //c.EnableOAuth2Support(
-                        //    clientId: "test-client-id",
-                        //    clientSecret: null,
-                        //    realm: "test-realm",
-                        //    appName: "Swagger UI"
-                        //    //additionalQueryStringParams: new Dictionary<string, string>() { { "foo", "bar" } }
-                        //);
+                        c.EnableOAuth2Support(
+                            clientId: "test-client-id",
+                            clientSecret: "dummySecret",
+                            realm: "test-realm",
+                            appName: "Swagger UI"
+                            //additionalQueryStringParams: new Dictionary<string, string>() { { "foo", "bar" } }
+                        );
 
                         // If your API supports ApiKey, you can override the default values.
                         // "apiKeyIn" can either be "query" or "header"
