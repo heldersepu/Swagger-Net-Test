@@ -73,7 +73,7 @@ namespace Swagger_Test
                         c.OAuth2("oauth2")
                             .Description("OAuth2 Implicit Grant")
                             .Flow("accessCode")
-                            .AuthorizationUrl("http://www.facebook.com/dialog/oauth/?client_id=113455642165175&redirect_uri=http%3A%2F%2Fswashbuckletest.azurewebsites.net%2Fswagger%2Fui%2Findex&scope=email,read_friendlists&state=11111")
+                            .AuthorizationUrl("http://www.facebook.com/dialog/oauth/?client_id=183620338840937&redirect_uri=http%3A%2F%2Fswashbuckletest.azurewebsites.net%2Fswagger")
                             .TokenUrl("https://graph.facebook.com/oauth/access_token");
                         //    .Scopes(scopes =>
                         //    {
@@ -244,8 +244,8 @@ namespace Swagger_Test
                         // the Swagger 2.0 specification, you can enable UI support as shown below.
                         //
                         c.EnableOAuth2Support(
-                            clientId: "113455642165175",
-                            clientSecret: "dummySecret",
+                            clientId: "183620338840937",
+                            clientSecret: "de81460e907d213dcc4271aa7b1ae88a",
                             realm: "test-realm",
                             appName: "Swagger UI" 
                             //additionalQueryStringParams: new Dictionary<string, string>() { { "foo", "bar" } }
