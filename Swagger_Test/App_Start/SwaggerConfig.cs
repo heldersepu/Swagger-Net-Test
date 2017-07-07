@@ -247,7 +247,7 @@ namespace Swagger_Test
                             clientId: "113455642165175",
                             clientSecret: "dummySecret",
                             realm: "test-realm",
-                            appName: "Swagger UI"
+                            appName: "Swagger UI" 
                             //additionalQueryStringParams: new Dictionary<string, string>() { { "foo", "bar" } }
                         );
 
@@ -257,6 +257,7 @@ namespace Swagger_Test
                         //c.EnableApiKeySupport("apiKey", "header");
                     });
         }
+        
 
         private class TestDocumentFilter : IDocumentFilter
         {
