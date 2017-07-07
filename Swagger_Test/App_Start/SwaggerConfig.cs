@@ -73,7 +73,7 @@ namespace Swagger_Test
                         c.OAuth2("oauth2")
                             .Description("OAuth2 Implicit Grant")
                             .Flow("accessCode")
-                            .AuthorizationUrl("http://www.facebook.com/dialog/oauth/?client_id=113455642165175&redirect_uri=http://hayageek.com/examples/facebook-oauth/callback.php&scope=email,read_friendlists&state=11111")
+                            .AuthorizationUrl("http://www.facebook.com/dialog/oauth/?client_id=113455642165175&redirect_uri=http%3A%2F%2Fswashbuckletest.azurewebsites.net%2Fswagger%2Fui%2Findex&scope=email,read_friendlists&state=11111")
                             .TokenUrl("https://graph.facebook.com/oauth/access_token");
                         //    .Scopes(scopes =>
                         //    {
