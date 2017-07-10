@@ -1,7 +1,7 @@
 using Swagger_Test;
 using Swagger_Test.Models;
-using Swashbuckle.Application;
-using Swashbuckle.Swagger;
+using Swagger.Net.Application;
+using Swagger.Net;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebActivatorEx;
