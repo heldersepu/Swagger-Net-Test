@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Xml.XPath;
 using System.Reflection;
+using System.IO;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -168,6 +169,7 @@ namespace Swagger_Test
                         // the Swagger 2.0 spec. - https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md
                         // before using this option.
                         //
+                        c.DocumentFilter<YamlDocumentFilter>();
                         c.DocumentFilter<TestDocumentFilter>();
                         c.DocumentFilter<ApplyDocumentFilter_ChangeCompany>();
 
@@ -247,7 +249,7 @@ namespace Swagger_Test
                             clientId: "183620338840937",
                             clientSecret: "de81460e907d213dcc4271aa7b1ae88a",
                             realm: "test-realm",
-                            appName: "Swagger UI" 
+                            appName: "Swagger UI"
                             //additionalQueryStringParams: new Dictionary<string, string>() { { "foo", "bar" } }
                         );
 
@@ -257,7 +259,19 @@ namespace Swagger_Test
                         //c.EnableApiKeySupport("apiKey", "header");
                     });
         }
-        
+
+
+        private class YamlDocumentFilter : IDocumentFilter
+        {
+            public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
+            {
+                string file = "swagger.yaml";
+                if (!File.Exists(file))
+                {
+
+                }
+            }
+        }
 
         private class TestDocumentFilter : IDocumentFilter
         {
