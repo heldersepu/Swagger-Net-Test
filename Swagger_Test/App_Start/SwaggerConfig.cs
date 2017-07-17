@@ -13,7 +13,7 @@ using System.Xml.XPath;
 using System.Reflection;
 using System.IO;
 using Swagger_Test.Models;
-
+using System.Yaml.Serialization;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -288,10 +288,11 @@ namespace Swagger_Test
         {
             public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
             {
-                string file = "swagger.yaml";
+                string file = AppDomain.CurrentDomain.BaseDirectory + "swagger_yaml.txt";
                 if (!File.Exists(file))
                 {
-
+                    var serializer = new YamlSerializer();
+                    serializer.SerializeToFile(file, swaggerDoc);
                 }
             }
         }
