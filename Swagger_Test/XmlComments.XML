@@ -4,6 +4,15 @@
         <name>Swagger_Test</name>
     </assembly>
     <members>
+        <member name="T:Swagger_Test.Controllers.MyData">
+            <summary>My super duper data</summary>
+        </member>
+        <member name="P:Swagger_Test.Controllers.MyData.id">
+            <summary>The unique identifier</summary>
+        </member>
+        <member name="P:Swagger_Test.Controllers.MyData.name">
+            <summary>Everyone needs a name</summary>
+        </member>
         <member name="P:Swagger_Test.Controllers.Feature.Title">
             <summary>We all need a Title</summary>
         </member>
