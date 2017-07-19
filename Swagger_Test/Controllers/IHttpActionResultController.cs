@@ -47,5 +47,8 @@ namespace Swagger_Test.Controllers
 
         /// <summary>Everyone needs a name</summary>
         public string name { get; set; }
+
+        /// <summary>Details - testing anchor: <a href="?filter=TestPost">TestPost</a></summary>
+        public string details { get; set; }
     }
 }

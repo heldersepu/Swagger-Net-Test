@@ -13,6 +13,9 @@
         <member name="P:Swagger_Test.Controllers.MyData.name">
             <summary>Everyone needs a name</summary>
         </member>
+        <member name="P:Swagger_Test.Controllers.MyData.details">
+            <summary>Details - testing anchor: <a href="?filter=TestPost">TestPost</a></summary>
+        </member>
         <member name="P:Swagger_Test.Controllers.Feature.Title">
             <summary>We all need a Title</summary>
         </member>
