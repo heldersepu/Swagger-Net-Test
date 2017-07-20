@@ -179,6 +179,7 @@ namespace Swagger_Test
                         // to execute the operation
                         //
                         //c.OperationFilter<AssignOAuth2SecurityRequirements>();
+                        c.OperationFilter<AddRequiredHeaderParameters>();
 
                         // Post-modify the entire Swagger document by wiring up one or more Document filters.
                         // This gives full control to modify the final SwaggerDocument. You should have a good understanding of
@@ -309,6 +310,38 @@ namespace Swagger_Test
                         path.Value.put = path.Value.get;
                     }
                 }
+            }
+        }
+
+        public class AddRequiredHeaderParameters : IOperationFilter
+        {
+            public void Apply(Operation operation, SchemaRegistry schemaRegistry, ApiDescription apiDescription)
+            {
+                if (operation.parameters == null)
+                    operation.parameters = new List<Parameter>();
+
+                if (operation.operationId == "ValueProvider_Put")
+                {
+                    operation.parameters.Add(HeaderParam("CID", "101"));
+                    operation.parameters.Add(HeaderParam("QID", "102"));
+                }
+                else if (operation.tags[0].Equals("FooBar"))
+                {
+                    // add other header parameters here
+                }
+            }
+
+            public Parameter HeaderParam(string name, string defaultValue, bool required = true, string type = "", string description = "")
+            {
+                return new Parameter
+                {
+                    name = name,
+                    @in = "header",
+                    @default = defaultValue,
+                    type = type,
+                    description = description,
+                    required = required
+                };
             }
         }
 
