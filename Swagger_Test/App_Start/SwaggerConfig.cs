@@ -273,8 +273,8 @@ namespace Swagger_Test
                         c.EnableOAuth2Support(
                             clientId: "183620338840937",
                             clientSecret: "de81460e907d213dcc4271aa7b1ae88a",
-                            realm: "testApp",
-                            appName: "testApp"
+                            realm: "swaggertestapp",
+                            appName: "swaggertestapp"
                             //additionalQueryStringParams: new Dictionary<string, string>() { { "foo", "bar" } }
                         );
 
