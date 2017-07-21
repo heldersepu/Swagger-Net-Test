@@ -189,6 +189,7 @@ namespace Swagger_Test
                         c.DocumentFilter<YamlDocumentFilter>();
                         c.DocumentFilter<TestDocumentFilter>();
                         c.DocumentFilter<ApplyDocumentFilter_ChangeCompany>();
+                        c.DocumentFilter<AddImageResponseDocumentFilter>();
 
                         // In contrast to WebApi, Swagger 2.0 does not include the query string component when mapping a URL
                         // to an action. As a result, Swagger-Net will raise an exception if it encounters multiple actions
@@ -310,6 +311,15 @@ namespace Swagger_Test
                         path.Value.put = path.Value.get;
                     }
                 }
+            }
+        }
+
+        private class AddImageResponseDocumentFilter : IDocumentFilter
+        {
+            public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
+            {
+                swaggerDoc.paths["/api/PngImage"].post.produces.Clear();
+                swaggerDoc.paths["/api/PngImage"].post.produces.Add("image/png");
             }
         }
 
