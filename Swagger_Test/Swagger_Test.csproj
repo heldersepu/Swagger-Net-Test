@@ -134,9 +134,11 @@
     <Compile Include="Controllers\DictionaryController.cs" />
     <Compile Include="Controllers\FromUriController.cs" />
     <Compile Include="Controllers\IHttpActionResultController.cs" />
+    <Compile Include="Controllers\ImageBaseController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\InheritanceTestController.cs" />
     <Compile Include="Controllers\MemoryBarrierController.cs" />
+    <Compile Include="Controllers\PngImageController.cs" />
     <Compile Include="Controllers\RecursiveParamController.cs" />
     <Compile Include="Controllers\RoutePrefixController.cs" />
     <Compile Include="Controllers\RoutesController.cs" />
