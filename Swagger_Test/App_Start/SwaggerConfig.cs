@@ -178,7 +178,7 @@ namespace Swagger_Test
                         // to inspect some attribute on each action and infer which (if any) OAuth2 scopes are required
                         // to execute the operation
                         //
-                        //c.OperationFilter<AssignOAuth2SecurityRequirements>();
+                        c.OperationFilter<AssignOAuth2SecurityRequirements>();
                         c.OperationFilter<AddRequiredHeaderParameters>();
 
                         // Post-modify the entire Swagger document by wiring up one or more Document filters.
@@ -419,6 +419,25 @@ namespace Swagger_Test
                         }
                     }
                 }
+            }
+        }
+
+        public class AssignOAuth2SecurityRequirements : IOperationFilter
+        {
+            public void Apply(Operation operation, SchemaRegistry schemaRegistry, ApiDescription apiDescription)
+            {
+                var actFilters = apiDescription.ActionDescriptor.GetFilterPipeline();
+                if (actFilters.Select(f => f.Instance).OfType<AllowAnonymousAttribute>().Any())
+                    return; // must be an anonymous method
+
+                if (operation.security == null)
+                    operation.security = new List<IDictionary<string, IEnumerable<string>>>();
+
+                var oAuthRequirements = new Dictionary<string, IEnumerable<string>>
+                {
+                    {"oauth2", new List<string> {}}
+                };
+                operation.security.Add(oAuthRequirements);
             }
         }
     }
