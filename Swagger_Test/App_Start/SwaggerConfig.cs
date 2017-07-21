@@ -87,7 +87,7 @@ namespace Swagger_Test
                             .Description("OAuth2 Implicit Grant")
                             .Flow("accessCode")
                             .AuthorizationUrl("http://www.facebook.com/dialog/oauth/?client_id=183620338840937&redirect_uri=http%3A%2F%2Fswashbuckletest.azurewebsites.net%2Fswagger")
-                            .TokenUrl("https://graph.facebook.com/oauth/access_token");
+                            .TokenUrl("https://graph.facebook.com/oauth/access_token?client_id=183620338840937&redirect_uri=http%3A%2F%2Fswashbuckletest.azurewebsites.net%2Fswagger");
                         //    .Scopes(scopes =>
                         //    {
                         //        scopes.Add("read", "Read access to protected resources");
@@ -273,8 +273,8 @@ namespace Swagger_Test
                         c.EnableOAuth2Support(
                             clientId: "183620338840937",
                             clientSecret: "de81460e907d213dcc4271aa7b1ae88a",
-                            realm: "test-realm",
-                            appName: "Swagger UI"
+                            realm: "testApp",
+                            appName: "testApp"
                             //additionalQueryStringParams: new Dictionary<string, string>() { { "foo", "bar" } }
                         );
 
