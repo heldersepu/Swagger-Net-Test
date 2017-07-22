@@ -10,7 +10,7 @@ namespace Swagger_Test.Controllers
         public HttpResponseMessage Get()
         {
             var response = new HttpResponseMessage();
-            response.Content = ImageStream("imageGet.png", Color.Red, Color.Cyan);
+            response.Content = ImageStream(Color.Red, Color.Cyan);
             response.Content.Headers.ContentType = new MediaTypeHeaderValue("image/png");
             return response;
         }
@@ -19,7 +19,7 @@ namespace Swagger_Test.Controllers
         public HttpResponseMessage Post()
         {
             var response = new HttpResponseMessage();
-            response.Content = ImageStream("imagePost.png", Color.White, Color.Blue);
+            response.Content = ImageStream(Color.White, Color.Blue);
             response.Content.Headers.ContentType = new MediaTypeHeaderValue("image/png");
             return response;
         }

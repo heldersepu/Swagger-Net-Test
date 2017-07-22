@@ -10,7 +10,7 @@ namespace Swagger_Test.Controllers
         public HttpResponseMessage Post()
         {
             var response = new HttpResponseMessage();
-            response.Content = ImageStream("image.png", Color.Red, Color.Blue);
+            response.Content = ImageStream(Color.Red, Color.Blue);
             response.Content.Headers.ContentType = new MediaTypeHeaderValue("image/png");
             return response;
         }
