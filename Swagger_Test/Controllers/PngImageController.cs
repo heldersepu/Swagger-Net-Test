@@ -1,5 +1,4 @@
 ﻿using System.Drawing;
-using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 
@@ -10,11 +9,8 @@ namespace Swagger_Test.Controllers
         // POST: api/PngImage
         public HttpResponseMessage Post()
         {
-            string filePath = FilePath("imagePost.png");
-            if (!File.Exists(filePath))
-                CreateImage(filePath, Color.Red, Color.Blue);
-            HttpResponseMessage response = new HttpResponseMessage();
-            response.Content = new StreamContent(new FileStream(filePath, FileMode.Open));
+            var response = new HttpResponseMessage();
+            response.Content = ImageStream("image.png", Color.Red, Color.Blue);
             response.Content.Headers.ContentType = new MediaTypeHeaderValue("image/png");
             return response;
         }
