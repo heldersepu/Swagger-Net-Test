@@ -1,19 +1,15 @@
+using Swagger.Net;
+using Swagger.Net.Application;
+using Swagger_Test;
+using Swagger_Test.Models;
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Description;
-using System.Web.Http.Routing.Constraints;
-
-using WebActivatorEx;
-using Swagger_Test;
-using Swagger.Net.Application;
-using Swagger.Net;
-using System.Collections.Generic;
-using System.Xml.XPath;
-using System.Reflection;
-using System.IO;
-using Swagger_Test.Models;
 using System.Yaml.Serialization;
+using WebActivatorEx;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -188,6 +184,7 @@ namespace Swagger_Test
                         //
                         c.DocumentFilter<YamlDocumentFilter>();
                         c.DocumentFilter<TestDocumentFilter>();
+                        c.DocumentFilter<SortModelDocumentFilter>();
                         c.DocumentFilter<ApplyDocumentFilter_ChangeCompany>();
                         c.DocumentFilter<AddImageResponseDocumentFilter>();
 
@@ -295,6 +292,20 @@ namespace Swagger_Test
                 {
                     var serializer = new YamlSerializer();
                     serializer.SerializeToFile(file, swaggerDoc);
+                }
+            }
+        }
+
+        private class SortModelDocumentFilter : IDocumentFilter
+        {
+            public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
+            {
+                string model = "ViewModelTest";
+                var props = swaggerDoc.definitions[model].properties.OrderBy(x => x.Key).ToArray();
+                swaggerDoc.definitions[model].properties.Clear();
+                foreach (var prop in props)
+                {
+                    swaggerDoc.definitions[model].properties.Add(prop.Key, prop.Value);
                 }
             }
         }
