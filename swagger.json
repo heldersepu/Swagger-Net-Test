@@ -1,0 +1,1914 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"version": "V1",
+		"title": "Swagger_Test",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+	},
+	"host": "localhost:21497",
+	"schemes": ["http"],
+	"paths": {
+		"/api/ApiExplorer": {
+			"get": {
+				"tags": ["ApiExplorer"],
+				"operationId": "ApiExplorer_Get",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/attrib/{name}": {
+			"post": {
+				"tags": ["Attribute"],
+				"operationId": "Attribute_Post",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "name",
+					"in": "path",
+					"required": true,
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Data"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/bind/{id}": {
+			"post": {
+				"tags": ["Binding"],
+				"operationId": "Binding_Post",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "id",
+					"in": "path",
+					"required": true,
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "string"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/api/Company": {
+			"get": {
+				"tags": ["Company"],
+				"operationId": "Company_Get",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Company123"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/api/Default": {
+			"get": {
+				"tags": ["Default"],
+				"operationId": "Default_Get",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/api/Default/{id}": {
+			"get": {
+				"tags": ["Default"],
+				"operationId": "Default_GetById",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "id",
+					"in": "path",
+					"required": true,
+					"type": "integer",
+					"format": "int32"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/api/Dictionary": {
+			"get": {
+				"tags": ["Dictionary"],
+				"operationId": "Dictionary_Get",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Test"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			},
+			"post": {
+				"tags": ["Dictionary"],
+				"operationId": "Dictionary_PostEcho",
+				"consumes": ["application/json",
+				"text/json",
+				"text/html"],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "test",
+					"in": "body",
+					"required": true,
+					"schema": {
+						"$ref": "#/definitions/Test"
+					}
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Test"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/api/FromUri/Test1_WithFromUri": {
+			"get": {
+				"tags": ["FromUri"],
+				"operationId": "FromUri_GetWith",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "v.id",
+					"in": "query",
+					"description": "The super ID that will be used",
+					"required": false,
+					"type": "integer",
+					"format": "int32"
+				},
+				{
+					"name": "v.name",
+					"in": "query",
+					"description": "Who needs a name?",
+					"required": false,
+					"type": "string"
+				},
+				{
+					"name": "v.abd",
+					"in": "query",
+					"required": false,
+					"type": "string"
+				},
+				{
+					"name": "v.xyz",
+					"in": "query",
+					"required": false,
+					"type": "string"
+				},
+				{
+					"name": "v.cde",
+					"in": "query",
+					"required": false,
+					"type": "string"
+				},
+				{
+					"name": "v.bcd",
+					"in": "query",
+					"required": false,
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ViewModelTest"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/api/FromUri/Test2_NoFromUri": {
+			"get": {
+				"tags": ["FromUri"],
+				"operationId": "FromUri_GetWithout",
+				"consumes": ["application/json",
+				"text/json",
+				"text/html"],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "v.id",
+					"in": "query",
+					"description": "The super ID that will be used",
+					"required": false,
+					"type": "integer",
+					"format": "int32"
+				},
+				{
+					"name": "v.name",
+					"in": "query",
+					"description": "Who needs a name?",
+					"required": false,
+					"type": "string"
+				},
+				{
+					"name": "v.abd",
+					"in": "query",
+					"required": false,
+					"type": "string"
+				},
+				{
+					"name": "v.xyz",
+					"in": "query",
+					"required": false,
+					"type": "string"
+				},
+				{
+					"name": "v.cde",
+					"in": "query",
+					"required": false,
+					"type": "string"
+				},
+				{
+					"name": "v.bcd",
+					"in": "query",
+					"required": false,
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ViewModelTest"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/api/IHttpActionResult": {
+			"get": {
+				"tags": ["IHttpActionResult"],
+				"operationId": "IHttpActionResult_Get",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			},
+			"post": {
+				"tags": ["IHttpActionResult"],
+				"operationId": "IHttpActionResult_Post",
+				"consumes": ["application/json",
+				"text/json",
+				"text/html"],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "data",
+					"in": "body",
+					"required": true,
+					"schema": {
+						"$ref": "#/definitions/MyData"
+					}
+				}],
+				"responses": {
+					"200": {
+						"description": "List of customers",
+						"schema": {
+							"type": "array",
+							"items": {
+								"format": "int32",
+								"type": "integer"
+							}
+						}
+					},
+					"404": {
+						"description": "NotFound",
+						"schema": {
+							"$ref": "#/definitions/NotFoundResult"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/api/IHttpActionResult/{id}": {
+			"get": {
+				"tags": ["IHttpActionResult"],
+				"operationId": "IHttpActionResult_GetById",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "id",
+					"in": "path",
+					"required": true,
+					"type": "integer",
+					"format": "int32"
+				}],
+				"responses": {
+					"200": {
+						"description": "List of customers",
+						"schema": {
+							"type": "array",
+							"items": {
+								"format": "int32",
+								"type": "integer"
+							}
+						}
+					},
+					"400": {
+						"description": "BadRequest",
+						"schema": {
+							"$ref": "#/definitions/BadRequestErrorMessageResult"
+						}
+					},
+					"404": {
+						"description": "NotFound",
+						"schema": {
+							"$ref": "#/definitions/NotFoundResult"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/api/Image": {
+			"get": {
+				"tags": ["Image"],
+				"operationId": "Image_Get",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "object"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			},
+			"post": {
+				"tags": ["Image"],
+				"operationId": "Image_Post",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "object"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/api/InheritanceTest": {
+			"get": {
+				"tags": ["InheritanceTest"],
+				"operationId": "InheritanceTest_Get",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "imageFeature.imageUrl",
+					"in": "query",
+					"description": "Here goes your image URL",
+					"required": false,
+					"type": "string"
+				},
+				{
+					"name": "imageFeature.title",
+					"in": "query",
+					"description": "We all need a Title",
+					"required": false,
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ImageFeature"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			},
+			"post": {
+				"tags": ["InheritanceTest"],
+				"operationId": "InheritanceTest_Post",
+				"consumes": ["application/json",
+				"text/json",
+				"text/html"],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "imageFeature",
+					"in": "body",
+					"required": true,
+					"schema": {
+						"$ref": "#/definitions/ImageFeature"
+					}
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ImageFeature"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/api/MemoryBarrier": {
+			"get": {
+				"tags": ["MemoryBarrier"],
+				"operationId": "MemoryBarrier_Get",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "boolean"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/api/MonthTest": {
+			"get": {
+				"tags": ["MonthTest"],
+				"operationId": "MonthTest_Get",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "month",
+					"in": "query",
+					"required": true,
+					"type": "string",
+					"enum": ["January",
+					"February",
+					"March",
+					"April",
+					"May",
+					"June",
+					"July",
+					"August",
+					"September",
+					"October",
+					"November",
+					"December"]
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"enum": ["January",
+							"February",
+							"March",
+							"April",
+							"May",
+							"June",
+							"July",
+							"August",
+							"September",
+							"October",
+							"November",
+							"December"],
+							"type": "string"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			},
+			"put": {
+				"tags": ["MonthTest"],
+				"operationId": "MonthTest_Put",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "month",
+					"in": "query",
+					"required": true,
+					"type": "string",
+					"enum": ["January",
+					"February",
+					"March",
+					"April",
+					"May",
+					"June",
+					"July",
+					"August",
+					"September",
+					"October",
+					"November",
+					"December"]
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"enum": ["January",
+							"February",
+							"March",
+							"April",
+							"May",
+							"June",
+							"July",
+							"August",
+							"September",
+							"October",
+							"November",
+							"December"],
+							"type": "string"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			},
+			"post": {
+				"tags": ["MonthTest"],
+				"operationId": "MonthTest_Post",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "month",
+					"in": "query",
+					"required": true,
+					"type": "string",
+					"enum": ["January",
+					"February",
+					"March",
+					"April",
+					"May",
+					"June",
+					"July",
+					"August",
+					"September",
+					"October",
+					"November",
+					"December"]
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"enum": ["January",
+							"February",
+							"March",
+							"April",
+							"May",
+							"June",
+							"July",
+							"August",
+							"September",
+							"October",
+							"November",
+							"December"],
+							"type": "string"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			},
+			"delete": {
+				"tags": ["MonthTest"],
+				"operationId": "MonthTest_Delete",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "month",
+					"in": "query",
+					"required": true,
+					"type": "string",
+					"enum": ["January",
+					"February",
+					"March",
+					"April",
+					"May",
+					"June",
+					"July",
+					"August",
+					"September",
+					"October",
+					"November",
+					"December"]
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"enum": ["January",
+							"February",
+							"March",
+							"April",
+							"May",
+							"June",
+							"July",
+							"August",
+							"September",
+							"October",
+							"November",
+							"December"],
+							"type": "string"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/api/PngImage": {
+			"post": {
+				"tags": ["PngImage"],
+				"operationId": "PngImage_Post",
+				"consumes": [],
+				"produces": ["image/png"],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "object"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/api/RecursiveParam": {
+			"post": {
+				"tags": ["RecursiveParam"],
+				"operationId": "RecursiveParam_Post",
+				"consumes": ["application/json",
+				"text/json",
+				"text/html"],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "value",
+					"in": "body",
+					"required": true,
+					"schema": {
+						"$ref": "#/definitions/CategoryModel"
+					}
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"format": "int32",
+							"type": "integer"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/foo/widgets": {
+			"get": {
+				"tags": ["RoutePrefix"],
+				"operationId": "RoutePrefix_Get",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "string"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			},
+			"put": {
+				"tags": ["RoutePrefix"],
+				"operationId": "RoutePrefix_Get",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "string"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/foo/widgets/{id}": {
+			"get": {
+				"tags": ["RoutePrefix"],
+				"operationId": "RoutePrefix_GetById",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "id",
+					"in": "path",
+					"required": true,
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "string"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			},
+			"put": {
+				"tags": ["RoutePrefix"],
+				"operationId": "RoutePrefix_GetById",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "id",
+					"in": "path",
+					"required": true,
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "string"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/foo/widgets/{id}/{name}": {
+			"get": {
+				"tags": ["RoutePrefix"],
+				"operationId": "RoutePrefix_GetByIdByName",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "id",
+					"in": "path",
+					"required": true,
+					"type": "string"
+				},
+				{
+					"name": "name",
+					"in": "path",
+					"required": true,
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "string"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			},
+			"put": {
+				"tags": ["RoutePrefix"],
+				"operationId": "RoutePrefix_GetByIdByName",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "id",
+					"in": "path",
+					"required": true,
+					"type": "string"
+				},
+				{
+					"name": "name",
+					"in": "path",
+					"required": true,
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "string"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/foo/widgets/PostTest1": {
+			"post": {
+				"tags": ["RoutePrefix"],
+				"operationId": "RoutePrefix_PostTest1",
+				"consumes": ["application/json",
+				"text/json",
+				"text/html"],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "x",
+					"in": "body",
+					"required": true,
+					"schema": {
+						"$ref": "#/definitions/test1"
+					}
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"description": "Defines a command that asynchronously creates an {System.Net.Http.HttpResponseMessage}.",
+							"type": "object"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/foo/widgets/PostTest2": {
+			"post": {
+				"tags": ["RoutePrefix"],
+				"operationId": "RoutePrefix_PostTest2",
+				"consumes": ["application/json",
+				"text/json",
+				"text/html"],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "x",
+					"in": "body",
+					"required": true,
+					"schema": {
+						"$ref": "#/definitions/test2"
+					}
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"description": "Defines a command that asynchronously creates an {System.Net.Http.HttpResponseMessage}.",
+							"type": "object"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/faux/RoutePrefix/{id}": {
+			"get": {
+				"tags": ["Routes"],
+				"operationId": "Routes_GetById",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "id",
+					"in": "path",
+					"required": true,
+					"type": "integer",
+					"format": "int32"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "string"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/api/Routes": {
+			"get": {
+				"tags": ["Routes"],
+				"operationId": "Routes_Get",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "string"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/api/TestEnum": {
+			"get": {
+				"tags": ["TestEnum"],
+				"summary": "Simple GET echoing the given param",
+				"operationId": "TestEnum_Get",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "value",
+					"in": "query",
+					"description": "CustomEnum",
+					"required": true,
+					"type": "string",
+					"enum": ["Text",
+					"Numeric",
+					"Date",
+					"Numeric_Function",
+					"Dropdown_List",
+					"Checkbox"]
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"enum": ["Text",
+							"Numeric",
+							"Date",
+							"Numeric_Function",
+							"Dropdown_List",
+							"Checkbox"],
+							"type": "string"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			},
+			"post": {
+				"tags": ["TestEnum"],
+				"summary": "Test POST lorem ipsum",
+				"description": "<ul>\r\n  <li>\r\n    <b>Item 1</b> - description 1</li>\r\n  <li>\r\n    <b>Item 2</b> - description 2</li>\r\n</ul>",
+				"operationId": "TestEnum_Post",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "value",
+					"in": "query",
+					"description": "",
+					"required": true,
+					"type": "string",
+					"enum": ["Text",
+					"Numeric",
+					"Date",
+					"Numeric_Function",
+					"Dropdown_List",
+					"Checkbox"]
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"enum": ["Text",
+							"Numeric",
+							"Date",
+							"Numeric_Function",
+							"Dropdown_List",
+							"Checkbox"],
+							"type": "string"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/api/TestEnum/{Id}": {
+			"put": {
+				"tags": ["TestEnum"],
+				"summary": "Testing a [FromUri]",
+				"operationId": "TestEnum_Put",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "viewModelTest.id",
+					"in": "query",
+					"description": "The super ID that will be used",
+					"required": false,
+					"type": "integer",
+					"format": "int32"
+				},
+				{
+					"name": "viewModelTest.name",
+					"in": "query",
+					"description": "Who needs a name?",
+					"required": false,
+					"type": "string"
+				},
+				{
+					"name": "viewModelTest.abd",
+					"in": "query",
+					"required": false,
+					"type": "string"
+				},
+				{
+					"name": "viewModelTest.xyz",
+					"in": "query",
+					"required": false,
+					"type": "string"
+				},
+				{
+					"name": "viewModelTest.cde",
+					"in": "query",
+					"required": false,
+					"type": "string"
+				},
+				{
+					"name": "viewModelTest.bcd",
+					"in": "query",
+					"required": false,
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ViewModelTest"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/api/TestPost": {
+			"get": {
+				"tags": ["TestPost"],
+				"operationId": "TestPost_Get",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "x",
+					"in": "query",
+					"required": true,
+					"type": "integer",
+					"format": "int32"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"format": "int32",
+							"type": "integer"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			},
+			"post": {
+				"tags": ["TestPost"],
+				"operationId": "TestPost_CreateTest",
+				"consumes": ["application/json",
+				"text/json",
+				"text/html"],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "test",
+					"in": "body",
+					"required": true,
+					"schema": {
+						"$ref": "#/definitions/MyTest"
+					}
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/MyTest"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		},
+		"/api/ValueProvider": {
+			"get": {
+				"tags": ["ValueProvider"],
+				"operationId": "ValueProvider_Get",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "id",
+					"in": "query",
+					"required": true,
+					"type": "integer",
+					"format": "int64"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"description": "Defines a command that asynchronously creates an {System.Net.Http.HttpResponseMessage}.",
+							"type": "object"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			},
+			"put": {
+				"tags": ["ValueProvider"],
+				"operationId": "ValueProvider_Put",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "CID",
+					"in": "header",
+					"description": "",
+					"required": true,
+					"type": "",
+					"default": "101"
+				},
+				{
+					"name": "QID",
+					"in": "header",
+					"description": "",
+					"required": true,
+					"type": "",
+					"default": "102"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "object",
+							"additionalProperties": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			},
+			"post": {
+				"tags": ["ValueProvider"],
+				"operationId": "ValueProvider_Post",
+				"consumes": ["application/json",
+				"text/json",
+				"text/html"],
+				"produces": ["application/json",
+				"text/json",
+				"text/html"],
+				"parameters": [{
+					"name": "value",
+					"in": "body",
+					"required": true,
+					"schema": {
+						"type": "string"
+					}
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"format": "int64",
+							"type": "integer"
+						}
+					}
+				},
+				"security": [{
+					"oauth2": []
+				}]
+			}
+		}
+	},
+	"definitions": {
+		"Data": {
+			"type": "object",
+			"properties": {
+				"integ": {
+					"format": "int32",
+					"type": "integer",
+					"example": 123
+				},
+				"doub": {
+					"format": "double",
+					"type": "number",
+					"example": 9858.216
+				},
+				"boolea": {
+					"type": "boolean"
+				},
+				"guid": {
+					"format": "uuid",
+					"type": "string",
+					"example": "79b8a3d5-e15d-45c8-ac93-ccac0b0ac0ba"
+				},
+				"date": {
+					"format": "date-time",
+					"type": "string"
+				}
+			},
+			"xml": {
+				"name": "Data"
+			}
+		},
+		"Company": {
+			"type": "object",
+			"properties": {
+				"Id": {
+					"format": "int32",
+					"type": "integer",
+					"example": 123
+				},
+				"Name": {
+					"type": "string"
+				},
+				"Description": {
+					"type": "string"
+				}
+			},
+			"xml": {
+				"name": "Company"
+			}
+		},
+		"Test": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"format": "int32",
+					"type": "integer",
+					"example": 123
+				},
+				"guid": {
+					"format": "uuid",
+					"type": "string",
+					"example": "bc67f1b9-261c-47c1-b22a-448a0bf60756"
+				},
+				"did": {
+					"format": "double",
+					"type": "number",
+					"example": 9858.216
+				},
+				"keys": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"example": ["abc",
+					"def",
+					"ghi"]
+				},
+				"index": {
+					"type": "object",
+					"additionalProperties": {
+						"format": "int32",
+						"type": "integer"
+					},
+					"example": {
+						"1": "abc",
+						"2": "def"
+					}
+				}
+			},
+			"xml": {
+				"name": "Test"
+			}
+		},
+		"ViewModelTest": {
+			"description": "Testing POCO model",
+			"type": "object",
+			"properties": {
+				"abd": {
+					"type": "string"
+				},
+				"bcd": {
+					"type": "string"
+				},
+				"cde": {
+					"type": "string"
+				},
+				"Id": {
+					"format": "int32",
+					"description": "The super ID that will be used",
+					"type": "integer",
+					"example": 123
+				},
+				"Name": {
+					"description": "Who needs a name?",
+					"type": "string"
+				},
+				"xyz": {
+					"type": "string"
+				}
+			},
+			"xml": {
+				"name": "ViewModelTest"
+			}
+		},
+		"MyData": {
+			"description": "My super duper data",
+			"type": "object",
+			"properties": {
+				"id": {
+					"format": "int32",
+					"description": "The unique identifier",
+					"type": "integer",
+					"example": 123
+				},
+				"name": {
+					"description": "Everyone needs a name",
+					"type": "string"
+				},
+				"details": {
+					"description": "Details - testing anchor: <a href=\"?filter=TestPost\">TestPost</a>",
+					"type": "string"
+				}
+			},
+			"xml": {
+				"name": "MyData"
+			}
+		},
+		"NotFoundResult": {
+			"description": "Represents an action result that returns an empty {System.Net.HttpStatusCode.NotFound} response.",
+			"type": "object",
+			"properties": {
+				"Request": {
+					"description": "Gets the request message which led to this result.",
+					"type": "object",
+					"readOnly": true
+				}
+			},
+			"xml": {
+				"name": "NotFoundResult"
+			}
+		},
+		"BadRequestErrorMessageResult": {
+			"description": "Represents an action result that returns {System.Net.HttpStatusCode.BadRequest} response and performs content negotiation on an see {System.Web.Http.HttpError} with  {System.Web.Http.HttpError.Message}.",
+			"type": "object",
+			"properties": {
+				"Message": {
+					"description": "Gets the user-visible error message.",
+					"type": "string",
+					"readOnly": true
+				},
+				"ContentNegotiator": {
+					"$ref": "#/definitions/IContentNegotiator",
+					"description": "Gets the content negotiator to handle content negotiation.",
+					"readOnly": true
+				},
+				"Request": {
+					"description": "Gets the request message which led to this result.",
+					"type": "object",
+					"readOnly": true
+				},
+				"Formatters": {
+					"description": "Gets the formatters to use to negotiate and format the content.",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/MediaTypeFormatter"
+					},
+					"readOnly": true,
+					"xml": {
+						"name": "MediaTypeFormatter",
+						"wrapped": true
+					}
+				}
+			},
+			"xml": {
+				"name": "BadRequestErrorMessageResult"
+			}
+		},
+		"IContentNegotiator": {
+			"description": "Performs content negotiation.  This is the process of selecting a response writer (formatter) in compliance with header values in the request.",
+			"type": "object",
+			"properties": {
+				
+			},
+			"xml": {
+				"name": "IContentNegotiator"
+			}
+		},
+		"MediaTypeFormatter": {
+			"description": "Base class to handle serializing and deserializing strongly-typed objects using {System.Net.Http.ObjectContent}.",
+			"type": "object",
+			"properties": {
+				"SupportedMediaTypes": {
+					"description": "Gets the mutable collection of media types supported bythis {System.Net.Http.Formatting.MediaTypeFormatter}.",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/MediaTypeHeaderValue"
+					},
+					"readOnly": true,
+					"xml": {
+						"name": "MediaTypeHeaderValue",
+						"wrapped": true
+					}
+				},
+				"SupportedEncodings": {
+					"description": "Gets the mutable collection of character encodings supported bythis {System.Net.Http.Formatting.MediaTypeFormatter}.",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Encoding"
+					},
+					"readOnly": true,
+					"xml": {
+						"name": "Encoding",
+						"wrapped": true
+					}
+				},
+				"MediaTypeMappings": {
+					"description": "Gets the mutable collection of {System.Net.Http.Formatting.MediaTypeMapping} objects that match HTTP requests to media types.",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/MediaTypeMapping"
+					},
+					"readOnly": true,
+					"xml": {
+						"name": "MediaTypeMapping",
+						"wrapped": true
+					}
+				},
+				"RequiredMemberSelector": {
+					"$ref": "#/definitions/IRequiredMemberSelector",
+					"description": "Gets or sets the {System.Net.Http.Formatting.IRequiredMemberSelector} instance used to determine required members."
+				}
+			},
+			"xml": {
+				"name": "MediaTypeFormatter"
+			}
+		},
+		"MediaTypeHeaderValue": {
+			"type": "object",
+			"properties": {
+				"CharSet": {
+					"type": "string"
+				},
+				"Parameters": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/NameValueHeaderValue"
+					},
+					"readOnly": true,
+					"xml": {
+						"name": "NameValueHeaderValue",
+						"wrapped": true
+					}
+				},
+				"MediaType": {
+					"type": "string"
+				}
+			},
+			"xml": {
+				"name": "MediaTypeHeaderValue"
+			}
+		},
+		"Encoding": {
+			"type": "object",
+			"properties": {
+				"m_codePage": {
+					"format": "int32",
+					"type": "integer",
+					"example": 123
+				},
+				"dataItem": {
+					"$ref": "#/definitions/CodePageDataItem"
+				},
+				"m_isReadOnly": {
+					"type": "boolean"
+				},
+				"encoderFallback": {
+					"$ref": "#/definitions/EncoderFallback"
+				},
+				"decoderFallback": {
+					"$ref": "#/definitions/DecoderFallback"
+				}
+			},
+			"xml": {
+				"name": "Encoding"
+			}
+		},
+		"MediaTypeMapping": {
+			"description": "An abstract base class used to create an association between {System.Net.Http.HttpRequestMessage} or  {System.Net.Http.HttpResponseMessage} instances that have certain characteristics  and a specific {System.Net.Http.Headers.MediaTypeHeaderValue}.",
+			"type": "object",
+			"properties": {
+				"MediaType": {
+					"$ref": "#/definitions/MediaTypeHeaderValue",
+					"description": "Gets the {System.Net.Http.Headers.MediaTypeHeaderValue} that is associated with {System.Net.Http.HttpRequestMessage} or  {System.Net.Http.HttpResponseMessage} instances that have the given characteristics of the  {System.Net.Http.Formatting.MediaTypeMapping}.",
+					"readOnly": true
+				}
+			},
+			"xml": {
+				"name": "MediaTypeMapping"
+			}
+		},
+		"IRequiredMemberSelector": {
+			"description": "Defines method that determines whether a given member is required on deserialization.",
+			"type": "object",
+			"properties": {
+				
+			},
+			"xml": {
+				"name": "IRequiredMemberSelector"
+			}
+		},
+		"NameValueHeaderValue": {
+			"type": "object",
+			"properties": {
+				"Name": {
+					"type": "string",
+					"readOnly": true
+				},
+				"Value": {
+					"type": "string"
+				}
+			},
+			"xml": {
+				"name": "NameValueHeaderValue"
+			}
+		},
+		"CodePageDataItem": {
+			"type": "object",
+			"properties": {
+				"m_dataIndex": {
+					"format": "int32",
+					"type": "integer",
+					"example": 123
+				},
+				"m_uiFamilyCodePage": {
+					"format": "int32",
+					"type": "integer",
+					"example": 123
+				},
+				"m_webName": {
+					"type": "string"
+				},
+				"m_headerName": {
+					"type": "string"
+				},
+				"m_bodyName": {
+					"type": "string"
+				},
+				"m_flags": {
+					"format": "int32",
+					"type": "integer",
+					"example": 123
+				}
+			},
+			"xml": {
+				"name": "CodePageDataItem"
+			}
+		},
+		"EncoderFallback": {
+			"type": "object",
+			"properties": {
+				"bIsMicrosoftBestFitFallback": {
+					"type": "boolean"
+				}
+			},
+			"xml": {
+				"name": "EncoderFallback"
+			}
+		},
+		"DecoderFallback": {
+			"type": "object",
+			"properties": {
+				"bIsMicrosoftBestFitFallback": {
+					"type": "boolean"
+				}
+			},
+			"xml": {
+				"name": "DecoderFallback"
+			}
+		},
+		"ImageFeature": {
+			"type": "object",
+			"properties": {
+				"ImageUrl": {
+					"description": "Here goes your image URL",
+					"type": "string"
+				},
+				"Title": {
+					"description": "We all need a Title",
+					"type": "string"
+				}
+			},
+			"xml": {
+				"name": "ImageFeature"
+			}
+		},
+		"CategoryModel": {
+			"type": "object",
+			"properties": {
+				"Id": {
+					"format": "int32",
+					"type": "integer",
+					"example": 123
+				},
+				"Parent": {
+					"$ref": "#/definitions/CategoryModel"
+				}
+			},
+			"xml": {
+				"name": "CategoryModel"
+			}
+		},
+		"test1": {
+			"type": "object",
+			"properties": {
+				"MyId": {
+					"format": "int32",
+					"type": "integer",
+					"example": 123
+				},
+				"data": {
+					"format": "uuid",
+					"type": "string",
+					"example": "18e27719-7749-42e2-ba77-0effca47440f"
+				}
+			},
+			"xml": {
+				"name": "test1"
+			}
+		},
+		"test2": {
+			"type": "object",
+			"properties": {
+				"MyId": {
+					"format": "int32",
+					"type": "integer",
+					"example": 123
+				},
+				"data": {
+					"format": "uuid",
+					"type": "string",
+					"example": "18bfa47d-491d-4dc6-abdc-75d613822ec4"
+				}
+			},
+			"xml": {
+				"name": "test2"
+			}
+		},
+		"MyTest": {
+			"type": "object",
+			"properties": {
+				"Name": {
+					"type": "string"
+				},
+				"IsPassing": {
+					"type": "boolean"
+				}
+			},
+			"xml": {
+				"name": "MyTest"
+			}
+		},
+		"Company123": {
+			"type": "object",
+			"properties": {
+				"Id": {
+					"format": "int32",
+					"type": "integer",
+					"example": 123
+				},
+				"Name": {
+					"type": "string"
+				},
+				"Description": {
+					"type": "string"
+				}
+			},
+			"xml": {
+				"name": "Company"
+			}
+		}
+	},
+	"securityDefinitions": {
+		"oauth2": {
+			"type": "oauth2",
+			"description": "OAuth2 Implicit Grant",
+			"flow": "accessCode",
+			"authorizationUrl": "http://www.facebook.com/dialog/oauth/?client_id=183620338840937&redirect_uri=http%3A%2F%2Fswashbuckletest.azurewebsites.net%2Fswagger",
+			"tokenUrl": "https://graph.facebook.com/oauth/access_token?client_id=183620338840937&redirect_uri=http%3A%2F%2Fswashbuckletest.azurewebsites.net%2Fswagger&client_secret=de81460e907d213dcc4271aa7b1ae88a&grant_type=client_credentials",
+			"scopes": {
+				
+			}
+		}
+	},
+	"tags": [{
+		"name": "TestEnum",
+		"description": "Testing enums ..."
+	}]
+}
