@@ -139,6 +139,7 @@
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\InheritanceTestController.cs" />
     <Compile Include="Controllers\MemoryBarrierController.cs" />
+    <Compile Include="Controllers\MonthTestController.cs" />
     <Compile Include="Controllers\PngImageController.cs" />
     <Compile Include="Controllers\RecursiveParamController.cs" />
     <Compile Include="Controllers\RoutePrefixController.cs" />
@@ -150,6 +151,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BigClass.cs" />
+    <Compile Include="Models\MonthEnum.cs" />
     <Compile Include="Models\ExtraType.cs" />
     <Compile Include="Models\TestClasses.cs" />
     <Compile Include="Models\ViewModelTest.cs" />
