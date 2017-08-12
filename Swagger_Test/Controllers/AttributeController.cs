@@ -6,10 +6,10 @@ namespace Swagger_Test.Controllers
     [RoutePrefix("attrib")]
     public class AttributeController : ApiController
     {
-        [Route("{payId}/{requester?}")]
-        public string Get(int payId, int requester = 8)
+        [Route("{payId?}")]
+        public string Get(int payId = 123)
         {
-            return $"{payId} {requester}";
+            return $"{payId}";
         }
 
         [Route("{name}")]
