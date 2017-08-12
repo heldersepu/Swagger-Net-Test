@@ -187,6 +187,7 @@ namespace Swagger_Test
                         c.DocumentFilter<SortModelDocumentFilter>();
                         c.DocumentFilter<ApplyDocumentFilter_ChangeCompany>();
                         c.DocumentFilter<AddImageResponseDocumentFilter>();
+                        c.DocumentFilter<OptionalPathParamDocumentFilter>();
 
                         // In contrast to WebApi, Swagger 2.0 does not include the query string component when mapping a URL
                         // to an action. As a result, Swagger-Net will raise an exception if it encounters multiple actions
@@ -293,6 +294,15 @@ namespace Swagger_Test
                     var serializer = new YamlSerializer();
                     serializer.SerializeToFile(file, swaggerDoc);
                 }
+            }
+        }
+
+        private class OptionalPathParamDocumentFilter : IDocumentFilter
+        {
+            public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
+            {
+                string actionPath = "/attrib/{payId}";
+                swaggerDoc.paths[actionPath].get.parameters[0].required = false;
             }
         }
 
