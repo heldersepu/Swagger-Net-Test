@@ -1,15 +1,16 @@
-using Swagger.Net;
-using Swagger.Net.Application;
-using Swagger_Test;
-using Swagger_Test.Models;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Web;
 using System.Web.Http;
 using System.Web.Http.Description;
 using System.Yaml.Serialization;
-using WebActivatorEx;
+using System.Collections.Generic;
+
+using Swagger_Test;
+using Swagger_Test.Models;
+using Swagger.Net.Application;
+using Swagger.Net;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -246,7 +247,7 @@ namespace Swagger_Test
                         //
                         c.UIfilter("''");
 
-                        // Specify which HTTP operations will have the 'Try it out!' option. An empty paramter list disables
+                        // Specify which HTTP operations will have the 'Try it out!' option. An empty parameter list disables
                         // it for all operations.
                         //
                         //c.SupportedSubmitMethods("GET", "HEAD");
@@ -274,7 +275,7 @@ namespace Swagger_Test
                             clientSecret: "de81460e907d213dcc4271aa7b1ae88a",
                             realm: "swaggertestapp",
                             appName: "swaggertestapp"
-                            //additionalQueryStringParams: new Dictionary<string, string>() { { "foo", "bar" } }
+                        //additionalQueryStringParams: new Dictionary<string, string>() { { "foo", "bar" } }
                         );
 
                         // If your API supports ApiKey, you can override the default values.
