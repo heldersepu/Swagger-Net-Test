@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System.Collections.Generic;
+using System.Web.Http;
 
 namespace Swagger_Test.Controllers
 {
@@ -18,6 +19,11 @@ namespace Swagger_Test.Controllers
                 Name = "Co",
                 Description = "Test Co"
             };
+        }
+
+        public IHttpActionResult Put([FromBody] List<Company> companies)
+        {
+            return Ok(companies);
         }
     }
 }
