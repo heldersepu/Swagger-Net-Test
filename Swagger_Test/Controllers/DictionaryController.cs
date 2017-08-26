@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Description;
@@ -17,9 +18,9 @@ namespace Swagger_Test.Controllers
             return new Test { id = 99, index = d };
         }
 
-        public Test PostEcho(Test test)
+        public Test PostEcho([FromBody] List<Test> test)
         {
-            return test;
+            return test.FirstOrDefault();
         }
 
         public class Test
