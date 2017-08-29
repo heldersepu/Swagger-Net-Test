@@ -74,7 +74,7 @@ namespace Swagger_Test
                         //c.BasicAuth("basic")
                         //    .Description("Basic HTTP Authentication");
                         //
-                        c.ApiKey("apiKey", "API Key Authentication", "header", typeof(KeyAuthorizeAttribute));
+                        //c.ApiKey("apiKey", "API Key Authentication", "header", typeof(KeyAuthorizeAttribute));
                         //
                         c.OAuth2("oauth2")
                             .Description("OAuth2 Implicit Grant")
