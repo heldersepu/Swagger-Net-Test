@@ -18,6 +18,7 @@ namespace Swagger_Test.Controllers
             return new Test { id = 99, index = d };
         }
 
+        [KeyAuthorize]
         public Test PostEcho([FromBody] List<Test> test)
         {
             return test.FirstOrDefault();

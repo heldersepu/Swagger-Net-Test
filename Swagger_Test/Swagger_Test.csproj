@@ -59,7 +59,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Swagger.Net, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Swagger-Net.8.3.1.502\lib\net45\Swagger.Net.dll</HintPath>
+      <HintPath>..\packages\Swagger-Net.8.3.1.607\lib\net45\Swagger.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http" />
@@ -125,6 +125,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\KeyAuthorizeAttribute.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ApiExplorerController.cs" />
     <Compile Include="Controllers\AttributeController.cs" />
