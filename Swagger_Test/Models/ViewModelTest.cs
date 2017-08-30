@@ -10,6 +10,7 @@ namespace Swagger_Test.Models
         /// <summary>
         /// The super ID that will be used
         /// </summary>
+        /// <example>123</example>
         public int Id { get; set; }
 
         /// <summary>
