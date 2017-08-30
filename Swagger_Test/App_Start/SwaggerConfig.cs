@@ -476,6 +476,10 @@ namespace Swagger_Test
                                         p.Value.example = new List<string>
                                             { "abc", "def", "ghi" };
                                         break;
+                                    case "xyz":
+                                        p.Value.example = "abcasdfasd";
+                                        p.Value.maxLength = 10;
+                                        break;
                                 }
                                 break;
                         }

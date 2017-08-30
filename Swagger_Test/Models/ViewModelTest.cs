@@ -1,4 +1,6 @@
-﻿namespace Swagger_Test.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Swagger_Test.Models
 {
     /// <summary>
     /// Testing POCO model
@@ -18,6 +20,9 @@
         public string abd { get; set; }
         public string xyz { get; set; }
         public string cde { get; set; }
+
+        [MinLength(3)]
+        [MaxLength(5)]
         public string bcd { get; set; }
 
     }

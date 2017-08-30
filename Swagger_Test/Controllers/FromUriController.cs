@@ -17,5 +17,10 @@ namespace Swagger_Test.Controllers
         {
             return v;
         }
+
+        public ViewModelTest Post(ViewModelTest v)
+        {
+            return v;
+        }
     }
 }
