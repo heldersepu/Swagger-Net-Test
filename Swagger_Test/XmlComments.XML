@@ -54,12 +54,6 @@
             <param name="viewModelTest">ViewModelTest</param>
             <returns>ViewModelTest</returns>
         </member>
-        <member name="F:Swagger_Test.Models.test1.MyUniqId">
-            <summary>
-            Unique ID for the test
-            </summary>
-            <example>456789</example>
-        </member>
         <member name="T:Swagger_Test.Models.ViewModelTest">
             <summary>
             Testing POCO model
