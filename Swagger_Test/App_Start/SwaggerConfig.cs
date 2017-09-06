@@ -60,8 +60,8 @@ namespace Swagger_Test
                         //    (apiDesc, targetApiVersion) => ResolveVersionSupportByRouteConstraint(apiDesc, targetApiVersion),
                         //    (vc) =>
                         //    {
-                        //        vc.Version("v2", "Swagger-Net Dummy API V2");
-                        //        vc.Version("v1", "Swagger-Net Dummy API V1");
+                        //        vc.Version("v1", "Swagger_Test");
+                        //        vc.Version("v2", "Swagger_Test V2");
                         //    });
 
                         // You can use "BasicAuth", "ApiKey" or "OAuth2" options to describe security schemes for the API.
@@ -277,43 +277,43 @@ namespace Swagger_Test
                     });
         }
 
-    private class DocumentFilterAddFakes : IDocumentFilter
-    {
-        private PathItem FakePathItem(int i)
+        private class DocumentFilterAddFakes : IDocumentFilter
         {
-            var x = new PathItem();
-            x.get = new Operation()
+            private PathItem FakePathItem(int i)
             {
-                tags = new[] { "Fake" },
-                operationId = "Fake_Get" + i.ToString() ,
-                consumes = null,
-                produces = new[] { "application/json", "text/json", "application/xml", "text/xml" },
-                parameters = new List<Parameter>()
-                            {
-                                new Parameter()
+                var x = new PathItem();
+                x.get = new Operation()
+                {
+                    tags = new[] { "Fake" },
+                    operationId = "Fake_Get" + i.ToString() ,
+                    consumes = null,
+                    produces = new[] { "application/json", "text/json", "application/xml", "text/xml" },
+                    parameters = new List<Parameter>()
                                 {
-                                    name = "id",
-                                    @in = "path",
-                                    required = true,
-                                    type = "integer",
-                                    format = "int32",
-                                    @default = 8
-                                }
-                            },
-            };
-            x.get.responses = new Dictionary<string, Response>();
-            x.get.responses.Add("200", new Response() { description = "OK", schema = new Schema() { type = "string" } });
-            return x;
-        }
+                                    new Parameter()
+                                    {
+                                        name = "id",
+                                        @in = "path",
+                                        required = true,
+                                        type = "integer",
+                                        format = "int32",
+                                        @default = 8
+                                    }
+                                },
+                };
+                x.get.responses = new Dictionary<string, Response>();
+                x.get.responses.Add("200", new Response() { description = "OK", schema = new Schema() { type = "string" } });
+                return x;
+            }
 
-        public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
-        {
-            for (int i = 0; i < 10; i++)
+            public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
             {
-                swaggerDoc.paths.Add("/Fake/" + i  + "/{id}", FakePathItem(i));
+                for (int i = 0; i < 10; i++)
+                {
+                    swaggerDoc.paths.Add("/Fake/" + i  + "/{id}", FakePathItem(i));
+                }
             }
         }
-    }
 
         private class YamlDocumentFilter : IDocumentFilter
         {
@@ -333,7 +333,8 @@ namespace Swagger_Test
             public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
             {
                 string actionPath = "/attrib/{payId}";
-                swaggerDoc.paths[actionPath].get.parameters[0].required = false;
+                if (swaggerDoc.paths != null && swaggerDoc.paths.ContainsKey(actionPath))
+                    swaggerDoc.paths[actionPath].get.parameters[0].required = false;
             }
         }
 
@@ -342,11 +343,14 @@ namespace Swagger_Test
             public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
             {
                 string model = "ViewModelTest";
-                var props = swaggerDoc.definitions[model].properties.OrderBy(x => x.Key).ToArray();
-                swaggerDoc.definitions[model].properties.Clear();
-                foreach (var prop in props)
+                if (swaggerDoc.definitions.ContainsKey(model))
                 {
-                    swaggerDoc.definitions[model].properties.Add(prop.Key, prop.Value);
+                    var props = swaggerDoc.definitions[model].properties.OrderBy(x => x.Key).ToArray();
+                    swaggerDoc.definitions[model].properties.Clear();
+                    foreach (var prop in props)
+                    {
+                        swaggerDoc.definitions[model].properties.Add(prop.Key, prop.Value);
+                    }
                 }
             }
         }
@@ -370,8 +374,11 @@ namespace Swagger_Test
         {
             public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
             {
-                swaggerDoc.paths["/api/PngImage"].post.produces.Clear();
-                swaggerDoc.paths["/api/PngImage"].post.produces.Add("image/png");
+                if (swaggerDoc.paths != null && swaggerDoc.paths.ContainsKey("/api/PngImage"))
+                {
+                    swaggerDoc.paths["/api/PngImage"].post.produces.Clear();
+                    swaggerDoc.paths["/api/PngImage"].post.produces.Add("image/png");
+                }
             }
         }
 
@@ -411,11 +418,11 @@ namespace Swagger_Test
         {
             public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
             {
-                if (swaggerDoc.definitions != null)
+                if (swaggerDoc.definitions != null && swaggerDoc.definitions.ContainsKey("Company"))
                 {
                     swaggerDoc.definitions.Add("Company123", swaggerDoc.definitions["Company"]);
                 }
-                if (swaggerDoc.paths != null)
+                if (swaggerDoc.paths != null && swaggerDoc.paths.ContainsKey("/api/Company"))
                 {
                     swaggerDoc.paths["/api/Company"].get.responses["200"].schema.@ref = "#/definitions/Company123";
                 }
