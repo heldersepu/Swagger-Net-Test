@@ -146,6 +146,7 @@
     <Compile Include="Controllers\MemoryBarrierController.cs" />
     <Compile Include="Controllers\MonthTestController.cs" />
     <Compile Include="Controllers\MultiGetController.cs" />
+    <Compile Include="Controllers\OAuthController.cs" />
     <Compile Include="Controllers\PngImageController.cs" />
     <Compile Include="Controllers\RecursiveParamController.cs" />
     <Compile Include="Controllers\RoutePrefixController.cs" />
