@@ -10,37 +10,37 @@
 
 
 @keyframes animImg {
-	from {
-		-webkit-transform: translate(90px,0px);
-		transform: translate(90px,0px);
-	}
+    from {
+        -webkit-transform: translate(90px,0px);
+        transform: translate(90px,0px);
+    }
 
-	to {
-		-webkit-transform: rotate(180deg);
-		transform: rotate(180deg);
-	}
+    to {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
 }
 
 @keyframes animTitle {
-	12% { color:#9400D3; }
-	24% { color:#4B0082; }
-	36% { color:#0000FF; }
-	48% { color:#00FF00; }
-	60% { color:#FFFF00; }
-	72% { color:#FF7F00; }
-	84% { color:#FF0000; }
+    12% { color:#9400D3; }
+    24% { color:#4B0082; }
+    36% { color:#0000FF; }
+    48% { color:#00FF00; }
+    60% { color:#FFFF00; }
+    72% { color:#FF7F00; }
+    84% { color:#FF0000; }
     96% { color:black; }
 }
 
 .topbar-wrapper img {
-	animation-duration: 1s;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-	animation-name: animImg;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-name: animImg;
     position: absolute;
 }
 .topbar-wrapper span {
-	animation-duration: 10s;
-	animation-iteration-count: infinite;
-	animation-name: animTitle;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-name: animTitle;
 }
