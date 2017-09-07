@@ -3,7 +3,6 @@ using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Cors;
-using Microsoft.Web.Http.Routing;
 
 namespace Swagger_Test
 {
@@ -11,20 +10,20 @@ namespace Swagger_Test
     {
         public static void Register(HttpConfiguration config)
         {
-            config.AddApiVersioning(options => {
-                options.ReportApiVersions = true;
-            });
+            //config.AddApiVersioning(options => {
+            //    options.ReportApiVersions = true;
+            //});
 
-            var constraintResolver = new System.Web.Http.Routing.DefaultInlineConstraintResolver();
-            constraintResolver.ConstraintMap.Add("apiVersion", typeof(ApiVersionRouteConstraint));
-            config.MapHttpAttributeRoutes(constraintResolver);
+            //var constraintResolver = new System.Web.Http.Routing.DefaultInlineConstraintResolver();
+            //constraintResolver.ConstraintMap.Add("apiVersion", typeof(ApiVersionRouteConstraint));
+            //config.MapHttpAttributeRoutes(constraintResolver);
 
             // Web API configuration and services
             config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
             config.Formatters.Clear();
             config.Formatters.Add(new BrowserJsonFormatter());
             // Web API routes
-            //config.MapHttpAttributeRoutes();
+            config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
