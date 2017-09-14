@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using Swagger.Net.Annotations;
+using System.Drawing;
 using System.Net.Http;
 using System.Net.Http.Headers;
 
@@ -7,6 +8,7 @@ namespace Swagger_Test.Controllers
     public class ImageController : ImageBaseController
     {
         // GET: api/Image
+        [SwaggerResponse(200, mediaType: "image/png")]
         public HttpResponseMessage Get()
         {
             var response = new HttpResponseMessage();
@@ -16,6 +18,7 @@ namespace Swagger_Test.Controllers
         }
 
         // POST: api/Image
+        [SwaggerResponse(200, mediaType: "image/png")]
         public HttpResponseMessage Post()
         {
             var response = new HttpResponseMessage();
