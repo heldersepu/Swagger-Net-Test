@@ -29,7 +29,7 @@ namespace Swagger_Test.Controllers
         }
 
         // PUT: api/Image
-        [SwaggerResponse(200, typeName: "file", mediaType: "application/octet-stream")]
+        [SwaggerResponse(200, mediaType: "application/octet-stream")]
         public HttpResponseMessage Put()
         {
             var response = new HttpResponseMessage();
