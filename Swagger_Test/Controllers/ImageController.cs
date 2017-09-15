@@ -1,5 +1,6 @@
 ﻿using Swagger.Net.Annotations;
 using System.Drawing;
+using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 
@@ -24,6 +25,16 @@ namespace Swagger_Test.Controllers
             var response = new HttpResponseMessage();
             response.Content = ImageStream(Color.White, Color.Blue);
             response.Content.Headers.ContentType = new MediaTypeHeaderValue("image/png");
+            return response;
+        }
+
+        // PUT: api/Image
+        [SwaggerResponse(200, typeName: "file", mediaType: "application/applefile")]
+        public HttpResponseMessage Put()
+        {
+            var response = new HttpResponseMessage();
+            response.Content = ImageStream(Color.White, Color.Black);
+            response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/applefile");
             return response;
         }
     }
