@@ -29,12 +29,12 @@ namespace Swagger_Test.Controllers
         }
 
         // PUT: api/Image
-        [SwaggerResponse(200, typeName: "file", mediaType: "application/applefile")]
+        [SwaggerResponse(200, typeName: "file", mediaType: "application/octet-stream")]
         public HttpResponseMessage Put()
         {
             var response = new HttpResponseMessage();
             response.Content = ImageStream(Color.White, Color.Black);
-            response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/applefile");
+            response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
             return response;
         }
     }
