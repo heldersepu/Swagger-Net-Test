@@ -418,6 +418,9 @@ namespace Swagger_Test
         {
             public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
             {
+                schemaRegistry.GetOrRegister(typeof(CountingLock1));
+                schemaRegistry.GetOrRegister(typeof(CountingLock2));
+
                 if (swaggerDoc.definitions != null && swaggerDoc.definitions.ContainsKey("Company"))
                 {
                     swaggerDoc.definitions.Add("Company123", swaggerDoc.definitions["Company"]);

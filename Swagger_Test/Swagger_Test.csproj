@@ -135,6 +135,7 @@
     <Compile Include="Controllers\AttributeController.cs" />
     <Compile Include="Controllers\BindingController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\CountingLockController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\DictionaryController.cs" />
     <Compile Include="Controllers\FromUriController.cs" />
@@ -158,6 +159,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BigClass.cs" />
+    <Compile Include="Models\CountingLock.cs" />
     <Compile Include="Models\MonthEnum.cs" />
     <Compile Include="Models\ExtraType.cs" />
     <Compile Include="Models\TestClasses.cs" />
