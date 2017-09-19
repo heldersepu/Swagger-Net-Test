@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -143,6 +144,7 @@
     <Compile Include="Controllers\IHttpActionResultController.cs" />
     <Compile Include="Controllers\ImageBaseController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="Controllers\ImportArrayController.cs" />
     <Compile Include="Controllers\InheritanceTestController.cs" />
     <Compile Include="Controllers\MemoryBarrierController.cs" />
     <Compile Include="Controllers\MonthTestController.cs" />
