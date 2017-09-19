@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Http;
 
 namespace Swagger_Test.Controllers
@@ -15,8 +16,8 @@ namespace Swagger_Test.Controllers
     {
         public Account()
         {
-            Contact = new HashSet<string>();
-            SupplyAgreement = new HashSet<string>();
+            Contact = new HashSet<Contact>();
+            SupplyAgreement = new HashSet<SupplyAgreement>();
         }
         
         public int Id { get; set; }
@@ -39,7 +40,38 @@ namespace Swagger_Test.Controllers
         public string Website { get; set; }
 
         //public Entity Entity { get; set; }
-        public ICollection<string> Contact { get; set; }
-        public ICollection<string> SupplyAgreement { get; set; }
+        public ICollection<Contact> Contact { get; set; }
+        public ICollection<SupplyAgreement> SupplyAgreement { get; set; }
+    }
+
+    public partial class Contact
+    {
+        public int Id { get; set; }
+        public int? AccountId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string JobTitle { get; set; }
+        public string Email { get; set; }
+        public string BusinessPhone { get; set; }
+        public string MobilePhone { get; set; }
+        public string Fax { get; set; }
+        public DateTime? Updated { get; set; }
+
+        public Account Account { get; set; }
+    }
+
+    public partial class SupplyAgreement
+    {
+        public SupplyAgreement()
+        {
+        }
+
+        public int Id { get; set; }
+        public int EntityId { get; set; }
+        public int? AccountId { get; set; }
+        public string Name { get; set; }
+        public int? Slaid { get; set; }
+
+        public Account Account { get; set; }
     }
 }
