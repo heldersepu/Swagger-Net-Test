@@ -12,6 +12,12 @@ namespace Swagger_Test.Controllers
             return $"{payId}";
         }
 
+        [Route("data")]
+        public Data Get([FromUri]Data data)
+        {
+            return data;
+        }
+
         [Route("{name}")]
         public Data Post([FromUri]string name)
         {
@@ -27,10 +33,10 @@ namespace Swagger_Test.Controllers
 
     public class Data
     {
-        public int integ = 1;
-        public double doub = 1.1;
-        public bool boolea = false;
-        public Guid guid = Guid.NewGuid();
-        public DateTime date = DateTime.Now;
+        public int integ { get; set; }
+        public double doub { get; set; }
+        public bool boolea { get; set; }
+        public Guid guid { get; set; }
+        public DateTime date { get; set; }
     }
 }
