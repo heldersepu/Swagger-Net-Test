@@ -135,6 +135,7 @@
     <Compile Include="Controllers\ApiExplorerController.cs" />
     <Compile Include="Controllers\AttributeController.cs" />
     <Compile Include="Controllers\BindingController.cs" />
+    <Compile Include="Controllers\BlobController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\CountingLockController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
