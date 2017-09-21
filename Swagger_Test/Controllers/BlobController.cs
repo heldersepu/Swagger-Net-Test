@@ -3,21 +3,22 @@ using System.Web.Http;
 
 namespace Swagger_Test.Controllers
 {
-    [RoutePrefix("Blob")]
-    public class BlobController : ApiController
+    public abstract class BlobController : ApiController
     {
         /// <summary> Get a Bad Blob </summary>
-        [Route("GetBad")]
         public string GetBad(Guid id, int? includes = null)
         {
             return "Bad";
         }
 
         /// <summary> Get an Ok Blob </summary>
-        [Route("GetOk")]
-        public string GetOk(Guid id, int includes = 0)
+        public string PostOk(Guid id, int includes = 0)
         {
             return "Ok";
         }
     }
+
+    public class Foo { }
+
+    public class BlobTestController : BlobController { }
 }
