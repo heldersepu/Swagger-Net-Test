@@ -4,10 +4,10 @@
         <name>Swagger_Test</name>
     </assembly>
     <members>
-        <member name="M:Swagger_Test.Controllers.BlobController`1.GetBad(System.Guid,System.Nullable{System.Int32})">
+        <member name="M:Swagger_Test.Controllers.Blob`1.GetBad(System.Nullable{System.Int32})">
             <summary> Get a Bad Blob </summary>
         </member>
-        <member name="M:Swagger_Test.Controllers.BlobController`1.PostOk(System.Guid,System.Int32)">
+        <member name="M:Swagger_Test.Controllers.Blob`1.PostOk(System.Int32)">
             <summary> Get an Ok Blob </summary>
         </member>
         <member name="T:Swagger_Test.Controllers.MyData">
