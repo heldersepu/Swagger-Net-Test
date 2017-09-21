@@ -3,7 +3,7 @@ using System.Web.Http;
 
 namespace Swagger_Test.Controllers
 {
-    public abstract class BlobController : ApiController
+    public abstract class BlobController<T> : ApiController
     {
         /// <summary> Get a Bad Blob </summary>
         public string GetBad(Guid id, int? includes = null)
@@ -20,5 +20,5 @@ namespace Swagger_Test.Controllers
 
     public class Foo { }
 
-    public class BlobTestController : BlobController { }
+    public class BlobTestController : BlobController<Foo> { }
 }
