@@ -133,6 +133,7 @@
     <Compile Include="App_Start\KeyAuthorizeAttribute.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ApiExplorerController.cs" />
+    <Compile Include="Controllers\AsyncController.cs" />
     <Compile Include="Controllers\AttributeController.cs" />
     <Compile Include="Controllers\BindingController.cs" />
     <Compile Include="Controllers\BlobController.cs" />
