@@ -5,6 +5,7 @@ namespace Swagger_Test.Controllers
 {
     public class OAuthController : ApiController
     {
+        [Authorize]
         public IHttpActionResult Get()
         {
             var obj = new
