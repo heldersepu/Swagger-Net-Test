@@ -45,18 +45,6 @@ namespace Swagger_Test
                 base.SetDefaultContentHeaders(type, headers, mediaType);
                 headers.ContentType = new MediaTypeHeaderValue("application/json");
             }
-
-            public new JsonSerializerSettings SerializerSettings
-            {
-                get
-                {
-                    return new JsonSerializerSettings
-                    {
-                        Formatting = Formatting.Indented,
-                    };
-                }
-                set { }
-            }
         }
     }
 }
