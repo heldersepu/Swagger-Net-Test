@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Web.Http;
@@ -43,6 +44,18 @@ namespace Swagger_Test
             {
                 base.SetDefaultContentHeaders(type, headers, mediaType);
                 headers.ContentType = new MediaTypeHeaderValue("application/json");
+            }
+
+            public new JsonSerializerSettings SerializerSettings
+            {
+                get
+                {
+                    return new JsonSerializerSettings
+                    {
+                        Formatting = Formatting.Indented,
+                    };
+                }
+                set { }
             }
         }
     }
