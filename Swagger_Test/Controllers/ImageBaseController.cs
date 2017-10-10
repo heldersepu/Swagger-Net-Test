@@ -11,7 +11,7 @@ namespace Swagger_Test.Controllers
     {
         internal StreamContent ImageStream(Color color1, Color color2)
         {
-            var rnd = new Random();            
+            var rnd = new Random();
             var bmp = new Bitmap(250, 50);
             for (int y = 0; y < bmp.Height; ++y)
             {
