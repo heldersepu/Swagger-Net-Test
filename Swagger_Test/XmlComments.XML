@@ -28,10 +28,10 @@
         <member name="P:Swagger_Test.Controllers.ImageFeature.ImageUrl">
             <summary>Here goes your image URL</summary>
         </member>
-        <member name="M:Swagger_Test.Controllers.NestedEnum.PutEnumNull(Swagger_Test.Controllers.NestedEnum.Giorno)">
+        <member name="M:Swagger_Test.Controllers.NestedEnum`1.PutEnumNull(Swagger_Test.Controllers.NestedEnum{`0}.Giorno)">
             <summary> A nullable enum test </summary>
         </member>
-        <member name="M:Swagger_Test.Controllers.NestedEnum.DeleteEnumNonNull(Swagger_Test.Controllers.NestedEnum.Giorno)">
+        <member name="M:Swagger_Test.Controllers.NestedEnum`1.DeleteEnumNonNull(Swagger_Test.Controllers.NestedEnum{`0}.Giorno)">
             <summary> A non-null enum test </summary>
         </member>
         <member name="T:Swagger_Test.Controllers.TestEnumController">

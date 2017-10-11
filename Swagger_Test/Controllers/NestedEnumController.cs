@@ -2,7 +2,7 @@
 
 namespace Swagger_Test.Controllers
 {
-    public abstract class NestedEnum : ApiController
+    public abstract class NestedEnum<T> : ApiController
     {
         public enum Giorno { Lunedi, Martedi, Venerdi }
 
@@ -20,5 +20,5 @@ namespace Swagger_Test.Controllers
         }
     }
 
-    public class NestedEnumController : NestedEnum { }
+    public class NestedEnumController : NestedEnum<int> { }
 }
