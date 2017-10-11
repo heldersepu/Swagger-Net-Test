@@ -7,9 +7,9 @@ namespace Swagger_Test.Controllers
     public class FromUriController : ApiController
     {
         [Route("Test0_WithFromUri")]
-        public ViewModelTest GetWith0([FromUri] ViewModelTest v1, [FromUri] ViewModelTest v2)
+        public IHttpActionResult GetWith0([FromUri] ViewModelTest a, [FromUri] ViewModelTest b)
         {
-            return v1;
+            return Ok(new { a = a, b = b });
         }
 
         [Route("Test1_WithFromUri")]
