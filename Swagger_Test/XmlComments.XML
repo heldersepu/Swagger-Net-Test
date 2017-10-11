@@ -28,6 +28,12 @@
         <member name="P:Swagger_Test.Controllers.ImageFeature.ImageUrl">
             <summary>Here goes your image URL</summary>
         </member>
+        <member name="M:Swagger_Test.Controllers.NestedEnum.PutEnumNull(Swagger_Test.Controllers.NestedEnum.Giorno)">
+            <summary> A nullable enum test </summary>
+        </member>
+        <member name="M:Swagger_Test.Controllers.NestedEnum.DeleteEnumNonNull(Swagger_Test.Controllers.NestedEnum.Giorno)">
+            <summary> A non-null enum test </summary>
+        </member>
         <member name="T:Swagger_Test.Controllers.TestEnumController">
             <summary>
             Testing enums ...
