@@ -28,7 +28,7 @@
         <member name="P:Swagger_Test.Controllers.ImageFeature.ImageUrl">
             <summary>Here goes your image URL</summary>
         </member>
-        <member name="M:Swagger_Test.Controllers.NestedEnum`1.PutEnumNull(Swagger_Test.Controllers.NestedEnum{`0}.Giorno)">
+        <member name="M:Swagger_Test.Controllers.NestedEnum`1.PutEnumNull(System.Nullable{Swagger_Test.Controllers.NestedEnum{`0}.Giorno})">
             <summary> A nullable enum test </summary>
         </member>
         <member name="M:Swagger_Test.Controllers.NestedEnum`1.DeleteEnumNonNull(Swagger_Test.Controllers.NestedEnum{`0}.Giorno)">

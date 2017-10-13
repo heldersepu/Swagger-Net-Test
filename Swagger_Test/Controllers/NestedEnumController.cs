@@ -8,7 +8,7 @@ namespace Swagger_Test.Controllers
 
 
         /// <summary> A nullable enum test </summary>
-        public string PutEnumNull(Giorno value)
+        public string PutEnumNull(Giorno? value)
         {
             return "Nullable Enum parameter";
         }
