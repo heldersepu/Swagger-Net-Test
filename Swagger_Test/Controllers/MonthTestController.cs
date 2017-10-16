@@ -3,11 +3,17 @@ using System.Web.Http;
 
 namespace Swagger_Test.Controllers
 {
+    public class MData
+    {
+        public int Id { get; set; }
+        public MonthEnum Month { get; set; }
+    }
+
     public class MonthTestController : ApiController
     {
-        public MonthEnum Get(MonthEnum month)
+        public MData Get([FromUri]MData data)
         {
-            return month;
+            return data;
         }
 
         public MonthEnum Post(MonthEnum month)

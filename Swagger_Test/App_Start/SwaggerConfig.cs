@@ -183,6 +183,7 @@ namespace Swagger_Test
                         c.DocumentFilter<TestDocumentFilter>();
                         c.DocumentFilter<DocumentFilterAddFakes>();
                         c.DocumentFilter<SortModelDocumentFilter>();
+                        c.DocumentFilter<StringEnumDocumentFilter>();
                         c.DocumentFilter<ApplyDocumentFilter_ChangeCompany>();
                         c.DocumentFilter<AddImageResponseDocumentFilter>();
                         c.DocumentFilter<OptionalPathParamDocumentFilter>();
@@ -378,6 +379,27 @@ namespace Swagger_Test
                 {
                     swaggerDoc.paths["/api/PngImage"].post.produces.Clear();
                     swaggerDoc.paths["/api/PngImage"].post.produces.Add("image/png");
+                }
+            }
+        }
+
+        private class StringEnumDocumentFilter : IDocumentFilter
+        {
+            const string PATH = "/api/TestStringEnum";
+            static readonly string[] COLORS = { "dark-blue", "dark-red", "light-blue", "light-red" };
+
+            public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
+            {
+                if (swaggerDoc.paths != null && swaggerDoc.paths.ContainsKey(PATH))
+                {
+                    var get = swaggerDoc.paths[PATH].get;
+                    foreach (var param in get.parameters)
+                    {
+                        if (param.name.ToUpper().Contains("STRINGENUMCOLOR"))
+                        {
+                            param.@enum = COLORS;
+                        }
+                    } 
                 }
             }
         }
