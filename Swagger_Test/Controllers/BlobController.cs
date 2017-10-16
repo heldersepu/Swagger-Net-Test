@@ -17,7 +17,7 @@ namespace Swagger_Test.Controllers
         }
 
         /// <summary> Template object test </summary>
-        public string Put(AnotherFoo x)
+        public string Put(AnotherFoo<T> x)
         {
             return "Gets a template";
         }
@@ -25,7 +25,7 @@ namespace Swagger_Test.Controllers
 
     public class Foo { }
 
-    public class AnotherFoo { }
+    public class AnotherFoo<TV> { }
 
     public class BlobController : Blob<Foo> { }
 }
