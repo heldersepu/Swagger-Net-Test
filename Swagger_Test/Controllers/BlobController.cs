@@ -15,9 +15,17 @@ namespace Swagger_Test.Controllers
         {
             return "Ok";
         }
+
+        /// <summary> Template object test </summary>
+        public string Put(AnotherFoo x)
+        {
+            return "Gets a template";
+        }
     }
 
     public class Foo { }
+
+    public class AnotherFoo { }
 
     public class BlobController : Blob<Foo> { }
 }

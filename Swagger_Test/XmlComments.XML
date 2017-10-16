@@ -10,6 +10,9 @@
         <member name="M:Swagger_Test.Controllers.Blob`1.PostOk(System.Int32)">
             <summary> Get an Ok Blob </summary>
         </member>
+        <member name="M:Swagger_Test.Controllers.Blob`1.Put(Swagger_Test.Controllers.AnotherFoo)">
+            <summary> Template object test </summary>
+        </member>
         <member name="T:Swagger_Test.Controllers.MyData">
             <summary>My super duper data</summary>
         </member>
