@@ -1,4 +1,5 @@
 ﻿using Swagger_Test.Models;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Swagger_Test.Controllers
@@ -35,5 +36,34 @@ namespace Swagger_Test.Controllers
         {
             return Ok(x);
         }
+
+        [Route("my/put1/{date}")]
+        public Task<IHttpActionResult> Put1(LocalDate date, InputModel inputModel)
+        {
+            return null;
+        }
+
+        [Route("my/post1/{date}")]
+        public Task<IHttpActionResult> Post1(LocalDate date, InputModel inputModel)
+        {
+            return null;
+        }
+
+        [Route("my/put2")]
+        public Task<IHttpActionResult> Put2(LocalDate date, InputModel inputModel)
+        {
+            return null;
+        }
+
+        [Route("my/post2")]
+        public Task<IHttpActionResult> Post2(LocalDate date, InputModel inputModel)
+        {
+            return null;
+        }
     }
+
+    public class LocalDate { long id; string name; }
+    public class InputModel { int id; string name; }
+
+
 }
