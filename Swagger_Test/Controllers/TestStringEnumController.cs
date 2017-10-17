@@ -16,9 +16,14 @@ namespace Swagger_Test.Controllers
 
     public class TestStringEnumController : ApiController
     {
-        public string Get([FromUri] MyEndpointRequestClass r)
+        public string Post([FromUri] MyEndpointRequestClass r)
         {
             return r.StringEnumColor;
-        }       
+        }
+
+        public string Get([RegularExpression("^(uno|due)")]string x)
+        {
+            return x;
+        }
     }
 }
