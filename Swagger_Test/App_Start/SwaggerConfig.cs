@@ -386,42 +386,43 @@ namespace Swagger_Test
             }
         }
 
-        private class StringEnumDocumentFilter : IDocumentFilter
-        {
-            const string PARAM_NAME = "StringEnumColor";
-            static readonly string[] COLORS = { "dark-blue", "dark-red", "light-blue", "light-red" };
-
-            public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
+    private class StringEnumDocumentFilter : IDocumentFilter
+    {
+        public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
+        {                
+            if (swaggerDoc.paths != null)
             {
-                if (swaggerDoc.paths != null)
+                foreach (var path in swaggerDoc.paths)
                 {
-                    foreach (var path in swaggerDoc.paths)
-                    {
-                        ProcessOperation(path.Value.get);
-                        ProcessOperation(path.Value.put);
-                        ProcessOperation(path.Value.post);
-                        ProcessOperation(path.Value.delete);
-                        ProcessOperation(path.Value.options);
-                        ProcessOperation(path.Value.head);
-                        ProcessOperation(path.Value.patch);
-                    }
+                    ProcessOperation(path.Value.get);
+                    ProcessOperation(path.Value.put);
+                    ProcessOperation(path.Value.post);
+                    ProcessOperation(path.Value.delete);
+                    ProcessOperation(path.Value.options);
+                    ProcessOperation(path.Value.head);
+                    ProcessOperation(path.Value.patch);
                 }
             }
-
-            private void ProcessOperation(Operation op)
-            {
-                if (op != null)
-                {
-                    foreach (var param in op.parameters)
-                    {
-                        if (param.name.ToUpper().Contains(PARAM_NAME.ToUpper()))
-                        {
-                            param.@enum = COLORS;
-                        }
-                    }
-                }                
-            }
         }
+
+        private void ProcessOperation(Operation op)
+        {
+            if (op != null)
+            {
+                foreach (var param in op.parameters)
+                {
+                    if (param.pattern != null)
+                    {
+                        param.@enum = param.pattern
+                            .Replace("^", "")
+                            .Replace("(", "")
+                            .Replace(")", "")
+                            .Split('|');
+                    }
+                }
+            }                
+        }
+    }
 
         public class AddRequiredHeaderParameters : IOperationFilter
         {
