@@ -388,22 +388,38 @@ namespace Swagger_Test
 
         private class StringEnumDocumentFilter : IDocumentFilter
         {
-            const string PATH = "/api/TestStringEnum";
+            const string PARAM_NAME = "StringEnumColor";
             static readonly string[] COLORS = { "dark-blue", "dark-red", "light-blue", "light-red" };
 
             public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
             {
-                if (swaggerDoc.paths != null && swaggerDoc.paths.ContainsKey(PATH))
+                if (swaggerDoc.paths != null)
                 {
-                    var get = swaggerDoc.paths[PATH].get;
-                    foreach (var param in get.parameters)
+                    foreach (var path in swaggerDoc.paths)
                     {
-                        if (param.name.ToUpper().Contains("STRINGENUMCOLOR"))
+                        ProcessOperation(path.Value.get);
+                        ProcessOperation(path.Value.put);
+                        ProcessOperation(path.Value.post);
+                        ProcessOperation(path.Value.delete);
+                        ProcessOperation(path.Value.options);
+                        ProcessOperation(path.Value.head);
+                        ProcessOperation(path.Value.patch);
+                    }
+                }
+            }
+
+            private void ProcessOperation(Operation op)
+            {
+                if (op != null)
+                {
+                    foreach (var param in op.parameters)
+                    {
+                        if (param.name.ToUpper().Contains(PARAM_NAME.ToUpper()))
                         {
                             param.@enum = COLORS;
                         }
-                    } 
-                }
+                    }
+                }                
             }
         }
 

@@ -129,8 +129,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\KeyAuthorizeAttribute.cs" />
+    <Compile Include="Attributes\KeyAuthorizeAttribute.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Attributes\StringEnumAttribute.cs" />
     <Compile Include="Controllers\ApiExplorerController.cs" />
     <Compile Include="Controllers\AsyncController.cs" />
     <Compile Include="Controllers\AttributeController.cs" />

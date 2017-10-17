@@ -2,9 +2,9 @@
 
 namespace Swagger_Test.Controllers
 {
-    public class MyEndpointRequestClass 
+    public class MyEndpointRequestClass
     {
-        //[StringEnum("dark-blue", "dark-red", "light-blue", "light-red")]
+        [StringEnum(new string[]{"dark-blue", "dark-red", "light-blue", "light-red"})]
         public string StringEnumColor { get; set; }
 
         public string Name { get; set; }
