@@ -38,6 +38,10 @@ namespace Swagger_Test
             public BrowserJsonFormatter()
             {
                 this.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+                this.SerializerSettings = new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Include
+                };
             }
 
             public override void SetDefaultContentHeaders(Type type, HttpContentHeaders headers, MediaTypeHeaderValue mediaType)
