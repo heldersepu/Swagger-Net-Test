@@ -12,7 +12,8 @@ namespace Swagger_Test.Controllers
             {
                 HttpContext.Current.User.Identity.AuthenticationType,
                 HttpContext.Current.User.Identity.IsAuthenticated,
-                HttpContext.Current.User.Identity.Name
+                HttpContext.Current.User.Identity.Name,
+                RequestContext.Principal
             };
             return Ok(obj);
         }
