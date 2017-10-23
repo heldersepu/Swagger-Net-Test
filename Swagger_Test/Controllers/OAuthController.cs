@@ -17,5 +17,18 @@ namespace Swagger_Test.Controllers
             };
             return Ok(obj);
         }
+
+        [Authorize]
+        public IHttpActionResult GetById(int id)
+        {
+            var obj = new
+            {
+                HttpContext.Current.User.Identity.AuthenticationType,
+                HttpContext.Current.User.Identity.IsAuthenticated,
+                HttpContext.Current.User.Identity.Name,
+                RequestContext.Principal
+            };
+            return Ok(obj);
+        }
     }
 }
