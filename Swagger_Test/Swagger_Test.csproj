@@ -63,6 +63,9 @@
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NodaTime, Version=2.2.2.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NodaTime.2.2.2\lib\net45\NodaTime.dll</HintPath>
+    </Reference>
     <Reference Include="Swagger.Net, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
       <HintPath>..\packages\Swagger-Net.8.3.3.104\lib\net45\Swagger.Net.dll</HintPath>
     </Reference>
@@ -152,6 +155,7 @@
     <Compile Include="Controllers\MonthTestController.cs" />
     <Compile Include="Controllers\MultiGetController.cs" />
     <Compile Include="Controllers\NestedEnumController.cs" />
+    <Compile Include="Controllers\NodaTimeController.cs" />
     <Compile Include="Controllers\OAuthController.cs" />
     <Compile Include="Controllers\PngImageController.cs" />
     <Compile Include="Controllers\RecursiveParamController.cs" />
