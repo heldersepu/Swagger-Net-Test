@@ -25,8 +25,20 @@ namespace Swagger_Test.Controllers
             return Ok(date.ToString());
         }
 
-        [Route("my/route3/{date}")]
-        public IHttpActionResult GetByDate3(DateTime date)
+        [Route("my/route3")]
+        public IHttpActionResult GetByDate3([FromUri] NodaTime.LocalDate date)
+        {
+            return Ok(date.ToString());
+        }
+
+        [Route("my/route4")]
+        public IHttpActionResult GetByDate4([FromUri] InputData data)
+        {
+            return Ok(data);
+        }
+
+        [Route("my/route5/{date}")]
+        public IHttpActionResult GetByDate5([FromUri] DateTime date)
         {
             try {
                 var ndate = date.ToLocalDateTime().Date;
@@ -35,5 +47,25 @@ namespace Swagger_Test.Controllers
                 return BadRequest("Date is not a valid NodaTime.LocalDate");
             }            
         }
+
+        [Route("my/route6")]
+        public IHttpActionResult GetByDate6([FromUri] DateTime date)
+        {
+            try
+            {
+                var ndate = date.ToLocalDateTime().Date;
+                return Ok(date.ToString());
+            }
+            catch
+            {
+                return BadRequest("Date is not a valid NodaTime.LocalDate");
+            }
+        }
+    }
+
+    public class InputData
+    {
+        public int Id { get; set; }
+        public NodaTime.LocalDate Date { get; set; }
     }
 }
