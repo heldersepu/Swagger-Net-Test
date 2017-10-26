@@ -187,7 +187,7 @@ namespace Swagger_Test
                         c.DocumentFilter<StringEnumDocumentFilter>();
                         c.DocumentFilter<ApplyDocumentFilter_ChangeCompany>();
                         c.DocumentFilter<AddImageResponseDocumentFilter>();
-                        c.DocumentFilter<OptionalPathParamDocumentFilter>();
+                        //c.DocumentFilter<OptionalPathParamDocumentFilter>();
                         //c.ModelFilter<EnumDefinitionsModelFilter>();
                         
 
