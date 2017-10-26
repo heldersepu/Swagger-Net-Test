@@ -442,7 +442,7 @@ namespace Swagger_Test
                 }
             }
 
-            public Parameter HeaderParam(string name, string defaultValue, bool required = true, string type = "", string description = "")
+            public Parameter HeaderParam(string name, string defaultValue, bool required = true, string type = "string", string description = "")
             {
                 return new Parameter
                 {
