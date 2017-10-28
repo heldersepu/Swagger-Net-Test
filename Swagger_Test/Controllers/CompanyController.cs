@@ -21,6 +21,11 @@ namespace Swagger_Test.Controllers
             };
         }
 
+        public IHttpActionResult Post([FromBody] IEnumerable<Company> companies)
+        {
+            return Ok(companies);
+        }
+
         public IHttpActionResult Put([FromBody] List<Company> companies)
         {
             return Ok(companies);
