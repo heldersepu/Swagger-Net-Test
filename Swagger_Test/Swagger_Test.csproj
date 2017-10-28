@@ -146,6 +146,7 @@
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\DictionaryController.cs" />
     <Compile Include="Controllers\FromUriController.cs" />
+    <Compile Include="Controllers\HugeResponseController.cs" />
     <Compile Include="Controllers\IActionResultController.cs" />
     <Compile Include="Controllers\IHttpActionResultController.cs" />
     <Compile Include="Controllers\ImageBaseController.cs" />
