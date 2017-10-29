@@ -138,6 +138,7 @@
     <Compile Include="Controllers\ApiExplorerController.cs" />
     <Compile Include="Controllers\AsyncController.cs" />
     <Compile Include="Controllers\AttributeController.cs" />
+    <Compile Include="Controllers\BigStringController.cs" />
     <Compile Include="Controllers\BindingController.cs" />
     <Compile Include="Controllers\BlobController.cs" />
     <Compile Include="Controllers\ChildApiController.cs" />
