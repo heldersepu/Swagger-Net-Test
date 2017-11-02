@@ -565,7 +565,7 @@ namespace Swagger_Test
                         switch (p.Value.format)
                         {
                             case "uuid":
-                                p.Value.example = Guid.NewGuid();
+                                p.Value.example = Guid.Empty;
                                 break;
                             case "int32":
                                 p.Value.example = 123;
