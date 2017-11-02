@@ -136,6 +136,7 @@ namespace Swagger_Test
                         // specific type, you can wire up one or more Schema filters.
                         //
                         c.SchemaFilter<ApplySchemaVendorExtensions>();
+                        //c.SchemaFilter<EnumDefinitionsFilter>();
 
                         // In a Swagger 2.0 document, complex types are typically declared globally and referenced by unique
                         // Schema Id. By default, Swagger-Net does NOT use the full type name in Schema Ids. In most cases, this
@@ -187,8 +188,7 @@ namespace Swagger_Test
                         c.DocumentFilter<StringEnumDocumentFilter>();
                         c.DocumentFilter<ApplyDocumentFilter_ChangeCompany>();
                         c.DocumentFilter<AddImageResponseDocumentFilter>();
-                        //c.DocumentFilter<OptionalPathParamDocumentFilter>();
-                        //c.ModelFilter<EnumDefinitionsModelFilter>();
+                        //c.DocumentFilter<OptionalPathParamDocumentFilter>();                        
                         
 
                         // In contrast to WebApi, Swagger 2.0 does not include the query string component when mapping a URL
@@ -496,46 +496,58 @@ namespace Swagger_Test
             }
         }
 
-        public class EnumDefinitionsModelFilter : IModelFilter
+        public class EnumDefinitionsFilter : ISchemaFilter
         {
-            public void Apply(Schema model, ModelFilterContext context)
+            public void Apply(Schema model, SchemaRegistry schemaRegistry, Type type)
             {
-                if (model.properties == null)
-                    return;
-
-                var enumProperties = model.properties.Where(p => p.Value.@enum != null)
-                    .Union(model.properties.Where(p => p.Value.items?.@enum != null)).ToList();
-                var enums = context.SystemType.GetProperties()
-                    .Select(p => Nullable.GetUnderlyingType(p.PropertyType) ?? p.PropertyType.GetElementType() ??
-                                    p.PropertyType.GetGenericArguments().FirstOrDefault() ?? p.PropertyType)
-                    .Where(p => p.GetTypeInfo().IsEnum)
-                    .ToList();
-
-                foreach (var enumProperty in enumProperties)
+                if (model.properties != null)
                 {
-                    var enumPropertyValue = enumProperty.Value.@enum != null ? enumProperty.Value : enumProperty.Value.items;
-
-                    var enumValues = enumPropertyValue.@enum.Select(e => $"{e}").ToList();
-                    var enumType = enums.SingleOrDefault(p =>
+                    var enumProperties = model.properties.Where(p => p.Value.@enum != null)
+                        .Union(model.properties.Where(p => p.Value.items?.@enum != null)).ToList();
+                    if (enumProperties.Count > 0)
                     {
-                        var enumNames = Enum.GetNames(p);
-                        if (enumNames.Except(enumValues, StringComparer.InvariantCultureIgnoreCase).Any())
-                            return false;
-                        if (enumValues.Except(enumNames, StringComparer.InvariantCultureIgnoreCase).Any())
-                            return false;
-                        return true;
-                    });
+                        var enums = type.GetProperties()
+                            .Select(p => Nullable.GetUnderlyingType(p.PropertyType) ?? p.PropertyType.GetElementType() ??
+                                            p.PropertyType.GetGenericArguments().FirstOrDefault() ?? p.PropertyType)
+                            .Where(p => p.IsEnum)
+                            .Distinct()
+                            .ToList();
 
-                    if (enumType == null)
-                        throw new Exception($"Property {enumProperty} not found in {context.SystemType.Name} Type.");
+                        foreach (var enumProperty in enumProperties)
+                        {
+                            var enumPropertyValue = enumProperty.Value.@enum != null ? enumProperty.Value : enumProperty.Value.items;
 
-                    if (context.SchemaRegistry.Definitions.ContainsKey(enumType.Name) == false)
-                        context.SchemaRegistry.Definitions.Add(enumType.Name, enumPropertyValue);
+                            var enumValues = enumPropertyValue.@enum.Select(e => $"{e}").ToList();
+                            var enumType = enums.SingleOrDefault(p =>
+                            {
+                                var enumNames = Enum.GetNames(p);
+                                if (enumNames.Except(enumValues, StringComparer.InvariantCultureIgnoreCase).Any())
+                                    return false;
+                                if (enumValues.Except(enumNames, StringComparer.InvariantCultureIgnoreCase).Any())
+                                    return false;
+                                return true;
+                            });
 
-                    if (enumPropertyValue.@enum != null)
-                        model.properties[enumProperty.Key] = new Schema { @ref = $"#/definitions/{enumType.Name}" };
-                    else
-                        enumPropertyValue.items = new Schema { @ref = $"#/definitions/{enumType.Name}" };
+                            if (enumType == null)
+                                throw new Exception($"Property {enumProperty} not found in {type.Name} Type.");
+
+                            if (schemaRegistry.Definitions.ContainsKey(enumType.Name) == false)
+                                schemaRegistry.Definitions.Add(enumType.Name, enumPropertyValue);
+
+                            var schema = new Schema
+                            {
+                                @ref = $"#/definitions/{enumType.Name}"
+                            };
+                            if (enumProperty.Value.@enum != null)
+                            {
+                                model.properties[enumProperty.Key] = schema;
+                            }
+                            else if (enumProperty.Value.items?.@enum != null)
+                            {
+                                enumProperty.Value.items = schema;
+                            }
+                        }
+                    }
                 }
             }
         }
