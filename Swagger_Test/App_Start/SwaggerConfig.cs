@@ -518,7 +518,7 @@ namespace Swagger_Test
                             var enumPropertyValue = enumProperty.Value.@enum != null ? enumProperty.Value : enumProperty.Value.items;
 
                             var enumValues = enumPropertyValue.@enum.Select(e => $"{e}").ToList();
-                            var enumType = enums.SingleOrDefault(p =>
+                            var enumType = enums.FirstOrDefault(p =>
                             {
                                 var enumNames = Enum.GetNames(p);
                                 if (enumNames.Except(enumValues, StringComparer.InvariantCultureIgnoreCase).Any())
@@ -528,23 +528,23 @@ namespace Swagger_Test
                                 return true;
                             });
 
-                            if (enumType == null)
-                                throw new Exception($"Property {enumProperty} not found in {type.Name} Type.");
+                            if (enumType != null)
+                            {
+                                if (schemaRegistry.Definitions.ContainsKey(enumType.Name) == false)
+                                    schemaRegistry.Definitions.Add(enumType.Name, enumPropertyValue);
 
-                            if (schemaRegistry.Definitions.ContainsKey(enumType.Name) == false)
-                                schemaRegistry.Definitions.Add(enumType.Name, enumPropertyValue);
-
-                            var schema = new Schema
-                            {
-                                @ref = $"#/definitions/{enumType.Name}"
-                            };
-                            if (enumProperty.Value.@enum != null)
-                            {
-                                model.properties[enumProperty.Key] = schema;
-                            }
-                            else if (enumProperty.Value.items?.@enum != null)
-                            {
-                                enumProperty.Value.items = schema;
+                                var schema = new Schema
+                                {
+                                    @ref = $"#/definitions/{enumType.Name}"
+                                };
+                                if (enumProperty.Value.@enum != null)
+                                {
+                                    model.properties[enumProperty.Key] = schema;
+                                }
+                                else if (enumProperty.Value.items?.@enum != null)
+                                {
+                                    enumProperty.Value.items = schema;
+                                }
                             }
                         }
                     }
