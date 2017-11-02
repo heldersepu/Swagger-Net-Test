@@ -7,7 +7,7 @@ namespace Swagger_Test.Controllers
     public class HugeResponseController : ApiController
     {
         // GET: api/HugeResponse
-        public IEnumerable<string> Get(int max = 10000)
+        public IEnumerable<string> Get(int max = 100000)
         {
             var huge = new List<string>();
             huge.Add("Testing large responses");
