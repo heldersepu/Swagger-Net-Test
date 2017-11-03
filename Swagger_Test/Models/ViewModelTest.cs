@@ -16,10 +16,16 @@ namespace Swagger_Test.Models
         /// <summary>
         /// Who needs a name?
         /// </summary>
+        /// <example>John Doe</example>
         public string Name { get; set; }
 
+        /// <example>aaabbbddd</example>
         public string abd { get; set; }
+
+        /// <example>xxxyyyzzz</example>
         public string xyz { get; set; }
+
+        /// <example>cccdddeee</example>
         public string cde { get; set; }
 
         [MinLength(3)]

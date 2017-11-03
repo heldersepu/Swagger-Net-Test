@@ -84,6 +84,16 @@
             <summary>
             Who needs a name?
             </summary>
+            <example>John Doe</example>
+        </member>
+        <member name="P:Swagger_Test.Models.ViewModelTest.abd">
+            <example>aaabbbddd</example>
+        </member>
+        <member name="P:Swagger_Test.Models.ViewModelTest.xyz">
+            <example>xxxyyyzzz</example>
+        </member>
+        <member name="P:Swagger_Test.Models.ViewModelTest.cde">
+            <example>cccdddeee</example>
         </member>
     </members>
 </doc>
