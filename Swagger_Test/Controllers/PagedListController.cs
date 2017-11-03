@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http;
-using X.PagedList;
-using System.Collections;
+using X.PagedList;s
 
 namespace Swagger_Test.Controllers
 {
