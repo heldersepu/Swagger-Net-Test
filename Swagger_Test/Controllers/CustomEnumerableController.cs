@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Web.Http;
 
 namespace Swagger_Test.Controllers
@@ -8,18 +10,35 @@ namespace Swagger_Test.Controllers
         // GET: api/CustomEnumerable
         public MyEnumerable Get()
         {
-            return null;
+            var data = new MyEnumerable();
+            return new MyEnumerable();
         }
     }
 
-    public class MyEnumerable : IEnumerable
+    public class MyEnumerable : IEnumerable<int>
     {
-        public int Abc { get; }
-        public int Def { get; }
+        static Random rnd = new Random();
+        //public int Count { get { return Items.Count; } }
 
-        public IEnumerator GetEnumerator()
+        private IList<int> Items
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                var data = new List<int>();
+                for (int i = 0; i < rnd.Next(5, 10); i++)
+                    data.Add(rnd.Next(100, 999));
+                return data;
+            }                
+        }
+
+        public IEnumerator<int> GetEnumerator()
+        {
+            return Items.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return Items.GetEnumerator();
         }
     }
 }
