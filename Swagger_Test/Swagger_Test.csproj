@@ -168,6 +168,7 @@
     <Compile Include="Controllers\ChildApiController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\CountingLockController.cs" />
+    <Compile Include="Controllers\CustomEnumerableController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\DictionaryController.cs" />
     <Compile Include="Controllers\FromUriController.cs" />
