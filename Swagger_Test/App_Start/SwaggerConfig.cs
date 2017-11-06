@@ -12,6 +12,7 @@ using Swagger_Test.Models;
 using Swagger.Net.Application;
 using Swagger.Net;
 using System.Reflection;
+using System.Diagnostics;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -562,6 +563,7 @@ namespace Swagger_Test
                 {
                     foreach (var p in schema.properties)
                     {
+                        Debug.WriteLine($"{p.Key} {p.Value.format}");
                         switch (p.Value.format)
                         {
                             case "uuid":
@@ -572,6 +574,9 @@ namespace Swagger_Test
                                 break;
                             case "double":
                                 p.Value.example = 9858.216;
+                                break;
+                            case "date-time":
+                                p.Value.example = DateTime.Now.ToString("yyyy-MM-dd");
                                 break;
                             default:
                                 switch (p.Key)
