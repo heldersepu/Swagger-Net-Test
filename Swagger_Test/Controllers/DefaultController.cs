@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Swagger_Test.Models;
+using System.Collections.Generic;
 using System.Web.Http;
 
 namespace Swagger_Test.Controllers
@@ -16,6 +17,11 @@ namespace Swagger_Test.Controllers
         public List<string> GetById(int id)
         {
             return new List<string> { "value1", "value2" };
+        }
+
+        public string Put(NewUserWriteModel model)
+        {
+            return "TEST";
         }
     }
 }

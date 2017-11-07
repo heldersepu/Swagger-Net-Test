@@ -189,8 +189,10 @@ namespace Swagger_Test
                         c.DocumentFilter<StringEnumDocumentFilter>();
                         c.DocumentFilter<ApplyDocumentFilter_ChangeCompany>();
                         c.DocumentFilter<AddImageResponseDocumentFilter>();
-                        //c.DocumentFilter<OptionalPathParamDocumentFilter>();                        
+                        c.DocumentFilter<HideStuffDocumentFilter>();
                         
+                        //c.DocumentFilter<OptionalPathParamDocumentFilter>();                        
+
 
                         // In contrast to WebApi, Swagger 2.0 does not include the query string component when mapping a URL
                         // to an action. As a result, Swagger-Net will raise an exception if it encounters multiple actions
@@ -493,6 +495,21 @@ namespace Swagger_Test
                 {
                     if (path.Key.Contains("foo"))
                         swaggerDoc.paths.Add(path);
+                }
+            }
+        }
+
+        private class HideStuffDocumentFilter : IDocumentFilter
+        {
+            public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry s, IApiExplorer a)
+            {
+                foreach (var definition in swaggerDoc.definitions)
+                {
+                    foreach (var prop in definition.Value.properties.ToList())                        
+                    {
+                        if (prop.Value.maxLength == 9999)
+                            definition.Value.properties.Remove(prop);
+                    }
                 }
             }
         }
