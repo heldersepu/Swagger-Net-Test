@@ -9,7 +9,7 @@ namespace Swagger_Test.Controllers
     {
         // GET: api/Default
         public string Get()
-        {        
+        {
             return Request.Headers.Referrer.AbsoluteUri;
         }
 
@@ -20,6 +20,12 @@ namespace Swagger_Test.Controllers
         }
 
         public string Put(NewUserWriteModel model)
+        {
+            return "TEST";
+        }
+
+        [IgnoreSwaggerUiRequest]
+        public string Delete(int id)
         {
             return "TEST";
         }

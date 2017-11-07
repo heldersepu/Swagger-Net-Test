@@ -156,6 +156,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\IgnoreSwaggerUiRequestAttribute.cs" />
     <Compile Include="Attributes\KeyAuthorizeAttribute.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Attributes\StringEnumAttribute.cs" />
