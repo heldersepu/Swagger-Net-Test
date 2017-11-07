@@ -8,9 +8,9 @@ namespace Swagger_Test.Controllers
     public class DefaultController : ApiController
     {
         // GET: api/Default
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
+        public string Get()
+        {        
+            return Request.Headers.Referrer.AbsoluteUri;
         }
 
         // GET: api/Default/5
