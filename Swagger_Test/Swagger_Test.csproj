@@ -204,6 +204,7 @@
     <Compile Include="Models\MonthEnum.cs" />
     <Compile Include="Models\ExtraType.cs" />
     <Compile Include="Models\NewUserWriteModel.cs" />
+    <Compile Include="Models\ShiftDayOffRule.cs" />
     <Compile Include="Models\TestClasses.cs" />
     <Compile Include="Models\ViewModelTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

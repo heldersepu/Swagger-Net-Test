@@ -1,6 +1,6 @@
-﻿using System;
+﻿using NodaTime.Extensions;
+using System;
 using System.Web.Http;
-using NodaTime.Extensions;
 
 namespace Swagger_Test.Controllers
 {
@@ -45,7 +45,7 @@ namespace Swagger_Test.Controllers
                 return Ok(date.ToString());
             } catch  {
                 return BadRequest("Date is not a valid NodaTime.LocalDate");
-            }            
+            }
         }
 
         [Route("my/route6")]
