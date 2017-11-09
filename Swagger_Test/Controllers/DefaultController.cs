@@ -24,6 +24,11 @@ namespace Swagger_Test.Controllers
             return "TEST";
         }
 
+        public ShiftDayOffRule Post(ShiftDayOffRule dayOffRule)
+        {
+            return dayOffRule;
+        }
+
         [IgnoreSwaggerUiRequest]
         public string Delete(int id)
         {
