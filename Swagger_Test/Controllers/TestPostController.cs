@@ -16,9 +16,9 @@ namespace Swagger_Test.Controllers
             return test;
         }
 
-        public int? Get(int? x)
+        public decimal Get(decimal x = 989898989898989898, decimal y = 1)
         {
-            return x;
+            return x * y;
         }
     }
 }
