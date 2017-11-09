@@ -10,12 +10,13 @@ namespace Swagger_Test.Controllers
     {
         // GET: api/PagedList
         public IPagedList<Company> Get()
-        {           
+        {
             return PagedCompany;
         }
 
         // GET: api/PagedList/5
         [SwaggerResponse(200, Type = typeof(IPagedList<Company>))]
+        [SwaggerResponse(statusCode: 400, type: typeof(string), description:"<p>Hello</p><p>World</p>")]
         public async Task<IHttpActionResult> Get(int id)
         {
             return Ok(PagedCompany);
@@ -31,5 +32,5 @@ namespace Swagger_Test.Controllers
                 return new PagedList<Company>(data, 1, 3);
             }
         }
-    }    
+    }
 }
