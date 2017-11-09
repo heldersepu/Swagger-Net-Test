@@ -137,6 +137,7 @@ namespace Swagger_Test
                         // specific type, you can wire up one or more Schema filters.
                         //
                         c.SchemaFilter<ApplySchemaVendorExtensions>();
+                        c.SchemaFilter<EnumExampleSchemaFilter>();
                         //c.SchemaFilter<EnumDefinitionsFilter>();
 
                         // In a Swagger 2.0 document, complex types are typically declared globally and referenced by unique
@@ -190,7 +191,7 @@ namespace Swagger_Test
                         c.DocumentFilter<ApplyDocumentFilter_ChangeCompany>();
                         c.DocumentFilter<AddImageResponseDocumentFilter>();
                         c.DocumentFilter<HideStuffDocumentFilter>();
-                        
+
                         //c.DocumentFilter<OptionalPathParamDocumentFilter>();                        
 
 
@@ -292,7 +293,7 @@ namespace Swagger_Test
                 x.get = new Operation()
                 {
                     tags = new[] { "Fake" },
-                    operationId = "Fake_Get" + i.ToString() ,
+                    operationId = "Fake_Get" + i.ToString(),
                     consumes = null,
                     produces = new[] { "application/json", "text/json", "application/xml", "text/xml" },
                     parameters = new List<Parameter>()
@@ -317,7 +318,7 @@ namespace Swagger_Test
             {
                 for (int i = 0; i < 10; i++)
                 {
-                    swaggerDoc.paths.Add("/Fake/" + i  + "/{id}", FakePathItem(i));
+                    swaggerDoc.paths.Add("/Fake/" + i + "/{id}", FakePathItem(i));
                 }
             }
         }
@@ -389,43 +390,43 @@ namespace Swagger_Test
             }
         }
 
-    private class StringEnumDocumentFilter : IDocumentFilter
-    {
-        public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
-        {                
-            if (swaggerDoc.paths != null)
+        private class StringEnumDocumentFilter : IDocumentFilter
+        {
+            public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
             {
-                foreach (var path in swaggerDoc.paths)
+                if (swaggerDoc.paths != null)
                 {
-                    ProcessOperation(path.Value.get);
-                    ProcessOperation(path.Value.put);
-                    ProcessOperation(path.Value.post);
-                    ProcessOperation(path.Value.delete);
-                    ProcessOperation(path.Value.options);
-                    ProcessOperation(path.Value.head);
-                    ProcessOperation(path.Value.patch);
+                    foreach (var path in swaggerDoc.paths)
+                    {
+                        ProcessOperation(path.Value.get);
+                        ProcessOperation(path.Value.put);
+                        ProcessOperation(path.Value.post);
+                        ProcessOperation(path.Value.delete);
+                        ProcessOperation(path.Value.options);
+                        ProcessOperation(path.Value.head);
+                        ProcessOperation(path.Value.patch);
+                    }
+                }
+            }
+
+            private void ProcessOperation(Operation op)
+            {
+                if (op != null)
+                {
+                    foreach (var param in op.parameters)
+                    {
+                        if (param.pattern != null)
+                        {
+                            param.@enum = param.pattern
+                                .Replace("^", "")
+                                .Replace("(", "")
+                                .Replace(")", "")
+                                .Split('|');
+                        }
+                    }
                 }
             }
         }
-
-        private void ProcessOperation(Operation op)
-        {
-            if (op != null)
-            {
-                foreach (var param in op.parameters)
-                {
-                    if (param.pattern != null)
-                    {
-                        param.@enum = param.pattern
-                            .Replace("^", "")
-                            .Replace("(", "")
-                            .Replace(")", "")
-                            .Split('|');
-                    }
-                }
-            }                
-        }
-    }
 
         public class AddRequiredHeaderParameters : IOperationFilter
         {
@@ -505,7 +506,7 @@ namespace Swagger_Test
             {
                 foreach (var definition in swaggerDoc.definitions)
                 {
-                    foreach (var prop in definition.Value.properties.ToList())                        
+                    foreach (var prop in definition.Value.properties.ToList())
                     {
                         if (prop.Value.maxLength == 9999)
                             definition.Value.properties.Remove(prop);
@@ -614,6 +615,22 @@ namespace Swagger_Test
                                 break;
                         }
                     }
+                }
+            }
+        }
+
+        private class EnumExampleSchemaFilter : ISchemaFilter
+        {
+            public void Apply(Schema schema, SchemaRegistry schemaRegistry, Type type)
+            {
+                if (type == typeof(ShiftDayOffRule))
+                {
+                    var example = new Dictionary<string, int>();
+                    foreach (var item in Enum.GetValues(typeof(ShiftDayOffRule)))
+                    {
+                        example.Add(item.ToString(), (int)item);
+                    }
+                    schema.example = example;
                 }
             }
         }
