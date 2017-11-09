@@ -24,9 +24,9 @@ namespace Swagger_Test.Controllers
             return "TEST";
         }
 
-        public ShiftDayOffRule Post(ShiftDayOffRule dayOffRule)
+        public KeyValuePair<int, ShiftDayOffRule> Post(ShiftDayOffRule dayOffRule)
         {
-            return dayOffRule;
+            return new KeyValuePair<int, ShiftDayOffRule>((int)dayOffRule, dayOffRule);
         }
 
         [IgnoreSwaggerUiRequest]
