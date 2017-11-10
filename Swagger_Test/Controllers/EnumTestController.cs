@@ -5,9 +5,9 @@ namespace Swagger_Test.Controllers
 {
     public class EnumTestController : ApiController
     {
-        public string Get(ShiftDayOffRule rule)
+        public ShiftDayOffRule Get(ShiftDayOffRule rule)
         {
-            return "test";
+            return rule;
         }
 
     }
