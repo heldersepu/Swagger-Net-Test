@@ -13,6 +13,7 @@ using Swagger.Net.Application;
 using Swagger.Net;
 using System.Reflection;
 using System.Diagnostics;
+using static Swagger_Test.Controllers.TestEnumController;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -191,8 +192,13 @@ namespace Swagger_Test
                         c.DocumentFilter<ApplyDocumentFilter_ChangeCompany>();
                         c.DocumentFilter<AddImageResponseDocumentFilter>();
                         c.DocumentFilter<HideStuffDocumentFilter>();
+                        c.DocumentFilter(() => new DetailEnumDocumentFilter(new[] {
+                            typeof(ShiftDayOffRule),
+                            typeof(CustomEnum),
+                            typeof(MonthEnum)
+                        }));
 
-                        //c.DocumentFilter<OptionalPathParamDocumentFilter>();                        
+                        //c.DocumentFilter<OptionalPathParamDocumentFilter>();
 
 
                         // In contrast to WebApi, Swagger 2.0 does not include the query string component when mapping a URL
@@ -387,6 +393,30 @@ namespace Swagger_Test
                     swaggerDoc.paths["/api/PngImage"].post.produces.Clear();
                     swaggerDoc.paths["/api/PngImage"].post.produces.Add("image/png");
                 }
+            }
+        }
+
+        private class DetailEnumDocumentFilter : IDocumentFilter
+        {
+            private Type[] enums;
+            public DetailEnumDocumentFilter(Type[] enums)
+            {
+                this.enums = enums;
+            }
+
+            public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry s, IApiExplorer a)
+            {
+                var schema = new Schema { properties = new Dictionary<string, Schema>() };
+                foreach (Type e in enums)
+                {
+                    var example = new Dictionary<string, int>();
+                    foreach (var item in Enum.GetValues(e))
+                    {
+                        example.Add(item.ToString(), (int)item);
+                    }
+                    schema.properties.Add(e.Name, new Schema { example = example });
+                }
+                swaggerDoc.definitions.Add("Enums_Definitions", schema);
             }
         }
 
