@@ -1,18 +1,16 @@
+using Swagger.Net;
+using Swagger.Net.Application;
+using Swagger_Test;
+using Swagger_Test.Models;
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.Description;
 using System.Yaml.Serialization;
-using System.Collections.Generic;
-
-using Swagger_Test;
-using Swagger_Test.Models;
-using Swagger.Net.Application;
-using Swagger.Net;
-using System.Reflection;
-using System.Diagnostics;
 using static Swagger_Test.Controllers.TestEnumController;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
@@ -388,10 +386,20 @@ namespace Swagger_Test
         {
             public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
             {
-                if (swaggerDoc.paths != null && swaggerDoc.paths.ContainsKey("/api/PngImage"))
+                if (swaggerDoc.paths != null)
                 {
-                    swaggerDoc.paths["/api/PngImage"].post.produces.Clear();
-                    swaggerDoc.paths["/api/PngImage"].post.produces.Add("image/png");
+                    if (swaggerDoc.paths.ContainsKey("/api/PngImage"))
+                    {
+                        var post = swaggerDoc.paths["/api/PngImage"].post;
+                        post.produces.Clear();
+                        post.produces.Add("image/png");
+                    }
+                    if (swaggerDoc.paths.ContainsKey("/api/Image"))
+                    {
+                        var put = swaggerDoc.paths["/api/Image"].put;
+                        put.responses["200"].schema = new Schema();
+                        put.responses["200"].schema.type = "file";
+                    }
                 }
             }
         }
