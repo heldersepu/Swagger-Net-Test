@@ -1,6 +1,5 @@
 ﻿using Swagger.Net.Annotations;
 using System.Drawing;
-using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 
@@ -29,7 +28,7 @@ namespace Swagger_Test.Controllers
         }
 
         // PUT: api/Image
-        [SwaggerResponse(200, mediaType: "application/octet-stream")]
+        [SwaggerResponse(200, "image.png", mediaType: "application/octet-stream")]
         public HttpResponseMessage Put()
         {
             var response = new HttpResponseMessage();
