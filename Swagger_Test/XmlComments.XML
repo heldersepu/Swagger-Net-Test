@@ -115,5 +115,20 @@
         <member name="P:Swagger_Test.Models.ViewModelTest.cde">
             <example>cccdddeee</example>
         </member>
+        <member name="P:Swagger_Test.Company.Id">
+            <example>123</example>
+        </member>
+        <member name="P:Swagger_Test.Company.Name">
+            <example>Acme co</example>
+        </member>
+        <member name="P:Swagger_Test.Company.Description">
+            <example>Super duper company</example>
+        </member>
+        <member name="P:Swagger_Test.Company.TaxCode">
+            <example>42rty</example>
+        </member>
+        <member name="P:Swagger_Test.Company.TaxCodeDisplayName">
+            <example>Tax Code Display</example>
+        </member>
     </members>
 </doc>
