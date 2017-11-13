@@ -350,6 +350,20 @@ namespace Swagger_Test
             }
         }
 
+        private class ChangeExamplesDocumentFilter : IDocumentFilter
+        {
+            public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry s, IApiExplorer a)
+            {
+                foreach (var def in swaggerDoc.definitions)
+                {
+                    if (def.Value.example != null)
+                    {
+                        Debug.WriteLine(" = " + def.Value.example.GetType());
+                    }
+                }
+            }
+        }
+
         private class SortModelDocumentFilter : IDocumentFilter
         {
             public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
