@@ -350,15 +350,20 @@ namespace Swagger_Test
             }
         }
 
-        private class ChangeExamplesDocumentFilter : IDocumentFilter
+        private class LowerCaseProperties : IDocumentFilter
         {
             public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry s, IApiExplorer a)
             {
                 foreach (var def in swaggerDoc.definitions)
                 {
-                    if (def.Value.example != null)
-                    {
-                        Debug.WriteLine(" = " + def.Value.example.GetType());
+                    if (def.Value.properties != null)
+                    {                        
+                        foreach (var key in def.Value.properties.Keys.ToArray())
+                        {
+                            var value = def.Value.properties[key];
+                            def.Value.properties.Remove(key);
+                            def.Value.properties.Add(key.ToLower(), value);
+                        }
                     }
                 }
             }
