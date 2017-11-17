@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swagger_Test", "Swagger_Test\Swagger_Test.csproj", "{48B8C5DA-0545-4D9C-9140-5963E03668FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{EAD150F4-5350-4376-AEB0-49AC40043FE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{48B8C5DA-0545-4D9C-9140-5963E03668FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48B8C5DA-0545-4D9C-9140-5963E03668FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48B8C5DA-0545-4D9C-9140-5963E03668FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAD150F4-5350-4376-AEB0-49AC40043FE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAD150F4-5350-4376-AEB0-49AC40043FE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAD150F4-5350-4376-AEB0-49AC40043FE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAD150F4-5350-4376-AEB0-49AC40043FE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {519F87A7-752C-4063-9C30-CBB70E8E47E6}
 	EndGlobalSection
 EndGlobal
