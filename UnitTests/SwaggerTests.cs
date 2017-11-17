@@ -4,6 +4,7 @@ using Swagger.Net.Application;
 using Swagger_Test;
 using System;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Threading;
 using System.Web.Http;
@@ -22,11 +23,28 @@ namespace UnitTests
             return new SwaggerDocsHandler(swaggerDocsConfig);
         }
 
+        private HttpConfiguration Configuration
+        {
+            get
+            {
+                var config = new HttpConfiguration();
+                var controllers = SwaggerConfig.ThisAssembly.GetTypes().Where(t => typeof(ApiController).IsAssignableFrom(t));
+                foreach (var type in controllers)
+                {
+                    var controllerName = type.Name.ToLower().Replace("controller", String.Empty);
+                    var route = new HttpRoute(
+                        String.Format("{0}/{{id}}", controllerName),
+                        new HttpRouteValueDictionary(new { controller = controllerName, id = RouteParameter.Optional }));
+                    config.Routes.Add(controllerName, route);
+                }
+                return config;
+            }
+        }
+
         private HttpRequestMessage Request
         {
             get
             {
-                var Configuration = new HttpConfiguration();
                 var request = new HttpRequestMessage(HttpMethod.Get, "http://tempuri.org/swagger/docs/v1");
                 request.Properties[HttpPropertyKeys.HttpConfigurationKey] = Configuration;
 
