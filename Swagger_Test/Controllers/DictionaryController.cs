@@ -24,6 +24,12 @@ namespace Swagger_Test.Controllers
             return test.FirstOrDefault();
         }
 
+        [KeyAuthorize(Role.Admin)]
+        public Test PutEcho([FromBody] List<Test> test)
+        {
+            return test.FirstOrDefault();
+        }
+
         public class Test
         {
             public int id;
