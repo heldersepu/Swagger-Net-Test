@@ -19,13 +19,9 @@ namespace Swagger_Test.Controllers
             return DateTime.Now.Ticks;
         }
 
-        public Dictionary<string, string> Put()
+        public IHttpActionResult Put()
         {
-            var dict = new Dictionary<string, string>();
-            foreach (var header in Request.Headers)
-                if (header.Key.EndsWith("id"))
-                    dict.Add(header.Key, header.Value.First());
-            return dict;
+            return Ok(Request.Headers);
         }
 
         private class MyValueProviderFactory: ValueProviderFactory

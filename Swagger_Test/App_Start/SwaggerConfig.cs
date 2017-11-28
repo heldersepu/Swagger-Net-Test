@@ -513,6 +513,7 @@ namespace Swagger_Test
                 {
                     operation.parameters.Add(HeaderParam("CID", "101"));
                     operation.parameters.Add(HeaderParam("QID", "102"));
+                    operation.parameters.Add(HeaderParam("Proxy-Authorization", "103"));
                 }
                 else if (operation.tags[0].Equals("FooBar"))
                 {
