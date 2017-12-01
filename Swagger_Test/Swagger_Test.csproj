@@ -68,7 +68,7 @@
       <HintPath>..\packages\NodaTime.2.2.2\lib\net45\NodaTime.dll</HintPath>
     </Reference>
     <Reference Include="Swagger.Net, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Swagger-Net.8.3.4.501\lib\net45\Swagger.Net.dll</HintPath>
+      <HintPath>..\packages\Swagger-Net.8.3.5.2\lib\net45\Swagger.Net.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
