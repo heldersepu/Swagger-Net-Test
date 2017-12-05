@@ -435,6 +435,16 @@ namespace Swagger_Test
                         var put = swaggerDoc.paths["/api/Image"].put;
                         put.responses["200"].schema = new Schema();
                         put.responses["200"].schema.type = "file";
+
+                        var patch = swaggerDoc.paths["/api/Image"].patch;
+                        foreach (var param in patch.parameters)
+                        {
+                            if (param.name == "templateFile")
+                            {
+                                param.type = "file";
+                                param.@in = "formData";
+                            }
+                        }
                     }
                 }
             }
