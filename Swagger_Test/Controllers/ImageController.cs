@@ -41,7 +41,7 @@ namespace Swagger_Test.Controllers
             return response;
         }
 
-        // PATCH: api/Image        
+        // PATCH: api/Image
         public string Patch([FromUri]Dictionary<string, string>[] mergeValues, MultipartFileData templateFile)
         {
             return templateFile.Headers.ContentDisposition.FileName;
