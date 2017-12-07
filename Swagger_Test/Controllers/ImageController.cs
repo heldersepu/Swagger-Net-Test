@@ -1,9 +1,7 @@
 ﻿using Swagger.Net.Annotations;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Web.Http;
 
 namespace Swagger_Test.Controllers
 {
@@ -39,12 +37,6 @@ namespace Swagger_Test.Controllers
             response.Content.Headers.ContentDisposition =
                 new ContentDispositionHeaderValue("attachment") { FileName = "image.png" };
             return response;
-        }
-
-        // PATCH: api/Image
-        public string Patch(MultipartFileData templateFile)
-        {
-            return templateFile.Headers.ContentDisposition.FileName;
         }
     }
 }
