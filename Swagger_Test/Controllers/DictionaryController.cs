@@ -30,7 +30,7 @@ namespace Swagger_Test.Controllers
             return test.FirstOrDefault();
         }
 
-        public Dictionary<string, string>[] PatchEcho([FromUri]Dictionary<string, string>[] values)
+        public Dictionary<string, string>[] PatchEcho([FromBody]Dictionary<string, string>[] values)
         {
             return values;
         }
