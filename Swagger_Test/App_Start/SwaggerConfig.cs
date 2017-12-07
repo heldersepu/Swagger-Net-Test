@@ -374,7 +374,7 @@ namespace Swagger_Test
                 foreach (var def in swaggerDoc.definitions)
                 {
                     if (def.Value.properties != null)
-                    {                        
+                    {
                         foreach (var key in def.Value.properties.Keys.ToArray())
                         {
                             var value = def.Value.properties[key];
@@ -433,16 +433,22 @@ namespace Swagger_Test
                     if (swaggerDoc.paths.ContainsKey("/api/Image"))
                     {
                         var put = swaggerDoc.paths["/api/Image"].put;
-                        put.responses["200"].schema = new Schema();
-                        put.responses["200"].schema.type = "file";
+                        if (put != null)
+                        {
+                            put.responses["200"].schema = new Schema();
+                            put.responses["200"].schema.type = "file";
+                        }
 
                         var patch = swaggerDoc.paths["/api/Image"].patch;
-                        foreach (var param in patch.parameters)
+                        if (patch != null)
                         {
-                            if (param.name == "templateFile")
+                            foreach (var param in patch.parameters)
                             {
-                                param.type = "file";
-                                param.@in = "formData";
+                                if (param.name == "templateFile")
+                                {
+                                    param.type = "file";
+                                    param.@in = "formData";
+                                }
                             }
                         }
                     }
@@ -524,7 +530,7 @@ namespace Swagger_Test
                     operation.parameters.Add(HeaderParam("CID", "101"));
                     operation.parameters.Add(HeaderParam("QID", "102"));
                     operation.parameters.Add(HeaderParam("QID-V2", "1022"));
-                    operation.parameters.Add(HeaderParam("Proxy-Authorization", "103"));                    
+                    operation.parameters.Add(HeaderParam("Proxy-Authorization", "103"));
                     operation.parameters.Add(HeaderParam("Proxy_Authorization", "1031"));
                     operation.parameters.Add(HeaderParam("Proxy-CustomAuth", "1032"));
                     operation.parameters.Add(HeaderParam("Proxy-Test", "1033"));
