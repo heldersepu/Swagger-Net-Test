@@ -168,6 +168,7 @@
     <Compile Include="Controllers\BlobController.cs" />
     <Compile Include="Controllers\ChildApiController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\ComplexRequestController.cs" />
     <Compile Include="Controllers\CountingLockController.cs" />
     <Compile Include="Controllers\CustomEnumerableController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
@@ -202,6 +203,7 @@
     </Compile>
     <Compile Include="Models\BigClass.cs" />
     <Compile Include="Models\Company.cs" />
+    <Compile Include="Models\ComplexModel.cs" />
     <Compile Include="Models\CountingLock.cs" />
     <Compile Include="Models\MonthEnum.cs" />
     <Compile Include="Models\ExtraType.cs" />
