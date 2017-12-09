@@ -182,6 +182,7 @@
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\ImportArrayController.cs" />
     <Compile Include="Controllers\InheritanceTestController.cs" />
+    <Compile Include="Controllers\Int64Controller.cs" />
     <Compile Include="Controllers\MemoryBarrierController.cs" />
     <Compile Include="Controllers\MonthTestController.cs" />
     <Compile Include="Controllers\MultiGetController.cs" />
