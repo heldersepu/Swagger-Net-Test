@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 
 namespace Swagger_Test.Controllers
 {
@@ -36,6 +37,19 @@ namespace Swagger_Test.Controllers
             response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
             response.Content.Headers.ContentDisposition =
                 new ContentDispositionHeaderValue("attachment") { FileName = "image.png" };
+            return response;
+        }
+
+        // PATCH: api/Image
+        [SwaggerResponse(200, "image.svg", mediaType: "image/svg")]
+        public HttpResponseMessage Patch()
+        {
+            var response = new HttpResponseMessage();
+            response.Content = new StringContent(
+                "<svg><circle cx='50' cy='50' r='40' fill='red' /></svg>",
+                Encoding.UTF8, "text/html"
+            );
+            response.Content.Headers.ContentType = new MediaTypeHeaderValue("image/svg");
             return response;
         }
     }
