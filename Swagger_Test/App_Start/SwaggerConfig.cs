@@ -5,9 +5,11 @@ using Swagger_Test.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.Contracts;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Caching;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.Description;
@@ -189,6 +191,7 @@ namespace Swagger_Test
                     c.DocumentFilter<DocumentFilterAddFakes>();
                     c.DocumentFilter<SortModelDocumentFilter>();
                     c.DocumentFilter<StringEnumDocumentFilter>();
+                    //c.DocumentFilter<ApplyDocumentVendorExtensions>();
                     c.DocumentFilter<ApplyDocumentFilter_ChangeCompany>();
                     c.DocumentFilter<AddImageResponseDocumentFilter>();
                     c.DocumentFilter<HideStuffDocumentFilter>();
@@ -580,10 +583,42 @@ namespace Swagger_Test
 
         private class ApplyDocumentVendorExtensions : IDocumentFilter
         {
+            const string CONTRACT_TYPES = "ContractTypes";
+            private List<Type> ContractTypes(Type AttribType)
+            {
+                var types = new List<Type>();
+                var memCache = MemoryCache.Default.Get(CONTRACT_TYPES);
+                if (memCache == null)
+                {
+                    foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+                    {
+                        foreach (Type type in assembly.GetTypes())
+                        {
+                            var attribs = type.GetCustomAttributes(AttribType, false);
+                            if (attribs != null && attribs.Length > 0)
+                            {
+                                types.Add(type);
+                            }
+                        }
+                    }
+                    var policy = new CacheItemPolicy { SlidingExpiration = TimeSpan.FromHours(24) };
+                    MemoryCache.Default.Add(CONTRACT_TYPES, types, policy);
+                }
+                else
+                {
+                    types = (List<Type>)memCache;
+                }
+                return types;
+            }
+
             public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
             {
                 schemaRegistry.GetOrRegister(typeof(ExtraType));
                 //schemaRegistry.GetOrRegister(typeof(BigClass));
+                foreach (var type in ContractTypes(typeof(ContractClassAttribute)))
+                {
+                    schemaRegistry.GetOrRegister(type);
+                }
 
                 var paths = new Dictionary<string, PathItem>(swaggerDoc.paths);
                 swaggerDoc.paths.Clear();
