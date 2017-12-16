@@ -197,6 +197,7 @@
     <Compile Include="Controllers\RecursiveParamController.cs" />
     <Compile Include="Controllers\RoutePrefixController.cs" />
     <Compile Include="Controllers\RoutesController.cs" />
+    <Compile Include="Controllers\SvgImageController.cs" />
     <Compile Include="Controllers\TestStringEnumController.cs" />
     <Compile Include="Controllers\TestEnumController.cs" />
     <Compile Include="Controllers\TestPostController.cs" />
