@@ -8,16 +8,28 @@ namespace Swagger_Test.Controllers
 {
     public class SvgImageController : ApiController
     {
-        [SwaggerResponse(200, "image.svg", mediaType: "image/svg")]
-        public HttpResponseMessage Get()
+        private HttpResponseMessage Image(string mediaType)
         {
             var response = new HttpResponseMessage();
             response.Content = new StringContent(
                 "<svg><circle cx='50' cy='50' r='40' fill='red' /></svg>",
                 Encoding.UTF8, "text/html"
             );
-            response.Content.Headers.ContentType = new MediaTypeHeaderValue("image/svg");
+            response.Content.Headers.ContentType = new MediaTypeHeaderValue(mediaType);
             return response;
+        }
+
+
+        [SwaggerResponse(200, "image.svg", mediaType: "image/svg")]
+        public HttpResponseMessage Get()
+        {
+            return Image("image/svg");
+        }
+
+        [SwaggerResponse(200, "image.svg", mediaType: "text/html")]
+        public HttpResponseMessage Post()
+        {
+            return Image("text/html");
         }
     }
 }
