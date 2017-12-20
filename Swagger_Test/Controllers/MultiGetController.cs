@@ -16,7 +16,14 @@ namespace Swagger_Test.Controllers
 
         [Route("ByList")]
         [ResponseType(typeof(IEnumerable<int>))]
-        public IHttpActionResult GetByList(IList<int> cIds)
+        public IHttpActionResult GetByList(List<int> cIds)
+        {
+            return Ok();
+        }
+
+        [Route("ByIList")]
+        [ResponseType(typeof(IEnumerable<int>))]
+        public IHttpActionResult GetByIList(IList<int> cIds)
         {
             return Ok();
         }
