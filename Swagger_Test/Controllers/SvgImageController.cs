@@ -20,10 +20,10 @@ namespace Swagger_Test.Controllers
         }
 
 
-        [SwaggerResponse(200, "image.svg", mediaType: "image/svg")]
+        [SwaggerResponse(200, "image.svg", mediaType: "image/svg+xml")]
         public HttpResponseMessage Get()
         {
-            return Image("image/svg");
+            return Image("image/svg+xml");
         }
 
         [SwaggerResponse(200, "image.svg", mediaType: "text/html")]
