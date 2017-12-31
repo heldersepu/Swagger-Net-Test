@@ -5,7 +5,7 @@ namespace Swagger_Test.Controllers
 {
     public class PolygonVolumeController : ApiController
     {
-        public PolygonVolumeInsideParameter Get(PolygonVolumeInsideParameter p)
+        public PolygonVolumeInsideParameter Get([FromUri]PolygonVolumeInsideParameter p)
         {
             return p;
         }
