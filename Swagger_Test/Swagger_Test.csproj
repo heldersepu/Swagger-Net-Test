@@ -163,6 +163,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Attributes\StringEnumAttribute.cs" />
     <Compile Include="Controllers\ApiExplorerController.cs" />
+    <Compile Include="Controllers\ArrayTestController.cs" />
     <Compile Include="Controllers\AsyncController.cs" />
     <Compile Include="Controllers\AttributeController.cs" />
     <Compile Include="Controllers\BigStringController.cs" />
@@ -211,6 +212,7 @@
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\ComplexModel.cs" />
     <Compile Include="Models\CountingLock.cs" />
+    <Compile Include="Models\Location.cs" />
     <Compile Include="Models\MonthEnum.cs" />
     <Compile Include="Models\ExtraType.cs" />
     <Compile Include="Models\NewUserWriteModel.cs" />
