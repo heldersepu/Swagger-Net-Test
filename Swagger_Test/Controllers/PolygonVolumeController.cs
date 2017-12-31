@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
+using Swagger_Test.Models;
 
 namespace Swagger_Test.Controllers
 {
@@ -20,10 +21,5 @@ namespace Swagger_Test.Controllers
     {
         public List<Location> Points { get; set; }
         public string PlanId { get; set; }
-    }
-    public class Location
-    {
-        public decimal Lat { get; set; }
-        public decimal Lon { get; set; }
     }
 }
