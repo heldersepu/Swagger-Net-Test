@@ -741,6 +741,13 @@ namespace Swagger_Test
                                         p.Value.example = "abcasdfasd";
                                         p.Value.maxLength = 10;
                                         break;
+                                    case "Points":
+                                        p.Value.example = new List<Location>
+                                        {
+                                            new Location{Lat=1, Lon=2},
+                                            new Location{Lat=5, Lon=6},
+                                        };
+                                        break;
                                 }
                                 break;
                         }
