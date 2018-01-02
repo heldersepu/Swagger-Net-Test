@@ -35,6 +35,11 @@ namespace Swagger_Test.Controllers
             return values;
         }
 
+        public List<Guid> DeleteEcho([FromBody] List<Guid> guids)
+        {
+            return guids;
+        }
+
         public class Test
         {
             public int id;
