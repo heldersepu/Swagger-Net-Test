@@ -7,6 +7,7 @@ namespace Swagger_Test.Controllers
     public class PngImageController : ImageBaseController
     {
         // POST: api/PngImage
+        [SwaggerForm("ImportImage", "Upload image file")]
         public HttpResponseMessage Post()
         {
             var response = new HttpResponseMessage();

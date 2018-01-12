@@ -180,6 +180,7 @@ namespace Swagger_Test
                     //
                     c.OperationFilter<AssignOAuth2SecurityRequirements>();
                     c.OperationFilter<AddRequiredHeaderParameters>();
+                    c.OperationFilter<ImportFileParamType>();
 
                     // Post-modify the entire Swagger document by wiring up one or more Document filters.
                     // This gives full control to modify the final SwaggerDocument. You should have a good understanding of
@@ -815,6 +816,29 @@ namespace Swagger_Test
                     {"oauth2", new List<string> {}}
                 };
                 operation.security.Add(oAuthRequirements);
+            }
+        }
+
+        public class ImportFileParamType : IOperationFilter
+        {
+            public void Apply(Operation operation, SchemaRegistry schemaRegistry, ApiDescription apiDescription)
+            {
+                var requestAttributes = apiDescription.GetControllerAndActionAttributes<SwaggerFormAttribute>();
+                foreach (var attr in requestAttributes)
+                {
+                    operation.parameters = operation.parameters ?? new List<Parameter>();
+                    operation.parameters.Add(
+                        new Parameter
+                        {
+                            description = attr.Description,
+                            name = attr.Name,
+                            @in = "formData",
+                            required = true,
+                            type = "file",
+                        }
+                    );
+                    operation.consumes.Add("multipart/form-data");
+                }
             }
         }
     }
