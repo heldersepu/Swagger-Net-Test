@@ -29,7 +29,7 @@ namespace Swagger_Test.Controllers
             var response = new HttpResponseMessage(HttpStatusCode.OK);
             if (string.IsNullOrEmpty(value))
             {
-                throw new Exception("Invalid UPC code.");
+                throw new Exception("Empty UPC code.");
             }
             else if(value.Length < 10)
             {
