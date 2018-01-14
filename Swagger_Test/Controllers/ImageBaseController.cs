@@ -9,6 +9,16 @@ namespace Swagger_Test.Controllers
 {
     public abstract class ImageBaseController : ApiController
     {
+        private static Random rnd = new Random();
+
+        internal Color RandomColor
+        {
+            get
+            {
+                return Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
+            }
+        }
+
         internal StreamContent ImageStream(Color color1, Color color2)
         {
             var rnd = new Random();
