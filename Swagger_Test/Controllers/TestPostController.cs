@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Web.Http;
 
 namespace Swagger_Test.Controllers
 {
     public class MyTest
     {
+        [MaxLength(200)]
         [DefaultValue("HelloWorld")]
         public string Name { get; set; }
         public bool IsPassing { get; set; }
