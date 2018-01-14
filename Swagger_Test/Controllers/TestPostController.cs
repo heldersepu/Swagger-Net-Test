@@ -1,9 +1,11 @@
-﻿using System.Web.Http;
+﻿using System.ComponentModel;
+using System.Web.Http;
 
 namespace Swagger_Test.Controllers
 {
     public class MyTest
     {
+        [DefaultValue("HelloWorld")]
         public string Name { get; set; }
         public bool IsPassing { get; set; }
     }
