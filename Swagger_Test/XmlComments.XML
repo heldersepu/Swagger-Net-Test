@@ -43,6 +43,19 @@
         <member name="M:Swagger_Test.Controllers.NestedEnum`1.DeleteEnumNonNull(Swagger_Test.Controllers.NestedEnum{`0}.Giorno)">
             <summary> A non-null enum test </summary>
         </member>
+        <member name="T:Swagger_Test.Controllers.RouteTestController">
+            <summary>
+            Testing a controller with param in the Route
+            </summary>
+        </member>
+        <member name="P:Swagger_Test.Controllers.DTOv2.itemid">
+            <summary>Secret ID for your object</summary>
+            <example>234</example>
+        </member>
+        <member name="P:Swagger_Test.Controllers.DTOv2.note">
+            <summary>Notes about your object</summary>
+            <example>MyNote</example>
+        </member>
         <member name="T:Swagger_Test.Controllers.TestEnumController">
             <summary>
             Testing enums ...
