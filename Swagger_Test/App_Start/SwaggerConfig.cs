@@ -501,6 +501,8 @@ namespace Swagger_Test
                     {
                         get.parameters.RemoveAt(0);
                         get.parameters[0].@in = "path";
+                        get.parameters[0].required = true;
+
                         foreach (var param in get.parameters)
                         {
                             int pos = param.name.IndexOf('.');
