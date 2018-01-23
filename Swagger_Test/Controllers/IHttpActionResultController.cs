@@ -20,9 +20,10 @@ namespace Swagger_Test.Controllers
         // GET: api/IHttpActionResult/{id}
         [SwaggerResponse(HttpStatusCode.OK, "List of customers", typeof(IEnumerable<int>))]
         [SwaggerResponse(HttpStatusCode.BadRequest, Type = typeof(BadRequestErrorMessageResult))]
-        [SwaggerResponse(HttpStatusCode.Unauthorized, Type = typeof(UnauthorizedResult))]        
+        [SwaggerResponse(HttpStatusCode.Unauthorized, Type = typeof(UnauthorizedResult))]
         [SwaggerResponse(HttpStatusCode.NotFound, Type = typeof(NotFoundResult))]
-        [SwaggerResponse(HttpStatusCode.InternalServerError, Type = typeof(InternalServerErrorResult))]        
+        [SwaggerResponse(HttpStatusCode.InternalServerError, Type = typeof(InternalServerErrorResult))]
+        [SwaggerExample("id", "123456")]
         public IHttpActionResult GetById(int id)
         {
             try
