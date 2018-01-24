@@ -10,6 +10,7 @@ namespace Swagger_Test.Controllers
         /// <summary>
         /// Testing the summary on the ApiExplorerController
         /// </summary>
+        /// 
         /// <remarks>
         /// Testing the description on the ApiExplorerController
         /// This is a second line
@@ -20,7 +21,8 @@ namespace Swagger_Test.Controllers
         /// <li>Item one</li>
         /// <li>Item two</li>
         /// </ul>
-        /// <br/>
+        /// <pre>Text in a pre element</pre>
+        ///
         /// <h1>Header1</h1>
         /// <h2>Header2</h2>
         /// <h3>Header3</h3>
