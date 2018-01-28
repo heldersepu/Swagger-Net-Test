@@ -187,7 +187,7 @@ namespace Swagger_Test
                     // the Swagger 2.0 spec. - https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md
                     // before using this option.
                     //
-                    c.DocumentFilter<YamlDocumentFilter>();
+                    //c.DocumentFilter<YamlDocumentFilter>();
                     c.DocumentFilter<TestDocumentFilter>();
                     c.DocumentFilter<DocumentFilterAddFakes>();
                     c.DocumentFilter<RouteTestDocumentFilter>();
