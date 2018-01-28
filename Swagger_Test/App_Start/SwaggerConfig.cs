@@ -617,6 +617,7 @@ namespace Swagger_Test
         {
             public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
             {
+                schemaRegistry.GetOrRegister(typeof(GeolocateResponse));
                 schemaRegistry.GetOrRegister(typeof(CountingLock1));
                 schemaRegistry.GetOrRegister(typeof(CountingLock2));
 
