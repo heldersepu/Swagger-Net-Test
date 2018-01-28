@@ -110,6 +110,56 @@
             <param name="viewModelTest">ViewModelTest</param>
             <returns>ViewModelTest</returns>
         </member>
+        <member name="T:Swagger_Test.Models.GeolocateResponse">
+            <summary>
+            Geolocation result
+            </summary>
+        </member>
+        <member name="P:Swagger_Test.Models.GeolocateResponse.CountryCode">
+            <summary>
+            Two-letter country code of IP address
+            </summary>
+        </member>
+        <member name="F:Swagger_Test.Models.GeolocateResponse.CountryName">
+            <summary>
+            Country name of IP address
+            </summary>
+        </member>
+        <member name="F:Swagger_Test.Models.GeolocateResponse.City">
+            <summary>
+            City of IP address
+            </summary>
+        </member>
+        <member name="F:Swagger_Test.Models.GeolocateResponse.RegionCode">
+            <summary>
+            State/region code of IP address
+            </summary>
+        </member>
+        <member name="F:Swagger_Test.Models.GeolocateResponse.RegionName">
+            <summary>
+            State/region of IP address
+            </summary>
+        </member>
+        <member name="F:Swagger_Test.Models.GeolocateResponse.ZipCode">
+            <summary>
+            Zip or postal code of IP address
+            </summary>
+        </member>
+        <member name="F:Swagger_Test.Models.GeolocateResponse.TimezoneStandardName">
+            <summary>
+            Timezone of IP address
+            </summary>
+        </member>
+        <member name="F:Swagger_Test.Models.GeolocateResponse.Latitude">
+            <summary>
+            Latitude of IP address
+            </summary>
+        </member>
+        <member name="F:Swagger_Test.Models.GeolocateResponse.Longitude">
+            <summary>
+            Longitude of IP address
+            </summary>
+        </member>
         <member name="F:Swagger_Test.Models.ShiftDayOffRule.None">
             <summary>
             Shift has no day off rule.
