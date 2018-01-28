@@ -768,44 +768,47 @@ namespace Swagger_Test
                     foreach (var p in schema.properties)
                     {
                         Debug.WriteLine($"{p.Key} {p.Value.format}");
-                        switch (p.Value.format)
+                        if (p.Value.example == null)
                         {
-                            case "uuid":
-                                p.Value.example = Guid.Empty;
-                                break;
-                            case "int32":
-                                p.Value.example = 123;
-                                break;
-                            case "double":
-                                p.Value.example = 9858.216;
-                                break;
-                            case "date-time":
-                                p.Value.example = DateTime.Now.ToString("yyyy-MM-dd");
-                                break;
-                            default:
-                                switch (p.Key)
-                                {
-                                    case "index":
-                                        p.Value.example = new Dictionary<int, string>
+                            switch (p.Value.format)
+                            {
+                                case "uuid":
+                                    p.Value.example = Guid.Empty;
+                                    break;
+                                case "int32":
+                                    p.Value.example = 123;
+                                    break;
+                                case "double":
+                                    p.Value.example = 9858.216;
+                                    break;
+                                case "date-time":
+                                    p.Value.example = DateTime.Now.ToString("yyyy-MM-dd");
+                                    break;
+                                default:
+                                    switch (p.Key)
+                                    {
+                                        case "index":
+                                            p.Value.example = new Dictionary<int, string>
                                             { { 1, "abc" }, { 2, "def" } };
-                                        break;
-                                    case "keys":
-                                        p.Value.example = new List<string>
+                                            break;
+                                        case "keys":
+                                            p.Value.example = new List<string>
                                             { "abc", "def", "ghi" };
-                                        break;
-                                    case "xyz":
-                                        p.Value.example = "abcasdfasd";
-                                        p.Value.maxLength = 10;
-                                        break;
-                                    case "Points":
-                                        p.Value.example = new List<Location>
+                                            break;
+                                        case "xyz":
+                                            p.Value.example = "abcasdfasd";
+                                            p.Value.maxLength = 10;
+                                            break;
+                                        case "Points":
+                                            p.Value.example = new List<Location>
                                         {
                                             new Location{Lat=1, Lon=2},
                                             new Location{Lat=5, Lon=6},
                                         };
-                                        break;
-                                }
-                                break;
+                                            break;
+                                    }
+                                    break;
+                            }
                         }
                     }
                 }
