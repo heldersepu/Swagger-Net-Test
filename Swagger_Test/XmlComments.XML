@@ -129,21 +129,25 @@
             <summary>
             City of IP address
             </summary>
+            <example>Miami</example>
         </member>
         <member name="F:Swagger_Test.Models.GeolocateResponse.RegionCode">
             <summary>
             State/region code of IP address
             </summary>
+            <example>FL</example>
         </member>
         <member name="F:Swagger_Test.Models.GeolocateResponse.RegionName">
             <summary>
             State/region of IP address
             </summary>
+            <example>Florida</example>
         </member>
         <member name="F:Swagger_Test.Models.GeolocateResponse.ZipCode">
             <summary>
             Zip or postal code of IP address
             </summary>
+            <example>33323</example>
         </member>
         <member name="F:Swagger_Test.Models.GeolocateResponse.TimezoneStandardName">
             <summary>
@@ -154,11 +158,13 @@
             <summary>
             Latitude of IP address
             </summary>
+            <example>25.85</example>
         </member>
         <member name="F:Swagger_Test.Models.GeolocateResponse.Longitude">
             <summary>
             Longitude of IP address
             </summary>
+            <example>-80.27</example>
         </member>
         <member name="F:Swagger_Test.Models.ShiftDayOffRule.None">
             <summary>
