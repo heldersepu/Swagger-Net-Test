@@ -213,6 +213,7 @@
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\ComplexModel.cs" />
     <Compile Include="Models\CountingLock.cs" />
+    <Compile Include="Models\GeolocateResponse.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\MonthEnum.cs" />
     <Compile Include="Models\ExtraType.cs" />
