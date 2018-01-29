@@ -15,5 +15,12 @@ namespace Swagger_Test.Controllers
         {
             return "RoutePrefix_GetById";
         }
+
+        [Route("one")]
+        [Route("two")]
+        public string Post(int id)
+        {
+            return "Post";
+        }
     }
 }
