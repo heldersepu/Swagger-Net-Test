@@ -26,6 +26,28 @@
              <h3>Header3</h3>
              </remarks>
         </member>
+        <member name="M:Swagger_Test.Controllers.ArrayTestController.Get1(System.Collections.Generic.List{System.String})">
+            <remarks>
+            Testing Markdown 
+            *Italic*
+            **Bold**
+            ## Heading 2
+            [Link](http://a.com)
+            * List abc
+            * List def
+            * List ghi
+            
+            > Blockquote
+            `Inline code` with backticks
+            Horizontal Rule
+            ---
+            Block1 Line1 
+            Block1 Line2
+            
+            Block2 Line1 
+            Block2 Line2
+            </remarks>
+        </member>
         <member name="M:Swagger_Test.Controllers.Blob`1.GetBad(System.Nullable{System.Int32})">
             <summary> Get a Bad Blob </summary>
         </member>

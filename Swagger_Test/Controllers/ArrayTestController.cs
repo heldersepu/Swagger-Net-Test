@@ -7,6 +7,27 @@ namespace Swagger_Test.Controllers
     [RoutePrefix("api/ArrayTest")]
     public class ArrayTestController : ApiController
     {
+        /// <remarks>
+        /// Testing Markdown
+        /// *Italic*
+        /// **Bold**
+        /// # Heading 1
+        /// ## Heading 2
+        /// [Link](http://a.com)
+        /// * List abc
+        /// * List def
+        /// * List ghi
+        ///
+        /// > Blockquote
+        /// `Inline code` with backticks
+        /// Horizontal Rule
+        /// ---
+        /// Block1 Line1
+        /// Block1 Line2
+        ///
+        /// Block2 Line1
+        /// Block2 Line2
+        /// </remarks>
         [Route("list_string")]
         public List<string> Get1([FromUri] List<string> p)
         {
