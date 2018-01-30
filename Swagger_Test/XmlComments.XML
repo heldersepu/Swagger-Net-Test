@@ -63,7 +63,7 @@
             <summary>Payload Name</summary>
         </member>
         <member name="P:Swagger_Test.Controllers.Payload.Timeout">
-            <summary> Timeout in ms (Range 15000 to 60000. Default set to 60000) </summary>
+            <summary> Timeout in ms (Range 15000 to 60000. Default set to 50000) </summary>
         </member>
         <member name="M:Swagger_Test.Controllers.NestedEnum`1.PutEnumNull(System.Nullable{Swagger_Test.Controllers.NestedEnum{`0}.Giorno})">
             <summary> A nullable enum test </summary>

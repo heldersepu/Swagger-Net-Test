@@ -17,7 +17,7 @@ namespace Swagger_Test.Controllers
         /// <summary>Payload Name</summary>
         public string Name { get; set; }
 
-        /// <summary> Timeout in ms (Range 15000 to 60000. Default set to 60000) </summary>
+        /// <summary> Timeout in ms (Range 15000 to 60000. Default set to 50000) </summary>
         [DefaultValue(50000)]
         [Range(15000, 60000)]
         public int Timeout { get; set; }
