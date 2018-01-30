@@ -59,6 +59,12 @@
         <member name="P:Swagger_Test.Controllers.Int64Controller.Int64Data.MyData">
             <example>1253261109769874438</example>
         </member>
+        <member name="P:Swagger_Test.Controllers.Payload.Name">
+            <summary>Payload Name</summary>
+        </member>
+        <member name="P:Swagger_Test.Controllers.Payload.Timeout">
+            <summary> Timeout in ms (Range 15000 to 60000. Default set to 60000) </summary>
+        </member>
         <member name="M:Swagger_Test.Controllers.NestedEnum`1.PutEnumNull(System.Nullable{Swagger_Test.Controllers.NestedEnum{`0}.Giorno})">
             <summary> A nullable enum test </summary>
         </member>
