@@ -55,6 +55,8 @@ namespace Swagger_Test.Controllers
         public string BusinessPhone { get; set; }
         public string MobilePhone { get; set; }
         public string Fax { get; set; }
+        public string allOf { get; set; }
+
         public DateTime? Updated { get; set; }
 
         public Account Account { get; set; }
