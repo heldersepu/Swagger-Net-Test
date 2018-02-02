@@ -17,6 +17,8 @@
         /// <example>Tax Code Display</example>
         public string TaxCodeDisplayName { get; set; }
 
+        public string allOf { get; set; }
+
         public string lowercase { get; set; }
         public string UPPERCASE { get; set; }
         public string huNGariAnCASE { get; set; }
