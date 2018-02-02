@@ -27,26 +27,27 @@
              </remarks>
         </member>
         <member name="M:Swagger_Test.Controllers.ArrayTestController.Get1(System.Collections.Generic.List{System.String})">
-            <remarks>
-            Testing Markdown 
-            *Italic*
-            **Bold**
-            ## Heading 2
-            [Link](http://a.com)
-            * List abc
-            * List def
-            * List ghi
+             <remarks>
+             Testing Markdown
+             *Italic*
+             **Bold**
+             # Heading 1
+             ## Heading 2
+             [Link](http://a.com)
+             * List abc
+             * List def
+             * List ghi
             
-            > Blockquote
-            `Inline code` with backticks
-            Horizontal Rule
-            ---
-            Block1 Line1 
-            Block1 Line2
+             > Blockquote
+             `Inline code` with backticks
+             Horizontal Rule
+             ---
+             Block1 Line1
+             Block1 Line2
             
-            Block2 Line1 
-            Block2 Line2
-            </remarks>
+             Block2 Line1
+             Block2 Line2
+             </remarks>
         </member>
         <member name="M:Swagger_Test.Controllers.Blob`1.GetBad(System.Nullable{System.Int32})">
             <summary> Get a Bad Blob </summary>
@@ -75,8 +76,11 @@
         <member name="P:Swagger_Test.Controllers.ImageFeature.ImageUrl">
             <summary>Here goes your image URL</summary>
         </member>
-        <member name="P:Swagger_Test.Controllers.Int64Controller.Int64Data.MyInt64">
+        <member name="P:Swagger_Test.Controllers.Int64Controller.Int64Data.MyLong">
             <example>1253261109769874438</example>
+        </member>
+        <member name="P:Swagger_Test.Controllers.Int64Controller.Int64Data.MyInt64">
+            <example>21474836470</example>
         </member>
         <member name="P:Swagger_Test.Controllers.Int64Controller.Int64Data.MyData">
             <example>1253261109769874438</example>
