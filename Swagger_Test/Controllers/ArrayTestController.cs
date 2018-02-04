@@ -34,6 +34,13 @@ namespace Swagger_Test.Controllers
             return p;
         }
 
+        /// <remarks>
+        /// HelloWorld
+        /// <pre>{
+        ///     "demo": "val", 
+        ///     "demo2": "hello"
+        /// }</pre>
+        /// </remarks>
         [Route("list_int")]
         public List<int> Get2([FromUri] List<int> p)
         {
