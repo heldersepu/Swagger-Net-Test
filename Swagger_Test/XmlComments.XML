@@ -49,6 +49,15 @@
              Block2 Line2
              </remarks>
         </member>
+        <member name="M:Swagger_Test.Controllers.ArrayTestController.Get2(System.Collections.Generic.List{System.Int32})">
+            <remarks>
+            HelloWorld
+            <pre>{
+                "demo": "val", 
+                "demo2": "hello"
+            }</pre>
+            </remarks>
+        </member>
         <member name="M:Swagger_Test.Controllers.Blob`1.GetBad(System.Nullable{System.Int32})">
             <summary> Get a Bad Blob </summary>
         </member>
