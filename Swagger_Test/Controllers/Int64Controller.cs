@@ -11,7 +11,7 @@ namespace Swagger_Test.Controllers
         }
 
         /// <remarks>
-        /// <h2><a name="Int64">Int64 Post</a></h2>
+        /// <h2><a name="Int64Post">Int64 Post</a></h2>
         /// </remarks>
         public Int64Data Post(Int64Data data)
         {

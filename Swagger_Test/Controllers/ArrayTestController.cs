@@ -48,7 +48,8 @@ namespace Swagger_Test.Controllers
         }
 
         /// <remarks>
-        /// <a href="#Int64">See also the Int64 Post</a>
+        /// <a href="#Int64Post">See also the Int64 Post</a>
+        /// <a href="#/IntParam/IntParam_Get">See also the IntParam Get</a>
         /// </remarks>
         [Route("list_location")]
         public List<Location> Get3([FromUri] List<Location> p)

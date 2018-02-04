@@ -60,7 +60,8 @@
         </member>
         <member name="M:Swagger_Test.Controllers.ArrayTestController.Get3(System.Collections.Generic.List{Swagger_Test.Models.Location})">
             <remarks>
-            <a href="#Int64">See also the Int64 Post</a>
+            <a href="#Int64Post">See also the Int64 Post</a>
+            <a href="#/IntParam/IntParam_Get">See also the IntParam Get</a>
             </remarks>
         </member>
         <member name="M:Swagger_Test.Controllers.Blob`1.GetBad(System.Nullable{System.Int32})">
@@ -92,7 +93,7 @@
         </member>
         <member name="M:Swagger_Test.Controllers.Int64Controller.Post(Swagger_Test.Controllers.Int64Controller.Int64Data)">
             <remarks>
-            <h2><a name="Int64">Int64 Post</a></h2>
+            <h2><a name="Int64Post">Int64 Post</a></h2>
             </remarks>
         </member>
         <member name="P:Swagger_Test.Controllers.Int64Controller.Int64Data.MyLong">
