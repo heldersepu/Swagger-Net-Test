@@ -10,6 +10,9 @@ namespace Swagger_Test.Controllers
             return new Int64Data(1253261109769874438);
         }
 
+        /// <remarks>
+        /// <h2><a name="Int64">Int64 Post</a></h2>
+        /// </remarks>
         public Int64Data Post(Int64Data data)
         {
             return data;
