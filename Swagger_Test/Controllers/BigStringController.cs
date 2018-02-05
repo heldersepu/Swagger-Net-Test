@@ -8,7 +8,7 @@ namespace Swagger_Test.Controllers
     {
         /// <remarks>
         /// <h2>Testing html table</h2>
-        /// <table>
+        /// <table border="1">
         ///     <tr>
         ///         <td colspan="3"><span class="method">ONE</span></td>
         ///     </tr>
