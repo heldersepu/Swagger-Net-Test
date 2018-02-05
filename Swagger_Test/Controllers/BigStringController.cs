@@ -6,7 +6,19 @@ namespace Swagger_Test.Controllers
 {
     public class BigStringController : ApiController
     {
-        // GET: api/BigString/5
+        /// <remarks>
+        /// <h2>Testing html table</h2>
+        /// <table>
+        ///     <tr>
+        ///         <td colspan="3"><span class="method">ONE</span></td>
+        ///     </tr>
+        ///     <tr>
+        ///         <td>ABC11</td>
+        ///         <td>ABC22</td>
+        ///         <td>ABC33</td>
+        ///     </tr>
+        /// </table>
+        /// </remarks>
         public string Get(int max = 10000)
         {
             var big = new StringBuilder();
