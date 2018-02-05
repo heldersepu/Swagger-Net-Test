@@ -198,7 +198,7 @@ namespace Swagger_Test
                     c.DocumentFilter<ApplyDocumentFilter_ChangeCompany>();
                     c.DocumentFilter<AddImageResponseDocumentFilter>();
                     c.DocumentFilter<HideStuffDocumentFilter>();
-                    c.DocumentFilter<ParamExampleDocumentFilter>();
+                    //c.DocumentFilter<ParamExampleDocumentFilter>();
                     c.DocumentFilter(() => new DetailEnumDocumentFilter(new[] {
                             typeof(ShiftDayOffRule),
                             typeof(CustomEnum),
