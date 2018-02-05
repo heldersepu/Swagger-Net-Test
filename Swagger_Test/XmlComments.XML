@@ -67,7 +67,7 @@
         <member name="M:Swagger_Test.Controllers.BigStringController.Get(System.Int32)">
             <remarks>
             <h2>Testing html table</h2>
-            <table>
+            <table border="1">
                 <tr>
                     <td colspan="3"><span class="method">ONE</span></td>
                 </tr>
@@ -87,6 +87,18 @@
         </member>
         <member name="M:Swagger_Test.Controllers.Blob`1.Put(Swagger_Test.Controllers.AnotherFoo{`0})">
             <summary> Template object test </summary>
+        </member>
+        <member name="M:Swagger_Test.Controllers.CompanyController.Get">
+             <remarks>
+             ## TESTING MARKDOWN TABLES
+            
+             | Tables        | Are           | Cool  |
+             | ------------- |:-------------:| -----:|
+             | col 3 is      | right-aligned | $1600 |
+             | col 2 is      | centered      |   $12 |
+             | zebra stripes | are neat      |    $1 |
+            
+             </remarks>
         </member>
         <member name="T:Swagger_Test.Controllers.MyData">
             <summary>My super duper data</summary>

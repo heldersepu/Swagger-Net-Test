@@ -5,6 +5,16 @@ namespace Swagger_Test.Controllers
 {
     public class CompanyController : ApiController
     {
+        /// <remarks>
+        /// ## TESTING MARKDOWN TABLES
+        ///
+        /// | Tables        | Are           | Cool  |
+        /// | ------------- |:-------------:| -----:|
+        /// | col 3 is      | right-aligned | $1600 |
+        /// | col 2 is      | centered      |   $12 |
+        /// | zebra stripes | are neat      |    $1 |
+        ///
+        /// </remarks>
         public Company Get()
         {
             return new Company {
