@@ -91,6 +91,7 @@
         <member name="M:Swagger_Test.Controllers.CompanyController.Get">
              <remarks>
              ## TESTING MARKDOWN TABLES
+             ### start table
             
              | Tables        | Are           | Cool  |
              | ------------- |:-------------:| -----:|
@@ -98,6 +99,7 @@
              | col 2 is      | centered      |   $12 |
              | zebra stripes | are neat      |    $1 |
             
+             ### end table
              </remarks>
         </member>
         <member name="T:Swagger_Test.Controllers.MyData">

@@ -7,6 +7,7 @@ namespace Swagger_Test.Controllers
     {
         /// <remarks>
         /// ## TESTING MARKDOWN TABLES
+        /// ### start table
         ///
         /// | Tables        | Are           | Cool  |
         /// | ------------- |:-------------:| -----:|
@@ -14,6 +15,7 @@ namespace Swagger_Test.Controllers
         /// | col 2 is      | centered      |   $12 |
         /// | zebra stripes | are neat      |    $1 |
         ///
+        /// ### end table
         /// </remarks>
         public Company Get()
         {
