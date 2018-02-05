@@ -64,6 +64,21 @@
             <a href="#/IntParam/IntParam_Get">See also the IntParam Get</a>
             </remarks>
         </member>
+        <member name="M:Swagger_Test.Controllers.BigStringController.Get(System.Int32)">
+            <remarks>
+            <h2>Testing html table</h2>
+            <table>
+                <tr>
+                    <td colspan="3"><span class="method">ONE</span></td>
+                </tr>
+                <tr>
+                    <td>ABC11</td>
+                    <td>ABC22</td>
+                    <td>ABC33</td>
+                </tr>
+            </table>
+            </remarks>
+        </member>
         <member name="M:Swagger_Test.Controllers.Blob`1.GetBad(System.Nullable{System.Int32})">
             <summary> Get a Bad Blob </summary>
         </member>
