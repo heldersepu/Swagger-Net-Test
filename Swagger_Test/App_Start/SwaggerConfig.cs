@@ -198,6 +198,7 @@ namespace Swagger_Test
                     c.DocumentFilter<ApplyDocumentFilter_ChangeCompany>();
                     c.DocumentFilter<AddImageResponseDocumentFilter>();
                     c.DocumentFilter<HideStuffDocumentFilter>();
+                    c.DocumentFilter<ParamExampleDocumentFilter>();
                     c.DocumentFilter(() => new DetailEnumDocumentFilter(new[] {
                             typeof(ShiftDayOffRule),
                             typeof(CustomEnum),
@@ -696,6 +697,22 @@ namespace Swagger_Test
                     {
                         if (prop.Value.maxLength == 9999)
                             definition.Value.properties.Remove(prop);
+                    }
+                }
+            }
+        }
+
+        private class ParamExampleDocumentFilter : IDocumentFilter
+        {
+            const string PATH = "/api/IHttpActionResult/{id}";
+            public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry s, IApiExplorer a)
+            {
+                if (swaggerDoc.paths.ContainsKey(PATH))
+                {
+                    foreach (var param in swaggerDoc.paths[PATH].get.parameters)
+                    {
+                        if (param.example != null && param.schema == null)
+                            param.schema = new Schema { example = param.example };
                     }
                 }
             }
