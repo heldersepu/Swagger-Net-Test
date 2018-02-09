@@ -68,7 +68,7 @@ namespace Swagger_Test.Controllers
     public class Schemas
     {
         /// <summary>Test</summary>
-        List<string> schema1;
-        List<string> schema2;
+        public List<string> schema1;
+        public List<string> schema2;
     }
 }
