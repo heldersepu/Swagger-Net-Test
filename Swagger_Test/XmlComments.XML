@@ -64,6 +64,9 @@
             <a href="#/IntParam/IntParam_Get">See also the IntParam Get</a>
             </remarks>
         </member>
+        <member name="F:Swagger_Test.Controllers.Schemas.schema1">
+            <summary>Test</summary>
+        </member>
         <member name="M:Swagger_Test.Controllers.BigStringController.Get(System.Int32)">
             <remarks>
             <h2>Testing html table</h2>

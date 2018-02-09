@@ -57,5 +57,18 @@ namespace Swagger_Test.Controllers
             return p;
         }
 
+        [Route("Schemas")]
+        public Schemas Get4()
+        {
+            return new Schemas();
+        }
+
+    }
+
+    public class Schemas
+    {
+        /// <summary>Test</summary>
+        List<string> schema1;
+        List<string> schema2;
     }
 }
