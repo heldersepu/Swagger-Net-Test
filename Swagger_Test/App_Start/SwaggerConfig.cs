@@ -628,7 +628,13 @@ namespace Swagger_Test
                 }
                 if (swaggerDoc.paths != null && swaggerDoc.paths.ContainsKey("/api/Company"))
                 {
-                    swaggerDoc.paths["/api/Company"].get.responses["200"].schema.@ref = "#/definitions/Company123";
+                    var get = swaggerDoc.paths["/api/Company"].get;
+                    var response = get.responses["200"];
+                    response.schema.@ref = "#/definitions/Company123";
+                    response.description =
+                        "## MARKDOWN DoubleHash \n" +
+                        "### MARKDOWN TripleHash \n" +
+                        "`MARKDOWN code` \n " + get.description;
                 }
             }
         }
