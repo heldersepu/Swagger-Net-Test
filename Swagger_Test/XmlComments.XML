@@ -64,8 +64,11 @@
             <a href="#/IntParam/IntParam_Get">See also the IntParam Get</a>
             </remarks>
         </member>
-        <member name="F:Swagger_Test.Controllers.Schemas.schema1">
+        <member name="F:Swagger_Test.Controllers.Arrays.array1">
             <summary>Test</summary>
+        </member>
+        <member name="F:Swagger_Test.Controllers.Arrays.array4">
+            <summary>List of Companies</summary>
         </member>
         <member name="M:Swagger_Test.Controllers.BigStringController.Get(System.Int32)">
             <remarks>

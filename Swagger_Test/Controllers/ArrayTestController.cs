@@ -57,18 +57,24 @@ namespace Swagger_Test.Controllers
             return p;
         }
 
-        [Route("Schemas")]
-        public Schemas Get4()
+        [Route("Arrays")]
+        public Arrays Get4()
         {
-            return new Schemas();
+            return new Arrays();
         }
 
     }
 
-    public class Schemas
+    public class Arrays
     {
         /// <summary>Test</summary>
-        public List<string> schema1;
-        public HashSet<string> schema2;
+        public List<string> array1;
+
+        public HashSet<string> array2;
+
+        public string[] array3;
+
+        /// <summary>List of Companies</summary>
+        public List<Data> array4;
     }
 }
