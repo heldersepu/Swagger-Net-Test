@@ -635,6 +635,9 @@ namespace Swagger_Test
                         "## MARKDOWN DoubleHash \n" +
                         "### MARKDOWN TripleHash \n" +
                         "`MARKDOWN code` \n " + get.description;
+
+                    var post = swaggerDoc.paths["/api/Company"].post;
+                    post.description = "foo | bar\r\n----|----\r\nbaz | qux &#x7c; quux";
                 }
             }
         }
