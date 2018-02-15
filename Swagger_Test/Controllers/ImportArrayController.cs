@@ -19,7 +19,7 @@ namespace Swagger_Test.Controllers
             Contact = new HashSet<Contact>();
             SupplyAgreement = new HashSet<SupplyAgreement>();
         }
-        
+
         public int Id { get; set; }
         public int EntityId { get; set; }
         public string Name { get; set; }
@@ -56,6 +56,7 @@ namespace Swagger_Test.Controllers
         public string MobilePhone { get; set; }
         public string Fax { get; set; }
         public string allOf { get; set; }
+        public TheProps properties { get; set; }
 
         public DateTime? Updated { get; set; }
 
@@ -75,5 +76,12 @@ namespace Swagger_Test.Controllers
         public int? Slaid { get; set; }
 
         public Account Account { get; set; }
+    }
+
+    public class TheProps
+    {
+        public int abc { get; set; }
+        public int bcd { get; set; }
+        public int def { get; set; }
     }
 }
