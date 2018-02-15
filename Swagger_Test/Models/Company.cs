@@ -19,6 +19,8 @@
 
         public string allOf { get; set; }
 
+        public string properties { get; set; }
+
         public string lowercase { get; set; }
         public string UPPERCASE { get; set; }
         public string huNGariAnCASE { get; set; }
