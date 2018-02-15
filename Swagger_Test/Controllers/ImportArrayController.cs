@@ -57,6 +57,7 @@ namespace Swagger_Test.Controllers
         public string Fax { get; set; }
         public string allOf { get; set; }
         public TheProps properties { get; set; }
+        public TheProps properties2 { get; set; }
 
         public DateTime? Updated { get; set; }
 
