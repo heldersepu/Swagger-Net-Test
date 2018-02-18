@@ -50,20 +50,26 @@ namespace Swagger_Test.Controllers
         }
 
         [Route("my/put2")]
-        public Task<IHttpActionResult> Put2(LocalDate date, InputModel inputModel)
+        public Task<IHttpActionResult> Put2([FromBody] BodyData data)
         {
             return null;
         }
 
         [Route("my/post2")]
-        public Task<IHttpActionResult> Post2(LocalDate date, InputModel inputModel)
+        public Task<IHttpActionResult> Post2([FromBody]  BodyData data)
         {
             return null;
         }
     }
 
-    public class LocalDate { long id; string name; }
-    public class InputModel { int id; string name; }
+
+    public class BodyData
+    {
+        public LocalDate date { get; set; }
+        public InputModel inputModel { get; set; }
+    }
+    public class LocalDate { public long id; public string name; }
+    public class InputModel { public int id; public string name; }
 
 
 }
