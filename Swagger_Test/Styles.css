@@ -44,3 +44,7 @@
     animation-iteration-count: infinite;
     animation-name: animTitle;
 }
+
+img[alt="Loading..."] {
+    display: none !important;
+}
