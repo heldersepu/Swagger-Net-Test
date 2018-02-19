@@ -7,6 +7,8 @@ namespace Swagger_Test.Models
     {
         public Guid Uid { get; set; }
 
+        [MinLength(5)]
+        [MaxLength(250)]
         [RegularExpression(@"^[^@\s]+@[^@\s]+\.[^@\s]+$")]
         public string Email { get; set; }
 
