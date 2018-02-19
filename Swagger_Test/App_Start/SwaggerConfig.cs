@@ -569,7 +569,7 @@ namespace Swagger_Test
                 {
                     foreach (var param in op.parameters)
                     {
-                        if (param.pattern != null)
+                        if (param.pattern != null && param.pattern.Contains("|"))
                         {
                             param.@enum = param.pattern
                                 .Replace("^", "")
