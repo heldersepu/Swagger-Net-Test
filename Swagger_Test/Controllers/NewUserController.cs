@@ -9,5 +9,10 @@ namespace Swagger_Test.Controllers
         {
             return data;
         }
+
+        public NewUserWriteModel Post([FromBody] NewUserWriteModel data)
+        {
+            return data;
+        }
     }
 }
