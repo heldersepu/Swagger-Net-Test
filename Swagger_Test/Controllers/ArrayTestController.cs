@@ -7,6 +7,7 @@ namespace Swagger_Test.Controllers
     [RoutePrefix("api/ArrayTest")]
     public class ArrayTestController : ApiController
     {
+        ///<summary>Get1 ##Get1</summary>
         /// <remarks>
         /// Testing Markdown
         /// *Italic*
@@ -34,6 +35,7 @@ namespace Swagger_Test.Controllers
             return p;
         }
 
+        ///<summary>Get2 `Get2`</summary>
         /// <remarks>
         /// HelloWorld
         /// <pre>{
@@ -47,6 +49,7 @@ namespace Swagger_Test.Controllers
             return p;
         }
 
+        ///<summary>Get3 **Get3**</summary>
         /// <remarks>
         /// <a href="#Int64Post">See also the Int64 Post</a>
         /// <a href="#/IntParam/IntParam_Get">See also the IntParam Get</a>
