@@ -27,6 +27,7 @@
              </remarks>
         </member>
         <member name="M:Swagger_Test.Controllers.ArrayTestController.Get1(System.Collections.Generic.List{System.String})">
+            <summary>Get1 ##Get1</summary>
              <remarks>
              Testing Markdown
              *Italic*
@@ -50,19 +51,21 @@
              </remarks>
         </member>
         <member name="M:Swagger_Test.Controllers.ArrayTestController.Get2(System.Collections.Generic.List{System.Int32})">
-            <remarks>
-            HelloWorld
-            <pre>{
-                "demo": "val", 
-                "demo2": "hello"
-            }</pre>
-            </remarks>
+            <summary>Get2 `Get2`</summary>
+             <remarks>
+             HelloWorld
+             <pre>{
+                 "demo": "val", 
+                 "demo2": "hello"
+             }</pre>
+             </remarks>
         </member>
         <member name="M:Swagger_Test.Controllers.ArrayTestController.Get3(System.Collections.Generic.List{Swagger_Test.Models.Location})">
-            <remarks>
-            <a href="#Int64Post">See also the Int64 Post</a>
-            <a href="#/IntParam/IntParam_Get">See also the IntParam Get</a>
-            </remarks>
+            <summary>Get3 **Get3**</summary>
+             <remarks>
+             <a href="#Int64Post">See also the Int64 Post</a>
+             <a href="#/IntParam/IntParam_Get">See also the IntParam Get</a>
+             </remarks>
         </member>
         <member name="F:Swagger_Test.Controllers.Arrays.array1">
             <summary>Test</summary>
