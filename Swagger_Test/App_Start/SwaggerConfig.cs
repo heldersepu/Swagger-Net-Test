@@ -76,10 +76,9 @@ namespace Swagger_Test
                     // you'll need to implement a custom IDocumentFilter and/or IOperationFilter to set these properties
                     // according to your specific authorization implementation
                     //
-                    //c.BasicAuth("basic")
-                    //    .Description("Basic HTTP Authentication");
+                    //c.BasicAuth("basic").Description("Basic HTTP Authentication");
                     //
-                    //c.ApiKey("apiKey", "API Key Authentication", "header", typeof(KeyAuthorizeAttribute));
+                    //c.ApiKey("apiKey", "header", "API Key Authentication");
                     //
                     c.OAuth2("oauth2")
                         .Description("OAuth2 Implicit Grant")
@@ -134,6 +133,7 @@ namespace Swagger_Test
                     // use the "MapType" option when the resulting Schema is a primitive or array type. If you need to alter a
                     // complex Schema, use a Schema filter.
                     //
+                    //c.MapType<ProductType>(() => new Schema { type = "integer", format = "int32" });
                     c.MapType<NodaTime.LocalDate>(() => new Schema { type = "string", format = "date-time" });
 
                     // If you want to post-modify "complex" Schemas once they've been generated, across the board or for a
@@ -160,7 +160,11 @@ namespace Swagger_Test
                     // Obsolete attribute
                     //c.IgnoreObsoleteProperties();
 
-                    // In accordance with the built in JsonSerializer, Swagger-Net will, by default, describe enums as integers.
+                    // Set this flag to ignore IsSpecified members when serializing and deserializing types.
+                    //
+                    c.IgnoreIsSpecifiedMembers();
+
+                    // In accordance with the built in JsonSerializer, if disabled Swagger-Net will describe enums as integers.
                     // You can change the serializer behavior by configuring the StringToEnumConverter globally or for a given
                     // enum type. Swagger-Net will honor this change out-of-the-box. However, if you use a different
                     // approach to serialize enums as strings, you can also force Swagger-Net to describe them as strings.
@@ -206,6 +210,7 @@ namespace Swagger_Test
                         }));
 
                     //c.DocumentFilter<OptionalPathParamDocumentFilter>();
+
 
 
                     // In contrast to WebApi, Swagger 2.0 does not include the query string component when mapping a URL
@@ -268,6 +273,20 @@ namespace Swagger_Test
                     // or "Full" (fully expanded: shows operations and their details).
                     //
                     c.DocExpansion(DocExpansion.List);
+
+                    // Controls how models are shown when the API is first rendered. (The user can always switch
+                    // the rendering for a given model by clicking the 'Model' and 'Example Value' links.) It can be
+                    // set to 'model' or 'example', and the default is 'example'.
+                    //
+                    //c.DefaultModelRendering(DefaultModelRender.Model);
+
+                    // Use this option to control the expansion depth for the model on the model-example section.
+                    //
+                    //c.DefaultModelExpandDepth(0);
+
+                    // The default expansion depth for models (set to -1 completely hide the models).
+                    //
+                    //c.DefaultModelsExpandDepth(0);
 
                     // Limit the number of operations shown to a smaller value
                     //
