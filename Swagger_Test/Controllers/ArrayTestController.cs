@@ -66,6 +66,12 @@ namespace Swagger_Test.Controllers
             return new Arrays();
         }
 
+        [Route("Post Arrays")]
+        public Arrays Post(Arrays arrays)
+        {
+            return arrays;
+        }
+
     }
 
     public class Arrays
