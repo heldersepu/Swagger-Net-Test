@@ -72,6 +72,11 @@ namespace Swagger_Test.Controllers
             return arrays;
         }
 
+        [Route("Test#Hash")]
+        public Arrays Put(Arrays arrays)
+        {
+            return arrays;
+        }
     }
 
     public class Arrays
