@@ -10,28 +10,22 @@ namespace Swagger_Test.Controllers
 {
     public class HtmlExampleController : ApiController
     {
-        [SwaggerResponse(HttpStatusCode.OK, type: typeof(string), mediaType: "text/html")]
-        public async Task<HttpResponseMessage> Get(Guid id)
+        [SwaggerResponse(HttpStatusCode.OK, type: typeof(string), mediaType: "text/html", examples: EXAMPLE)]
+        public async Task<HttpResponseMessage> Get()
         {
             return new HttpResponseMessage
             {
-                Content = new StringContent(Example, Encoding.UTF8, "text/html")
+                Content = new StringContent(EXAMPLE, Encoding.UTF8, "text/html")
             };
         }
 
-        private static string Example
-        {
-            get
-            {
-                return @"
-                    <!DOCTYPE html>
-                    <html>
-                        <head></head>
-                        <body>
-                            <h1>hello</h1>
-                        </body>
-                    </html>";
-            }
-        }
+        const string EXAMPLE = @"
+            <!DOCTYPE html>
+            <html>
+                <head></head>
+                <body>
+                    <h1>hello</h1>
+                </body>
+            </html>";
     }
 }
