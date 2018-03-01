@@ -1,4 +1,6 @@
-﻿namespace Swagger_Test.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Swagger_Test.Models
 {
     /// <summary>
     /// Geolocation result
@@ -55,5 +57,8 @@
         /// </summary>
         /// <example>-80.27</example>
         public decimal Longitude;
+
+        [Range(0.1, 0.99)]
+        public double ErrorMargin;
     }
 }
