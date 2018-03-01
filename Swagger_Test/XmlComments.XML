@@ -256,6 +256,12 @@
             </summary>
             <example>-80.27</example>
         </member>
+        <member name="P:Swagger_Test.Models.Location.Lat">
+            <example>25.85</example>
+        </member>
+        <member name="P:Swagger_Test.Models.Location.Lon">
+            <example>-80.27</example>
+        </member>
         <member name="F:Swagger_Test.Models.ShiftDayOffRule.None">
             <summary>
             Shift has no day off rule.
