@@ -59,6 +59,6 @@ namespace Swagger_Test.Models
         public decimal Longitude;
 
         [Range(0.1, 0.99)]
-        public double ErrorMargin;
+        public double ErrorMargin { get; set; }
     }
 }
