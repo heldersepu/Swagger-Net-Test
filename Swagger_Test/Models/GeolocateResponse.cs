@@ -60,5 +60,8 @@ namespace Swagger_Test.Models
 
         [Range(0.1, 0.99)]
         public double ErrorMargin { get; set; }
+
+        [Range(10.1, 110.99)]
+        public double BigErrorMargin;
     }
 }
