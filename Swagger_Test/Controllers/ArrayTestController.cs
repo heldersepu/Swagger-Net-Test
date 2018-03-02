@@ -1,4 +1,5 @@
 ﻿using Swagger_Test.Models;
+using System;
 using System.Collections.Generic;
 using System.Web.Http;
 
@@ -61,6 +62,7 @@ namespace Swagger_Test.Controllers
         }
 
         [Route("Arrays")]
+        [Obsolete("This endpoint will no longer be supported. Use /api/somepath instead")]
         public Arrays Get4()
         {
             return new Arrays();
