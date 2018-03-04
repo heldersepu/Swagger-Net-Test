@@ -6,10 +6,10 @@ namespace Swagger_Test.Models
     {
         /// <example>25.85</example>
         [Range(-90, 90)]
-        public decimal Lat { get; set; }
+        public float Lat { get; set; }
 
         /// <example>-80.27</example>
         [Range(-180, 180)]
-        public decimal Lon { get; set; }
+        public float Lon { get; set; }
     }
 }
