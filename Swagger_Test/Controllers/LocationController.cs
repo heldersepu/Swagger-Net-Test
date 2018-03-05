@@ -17,5 +17,17 @@ namespace Swagger_Test.Controllers
         {
             return x;
         }
+
+        [Route("Get3")]
+        public SomeRequest Get3([FromUri] SomeRequest x)
+        {
+            return x;
+        }
+    }
+
+    public class SomeRequest
+    {
+        public Location Point1 { get; set; }
+        public Location Point2 { get; set; }
     }
 }
