@@ -46,7 +46,7 @@ namespace Swagger_Test
                     // hold additional metadata for an API. Version and title are required but you can also provide
                     // additional fields by chaining methods off SingleApiVersion.
                     //
-                    c.SingleApiVersion("v1", "Swagger_Test");
+                    // c.SingleApiVersion("v1", "Swagger_Test");
 
                     // Taking to long to load the swagger docs? Enable this option to start caching it
                     //
@@ -61,13 +61,15 @@ namespace Swagger_Test
                     // included in the docs for a given API version. Like "SingleApiVersion", each call to "Version"
                     // returns an "Info" builder so you can provide additional metadata per API version.
                     //
-                    //c.MultipleApiVersions(
-                    //    (apiDesc, targetApiVersion) => ResolveVersionSupportByRouteConstraint(apiDesc, targetApiVersion),
-                    //    (vc) =>
-                    //    {
-                    //        vc.Version("v1", "Swagger_Test");
-                    //        vc.Version("v2", "Swagger_Test V2");
-                    //    });
+                    c.MultipleApiVersions(
+                        (apiDesc, targetApiVersion) => targetApiVersion.Equals("default", StringComparison.InvariantCultureIgnoreCase) ||                     // Include everything by default
+                                                       apiDesc.Route.RouteTemplate.StartsWith(targetApiVersion, StringComparison.InvariantCultureIgnoreCase), // Only include matching routes for other versions
+                        (vc) =>
+                        {
+                            vc.Version("default", "Swagger_Test");
+                            vc.Version("v1", "Swagger_Test V1");
+                            vc.Version("v2", "Swagger_Test V2");
+                        });
 
                     // You can use "BasicAuth", "ApiKey" or "OAuth2" options to describe security schemes for the API.
                     // See https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md for more details.
