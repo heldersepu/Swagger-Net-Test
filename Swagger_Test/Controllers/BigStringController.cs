@@ -18,6 +18,7 @@ namespace Swagger_Test.Controllers
         ///         <td>ABC33</td>
         ///     </tr>
         /// </table>
+        /// <img src="https://yuml.me/diagram/class/%5BSupplier%7Bbg:orange%7D%5D,%5BSupplier%5D-0..1%3E%5BAddress%5D,%5BSupplier%5D" />
         /// </remarks>
         public string Get(int max = 10000)
         {
