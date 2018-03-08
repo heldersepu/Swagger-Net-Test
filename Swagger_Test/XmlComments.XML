@@ -259,7 +259,11 @@
             <example>-80.27</example>
         </member>
         <member name="T:Swagger_Test.Models.Location">
-            <summary>Geographic coordinates</summary>
+            <summary>
+            ## Geographic coordinates
+            ___
+            A **geographic coordinate system** is a coordinate system used in geography that enables every location on Earth
+            </summary>
         </member>
         <member name="P:Swagger_Test.Models.Location.Lat">
             <summary>Latitude</summary>

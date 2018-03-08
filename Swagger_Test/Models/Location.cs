@@ -2,7 +2,11 @@
 
 namespace Swagger_Test.Models
 {
-    /// <summary>Geographic coordinates</summary>
+    /// <summary>
+    /// ## Geographic coordinates
+    /// ___
+    /// A **geographic coordinate system** is a coordinate system used in geography that enables every location on Earth
+    /// </summary>
     public class Location
     {
         /// <summary>Latitude</summary>
