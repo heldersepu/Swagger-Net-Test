@@ -266,11 +266,11 @@
             </summary>
         </member>
         <member name="P:Swagger_Test.Models.Location.Lat">
-            <summary>Latitude</summary>
+            <summary>**Latitude**: a geographic coordinate that specifies the north–south position of a point on the Earth's surface.</summary>
             <example>25.85</example>
         </member>
         <member name="P:Swagger_Test.Models.Location.Lon">
-            <summary>Longitude</summary>
+            <summary>**Longitude**: a geographic coordinate that specifies the east-west position of a point on the Earth's surface.</summary>
             <example>-80.27</example>
         </member>
         <member name="F:Swagger_Test.Models.ShiftDayOffRule.None">
