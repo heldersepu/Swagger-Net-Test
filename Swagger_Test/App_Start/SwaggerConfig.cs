@@ -645,6 +645,7 @@ namespace Swagger_Test
                 schemaRegistry.GetOrRegister(typeof(GeolocateResponse));
                 schemaRegistry.GetOrRegister(typeof(CountingLock1));
                 schemaRegistry.GetOrRegister(typeof(CountingLock2));
+                schemaRegistry.GetOrRegister(typeof(Coordinate));
 
                 if (swaggerDoc.definitions != null && swaggerDoc.definitions.ContainsKey("Company"))
                 {

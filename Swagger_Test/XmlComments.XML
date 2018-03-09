@@ -273,6 +273,10 @@
             <summary>**Longitude**: a geographic coordinate that specifies the east-west position of a point on the Earth's surface.</summary>
             <example>-80.27</example>
         </member>
+        <member name="P:Swagger_Test.Models.Coordinate.Elev">
+            <summary>**Elevation**: is the height above or below a fixed reference point.</summary>
+            <example>2.6</example>
+        </member>
         <member name="F:Swagger_Test.Models.ShiftDayOffRule.None">
             <summary>
             Shift has no day off rule.

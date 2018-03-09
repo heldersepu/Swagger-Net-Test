@@ -19,4 +19,11 @@ namespace Swagger_Test.Models
         [Range(-180, 180)]
         public float Lon { get; set; }
     }
+
+    public class Coordinate : Location
+    {
+        /// <summary>**Elevation**: is the height above or below a fixed reference point.</summary>
+        /// <example>2.6</example>
+        public float Elev { get; set; }
+    }
 }
