@@ -23,6 +23,12 @@ namespace Swagger_Test.Controllers
         {
             return x;
         }
+
+        [Route("Get4")]
+        public Coordinate Get4([FromUri] Coordinate x)
+        {
+            return x;
+        }
     }
 
     public class SomeRequest
