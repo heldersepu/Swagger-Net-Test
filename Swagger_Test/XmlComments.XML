@@ -73,6 +73,21 @@
         <member name="F:Swagger_Test.Controllers.Arrays.array4">
             <summary>List of Companies</summary>
         </member>
+        <member name="P:Swagger_Test.Controllers.Data.integ">
+            <summary>Sample integer</summary>
+        </member>
+        <member name="P:Swagger_Test.Controllers.Data.doub">
+            <summary>Sample double</summary>
+        </member>
+        <member name="P:Swagger_Test.Controllers.Data.boolea">
+            <summary>Sample boolean</summary>
+        </member>
+        <member name="P:Swagger_Test.Controllers.Data.guid">
+            <summary>Sample guid</summary>
+        </member>
+        <member name="P:Swagger_Test.Controllers.Data.date">
+            <summary>Sample DateTime</summary>
+        </member>
         <member name="M:Swagger_Test.Controllers.BigStringController.Get(System.Int32)">
             <remarks>
             <h2>Testing html table</h2>
