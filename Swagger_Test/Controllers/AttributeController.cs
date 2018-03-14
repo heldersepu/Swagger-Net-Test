@@ -33,10 +33,15 @@ namespace Swagger_Test.Controllers
 
     public class Data
     {
+        /// <summary>Sample integer</summary>
         public int integ { get; set; }
+        /// <summary>Sample double</summary>
         public double doub { get; set; }
+        /// <summary>Sample boolean</summary>
         public bool boolea { get; set; }
+        /// <summary>Sample guid</summary>
         public Guid guid { get; set; }
+        /// <summary>Sample DateTime</summary>
         public DateTime date { get; set; }
     }
 }
