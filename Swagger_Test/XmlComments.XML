@@ -55,7 +55,7 @@
              <remarks>
              HelloWorld
              <pre>{
-                 "demo": "val", 
+                 "demo": "val",
                  "demo2": "hello"
              }</pre>
              </remarks>
@@ -65,6 +65,17 @@
              <remarks>
              <a href="#Int64Post">See also the Int64 Post</a>
              <a href="#/IntParam/IntParam_Get">See also the IntParam Get</a>
+             </remarks>
+        </member>
+        <member name="M:Swagger_Test.Controllers.ArrayTestController.Put(Swagger_Test.Controllers.Arrays)">
+            <summary>Put</summary>
+             <remarks>
+             ### This is a list
+             - Item one
+             - Item 2
+               - Sub item 1
+               - Sub item 2
+             - Item 3
              </remarks>
         </member>
         <member name="F:Swagger_Test.Controllers.Arrays.array1">

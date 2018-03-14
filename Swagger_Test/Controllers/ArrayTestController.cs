@@ -40,7 +40,7 @@ namespace Swagger_Test.Controllers
         /// <remarks>
         /// HelloWorld
         /// <pre>{
-        ///     "demo": "val", 
+        ///     "demo": "val",
         ///     "demo2": "hello"
         /// }</pre>
         /// </remarks>
@@ -74,6 +74,15 @@ namespace Swagger_Test.Controllers
             return arrays;
         }
 
+        ///<summary>Put</summary>
+        /// <remarks>
+        /// ### This is a list
+        /// - Item one
+        /// - Item 2
+        ///   - Sub item 1
+        ///   - Sub item 2
+        /// - Item 3
+        /// </remarks>
         [Route("Test#Hash")]
         public Arrays Put(Arrays arrays)
         {
