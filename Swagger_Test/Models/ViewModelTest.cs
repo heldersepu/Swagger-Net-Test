@@ -30,6 +30,7 @@ namespace Swagger_Test.Models
 
         [MinLength(3)]
         [MaxLength(5)]
+        [Range(typeof(string), "AAA", "ZZZZZ")]
         public string bcd { get; set; }
 
     }
