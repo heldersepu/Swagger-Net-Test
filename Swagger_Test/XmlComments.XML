@@ -8,7 +8,7 @@
              <summary>
              Testing the summary on the ApiExplorerController
              </summary>
-             
+            
              <remarks>
              Testing the description on the ApiExplorerController
              This is a second line
@@ -302,6 +302,32 @@
         <member name="P:Swagger_Test.Models.Coordinate.Elev">
             <summary>**Elevation**: is the height above or below a fixed reference point.</summary>
             <example>2.6</example>
+        </member>
+        <member name="P:Swagger_Test.Models.ScopeResponseModel.Id">
+            <summary>
+            Id of the administrative scope.
+            </summary>
+        </member>
+        <member name="P:Swagger_Test.Models.ScopeResponseModel.Name">
+            <summary>
+            Name of the administrative scope.
+            </summary>
+        </member>
+        <member name="P:Swagger_Test.Models.ScopeResponseModel.Description">
+            <summary>
+            Description of the administrative scope.
+            </summary>
+        </member>
+        <member name="P:Swagger_Test.Models.ScopeResponseModel.IsBuiltIn">
+            <summary>
+            Whether the administrative scope is built-in.
+            </summary>
+        </member>
+        <member name="P:Swagger_Test.Models.ScopeResponseModel.IsAllScope">
+            <summary>
+            Indicates the built-in "All" scope.  There will be
+            exactly one scope with this property set to <c>true</c>.
+            </summary>
         </member>
         <member name="F:Swagger_Test.Models.ShiftDayOffRule.None">
             <summary>

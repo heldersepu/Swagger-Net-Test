@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Swagger_Test.Models;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
@@ -10,7 +11,7 @@ namespace Swagger_Test.Controllers
         /// <summary>
         /// Testing the summary on the ApiExplorerController
         /// </summary>
-        /// 
+        ///
         /// <remarks>
         /// Testing the description on the ApiExplorerController
         /// This is a second line
@@ -33,5 +34,9 @@ namespace Swagger_Test.Controllers
             return apiEx.ApiDescriptions.Select(a => $"{a.HttpMethod} {a.RelativePath}");
         }
 
+        public ScopeResponseModel Post(ScopeResponseModel x)
+        {
+            return x;
+        }
     }
 }
