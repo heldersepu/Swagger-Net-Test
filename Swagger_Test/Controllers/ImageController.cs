@@ -33,7 +33,7 @@ namespace Swagger_Test.Controllers
         public HttpResponseMessage Put()
         {
             var response = new HttpResponseMessage();
-            response.Content = ImageStream(Color.White, Color.Black);
+            response.Content = ImageStream(Color.White, RandomColor);
             response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
             response.Content.Headers.ContentDisposition =
                 new ContentDispositionHeaderValue("attachment") { FileName = "image.png" };
