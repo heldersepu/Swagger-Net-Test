@@ -376,12 +376,15 @@
             <example>cccdddeee</example>
         </member>
         <member name="P:Swagger_Test.Company.Id">
+            <summary>The Unique Company ID</summary>
             <example>123</example>
         </member>
         <member name="P:Swagger_Test.Company.Name">
+            <summary>The Company Name</summary>
             <example>Acme co</example>
         </member>
         <member name="P:Swagger_Test.Company.Description">
+            <summary>An optional description of the company</summary>
             <example>Super duper company</example>
         </member>
         <member name="P:Swagger_Test.Company.TaxCode">
