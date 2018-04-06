@@ -13,3 +13,4 @@ using System.Runtime.InteropServices;
 [assembly: Guid("48b8c5da-0545-4d9c-9140-5963e03668fb")]
 [assembly: AssemblyVersion("1.0.0.2")]
 [assembly: AssemblyFileVersion("1.0.0.2")]
+[assembly: log4net.Config.XmlConfigurator(ConfigFile = "log4net.config")]
