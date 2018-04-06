@@ -3,6 +3,7 @@ using System.Web.Http;
 
 namespace Swagger_Test.Controllers
 {
+    [RoutePrefix("api/Company")]
     public class CompanyController : ApiController
     {
         /// <remarks>
@@ -24,6 +25,12 @@ namespace Swagger_Test.Controllers
                 Name = "Co",
                 Description = "Test Co"
             };
+        }
+
+        [Route("Get2")]
+        public Company Get2(Company c)
+        {
+            return c;
         }
 
         public IHttpActionResult Post([FromBody] IEnumerable<Company> companies)
