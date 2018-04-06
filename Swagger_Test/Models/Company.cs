@@ -1,13 +1,20 @@
-﻿namespace Swagger_Test
+﻿using System.ComponentModel;
+
+namespace Swagger_Test
 {
     public class Company
     {
+        /// <summary>The Unique Company ID</summary>
         /// <example>123</example>
+        [DefaultValue(456)]
         public int Id { get; set; }
 
+        /// <summary>The Company Name</summary>
         /// <example>Acme co</example>
+        [DefaultValue("My Company")]
         public string Name { get; set; }
 
+        /// <summary>An optional description of the company</summary>
         /// <example>Super duper company</example>
         public string Description { get; set; }
 
