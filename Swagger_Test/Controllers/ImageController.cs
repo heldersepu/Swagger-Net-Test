@@ -29,14 +29,15 @@ namespace Swagger_Test.Controllers
         }
 
         // PUT: api/Image
-        [SwaggerResponse(200, "image.png", mediaType: "application/octet-stream")]
+        [SwaggerResponse(200, "Download an image", mediaType: "application/octet-stream")]
         public HttpResponseMessage Put()
         {
             var response = new HttpResponseMessage();
-            response.Content = ImageStream(Color.White, RandomColor);
+            var c = RandomColor;
+            response.Content = ImageStream(Color.White, c);
             response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
             response.Content.Headers.ContentDisposition =
-                new ContentDispositionHeaderValue("attachment") { FileName = "image.png" };
+                new ContentDispositionHeaderValue("attachment") { FileName = $"image_{c.R}_{c.G}_{c.B}.png" };
             return response;
         }
 
