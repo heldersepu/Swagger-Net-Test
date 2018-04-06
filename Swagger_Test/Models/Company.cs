@@ -15,6 +15,7 @@ namespace Swagger_Test
         public string Name { get; set; }
 
         /// <summary>An optional description of the company</summary>
+        /// <remarks>This is a good place to put additional details such as: Phone & Address </remarks>
         /// <example>Super duper company</example>
         public string Description { get; set; }
 
