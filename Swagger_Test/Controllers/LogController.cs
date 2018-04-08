@@ -9,8 +9,12 @@ namespace Swagger_Test.Controllers
 
         public IHttpActionResult Get()
         {
-            nlg.Info("Test");
-            l4n.Info("Test");
+            nlg.Info("Test1");
+            nlg.Error("Test2");
+
+            l4n.Info("Test1");
+            l4n.Error("Test2");
+
             return Ok();
         }
     }
