@@ -290,7 +290,7 @@ namespace Swagger_Test
 
                     // Limit the number of operations shown to a smaller value
                     //
-                    c.UImaxDisplayedTags(50);
+                    c.UImaxDisplayedTags(100);
 
                     // Filter the operations works as a search, to disable set to "null"
                     //
