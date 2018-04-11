@@ -371,9 +371,9 @@ namespace Swagger_Test
                 for (int i = 0; i < 10; i++)
                     swaggerDoc.paths.Add("/Fake/" + i + "/{id}", FakePathItem("Fake", i));
                 for (int i = 0; i < 2; i++)
-                    swaggerDoc.paths.Add("/Space Test/" + i + "/{id}", FakePathItem("Space Test", i));
+                    swaggerDoc.paths.Add("/Space Sample/" + i + "/{id}", FakePathItem("Space Sample", i));
                 for (int i = 0; i < 2; i++)
-                    swaggerDoc.paths.Add("/Hash#Test/" + i + "/{id}", FakePathItem("Hash#Test", i));
+                    swaggerDoc.paths.Add("/Hash#Sample/" + i + "/{id}", FakePathItem("Hash#Sample", i));
 
             }
         }
