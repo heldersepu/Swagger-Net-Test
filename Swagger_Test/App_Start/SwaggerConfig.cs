@@ -339,15 +339,15 @@ namespace Swagger_Test
 
         private class DocumentFilterAddFakes : IDocumentFilter
         {
-            private PathItem FakePathItem(int i)
+            private PathItem FakePathItem(string tag, int i)
             {
                 var x = new PathItem();
                 x.get = new Operation()
                 {
-                    tags = new[] { "Fake" },
-                    operationId = "Fake_Get" + i.ToString(),
+                    tags = new[] { tag },
+                    operationId = $"{tag}_Get{i}",
                     consumes = null,
-                    produces = new[] { "application/json", "text/json", "application/xml", "text/xml" },
+                    produces = new[] { "application/json" },
                     parameters = new List<Parameter>()
                                 {
                                     new Parameter()
@@ -369,9 +369,12 @@ namespace Swagger_Test
             public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
             {
                 for (int i = 0; i < 10; i++)
-                {
-                    swaggerDoc.paths.Add("/Fake/" + i + "/{id}", FakePathItem(i));
-                }
+                    swaggerDoc.paths.Add("/Fake/" + i + "/{id}", FakePathItem("Fake", i));
+                for (int i = 0; i < 2; i++)
+                    swaggerDoc.paths.Add("/Space Test/" + i + "/{id}", FakePathItem("Space Test", i));
+                for (int i = 0; i < 2; i++)
+                    swaggerDoc.paths.Add("/Hash#Test/" + i + "/{id}", FakePathItem("Hash#Test", i));
+
             }
         }
 
