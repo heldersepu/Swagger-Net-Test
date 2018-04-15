@@ -27,10 +27,16 @@ namespace Swagger_Test
 
         public string allOf { get; set; }
 
-        public string properties { get; set; }
+        public Props properties { get; set; }
 
         public string lowercase { get; set; }
         public string UPPERCASE { get; set; }
         public string huNGariAnCASE { get; set; }
+    }
+
+    public class Props
+    {
+        public string aaa { get; set; }
+        public string bbb { get; set; }
     }
 }
