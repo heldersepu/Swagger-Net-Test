@@ -6,12 +6,6 @@ namespace Swagger_Test.Controllers
     [RoutePrefix("api/FromBody")]
     public class FromBodyController : ApiController
     {
-        [Route("Test0_WithFromBody")]
-        public IHttpActionResult GetWith0([FromBody] ViewModelTest a, [FromBody] ViewModelTest b)
-        {
-            return Ok(new { a = a, b = b });
-        }
-
         [Route("Test1_WithFromBody")]
         public ViewModelTest GetWith([FromBody] ViewModelTest v)
         {
