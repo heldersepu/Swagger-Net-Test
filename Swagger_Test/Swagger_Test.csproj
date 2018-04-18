@@ -47,6 +47,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FromHeaderAttribute, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FromHeaderAttribute.2.0.2\lib\net45\FromHeaderAttribute.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
@@ -70,8 +73,8 @@
     <Reference Include="NodaTime, Version=2.2.5.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
       <HintPath>..\packages\NodaTime.2.2.5\lib\net45\NodaTime.dll</HintPath>
     </Reference>
-    <Reference Include="Swagger.Net, Version=8.3.13.403, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Swagger-Net.8.3.13.403\lib\net45\Swagger.Net.dll</HintPath>
+    <Reference Include="Swagger.Net, Version=8.3.13.407, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swagger-Net.8.3.13.407\lib\net45\Swagger.Net.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.IO.Compression" />
@@ -187,6 +190,7 @@
     <Compile Include="Controllers\AsyncController.cs" />
     <Compile Include="Controllers\AttributeController.cs" />
     <Compile Include="Controllers\BigStringController.cs" />
+    <Compile Include="Controllers\FromHeaderController.cs" />
     <Compile Include="Controllers\FromBodyController.cs" />
     <Compile Include="Controllers\MultiParamPostController.cs" />
     <Compile Include="Controllers\NestedSwagController.cs" />
