@@ -28,7 +28,7 @@ namespace Swagger_Test.Controllers
         }
 
         [Route("Get2")]
-        public Company Get2(Company c)
+        public Company Get2([FromUri] Company c)
         {
             return c;
         }
