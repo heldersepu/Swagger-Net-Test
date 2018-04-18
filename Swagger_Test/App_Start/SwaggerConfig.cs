@@ -265,7 +265,7 @@ namespace Swagger_Test
                     // By default, swagger-ui will validate specs against swagger.io's online validator and display the result
                     // in a badge at the bottom of the page. Use these options to set a different validator URL or to disable the
                     // feature entirely.
-                    c.SetValidatorUrl("https://online.swagger.io/validator");
+                    c.SetValidatorUrl("http://online.swagger.io/validator");
                     //c.DisableValidator();
 
                     // Use this option to control how the Operation listing is displayed.
