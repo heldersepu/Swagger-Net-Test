@@ -5,7 +5,7 @@ namespace Swagger_Test.Controllers
 {
     public class ComplexRequestController : ApiController
     {
-        public EntityRequest Get(EntityRequest obj)
+        public EntityRequest Get([FromUri] EntityRequest obj)
         {
             return obj;
         }
