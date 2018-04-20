@@ -4,8 +4,8 @@ namespace Swagger_Test.Controllers
 {
     public class ApiVersionController : ApiController
     {
-        [Route("v1/{id:int}")]
-        [Route("v2/{id:int}")]
+        [Route("v1_0/{id:int}")]
+        [Route("v2_0/{id:int}")]
         public string GetById(int id)
         {
             return "ApiVersion_GetById";

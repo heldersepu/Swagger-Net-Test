@@ -67,8 +67,8 @@ namespace Swagger_Test
                         (vc) =>
                         {
                             vc.Version("default", "Swagger_Test");
-                            vc.Version("v1", "Swagger_Test V1");
-                            vc.Version("v2", "Swagger_Test V2");
+                            vc.Version("v1_0", "Swagger_Test V1_0");
+                            vc.Version("v2_0", "Swagger_Test V2_0");
                         });
 
                     // You can use "BasicAuth", "ApiKey" or "OAuth2" options to describe security schemes for the API.
