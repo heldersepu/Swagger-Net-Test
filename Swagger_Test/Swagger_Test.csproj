@@ -171,6 +171,7 @@
     <Compile Include="Attributes\StringEnumAttribute.cs" />
     <Compile Include="Attributes\SwaggerFormAttribute.cs" />
     <Compile Include="Controllers\ApiExplorerController.cs" />
+    <Compile Include="Controllers\ApiVersionRoutePrefixController.cs" />
     <Compile Include="Controllers\ArrayTestController.cs" />
     <Compile Include="Controllers\AsyncController.cs" />
     <Compile Include="Controllers\AttributeController.cs" />
