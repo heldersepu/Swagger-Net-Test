@@ -6,6 +6,10 @@ namespace Swagger_Test.Controllers
     {
         public enum Giorno { Lunedi, Martedi, Venerdi }
 
+        public Giorno Get(Giorno value = Giorno.Martedi)
+        {
+            return value;
+        }
 
         /// <summary> A nullable enum test </summary>
         public string PutEnumNull(Giorno? value)

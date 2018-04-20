@@ -16,7 +16,6 @@ namespace Swagger_Test.Controllers
             return data;
         }
 
-        public MonthEnum Post(MonthEnum month)
         {
             return month;
         }
