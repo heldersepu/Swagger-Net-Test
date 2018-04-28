@@ -116,6 +116,13 @@
             <img src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==" alt="Red dot" />
             </remarks>
         </member>
+        <member name="M:Swagger_Test.Controllers.LongProcessingController.Get(System.Int32)">
+            <summary>
+            This action will put the thread to sleep for the given amount of seconds.
+            </summary>
+            <param name="seconds">How many seconds to sleep</param>
+            <returns>The provided seconds</returns>
+        </member>
         <member name="M:Swagger_Test.Controllers.Blob`1.GetBad(System.Nullable{System.Int32})">
             <summary> Get a Bad Blob </summary>
         </member>

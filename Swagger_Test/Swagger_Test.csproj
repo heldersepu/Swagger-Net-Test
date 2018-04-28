@@ -190,6 +190,7 @@
     <Compile Include="Controllers\AsyncController.cs" />
     <Compile Include="Controllers\AttributeController.cs" />
     <Compile Include="Controllers\BigStringController.cs" />
+    <Compile Include="Controllers\FibonacciController.cs" />
     <Compile Include="Controllers\FromHeaderController.cs" />
     <Compile Include="Controllers\FromBodyController.cs" />
     <Compile Include="Controllers\LongProcessingController.cs" />
