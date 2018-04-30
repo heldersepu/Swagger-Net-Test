@@ -27,12 +27,22 @@ namespace Swagger_Test.Controllers
             };
         }
 
+        /// <summary>
+        /// GET Echo test of company
+        /// </summary>
+        /// <param name="c">company to echo</param>
+        /// <returns>Returns given company</returns>
         [Route("Get2")]
         public Company Get2([FromUri] Company c)
         {
             return c;
         }
 
+        /// <summary>
+        /// POST Echo test of company
+        /// </summary>
+        /// <param name="companies">companies to echo</param>
+        /// <returns>Returns given companies</returns>
         public IHttpActionResult Post([FromBody] IEnumerable<Company> companies)
         {
             return Ok(companies);

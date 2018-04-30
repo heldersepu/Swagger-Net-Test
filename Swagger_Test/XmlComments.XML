@@ -146,6 +146,20 @@
              ### end table
              </remarks>
         </member>
+        <member name="M:Swagger_Test.Controllers.CompanyController.Get2(Swagger_Test.Company)">
+            <summary>
+            GET Echo test of company
+            </summary>
+            <param name="c">company to echo</param>
+            <returns>Returns given company</returns>
+        </member>
+        <member name="M:Swagger_Test.Controllers.CompanyController.Post(System.Collections.Generic.IEnumerable{Swagger_Test.Company})">
+            <summary>
+            POST Echo test of company
+            </summary>
+            <param name="companies">companies to echo</param>
+            <returns>Returns given companies</returns>
+        </member>
         <member name="T:Swagger_Test.Controllers.MyData">
             <summary>My super duper data</summary>
         </member>
