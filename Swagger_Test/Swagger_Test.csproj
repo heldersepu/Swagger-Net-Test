@@ -233,6 +233,7 @@
     <Compile Include="Controllers\PngImageController.cs" />
     <Compile Include="Controllers\PolygonVolumeController.cs" />
     <Compile Include="Controllers\RecursiveParamController.cs" />
+    <Compile Include="Controllers\ResourcesController.cs" />
     <Compile Include="Controllers\RoutePrefixController.cs" />
     <Compile Include="Controllers\RoutesController.cs" />
     <Compile Include="Controllers\RouteTestController.cs" />
