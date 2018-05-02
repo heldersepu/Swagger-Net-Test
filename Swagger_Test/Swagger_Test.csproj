@@ -232,6 +232,7 @@
     <Compile Include="Controllers\PagedListController.cs" />
     <Compile Include="Controllers\PngImageController.cs" />
     <Compile Include="Controllers\PolygonVolumeController.cs" />
+    <Compile Include="Controllers\ProcessController.cs" />
     <Compile Include="Controllers\RecursiveParamController.cs" />
     <Compile Include="Controllers\ResourcesController.cs" />
     <Compile Include="Controllers\RoutePrefixController.cs" />
