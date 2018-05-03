@@ -6,7 +6,12 @@ namespace Swagger_Test.Controllers
 {
     public class ImportArrayController : ApiController
     {
-        public IHttpActionResult Post([FromBody]Account[] value)
+        public IHttpActionResult Post([FromBody] Account[] value)
+        {
+            return Ok(value);
+        }
+
+        public IHttpActionResult Put([FromBody] Contact[] value)
         {
             return Ok(value);
         }
