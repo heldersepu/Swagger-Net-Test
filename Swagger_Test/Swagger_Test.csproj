@@ -227,6 +227,7 @@
     <Compile Include="Controllers\NestedEnumController.cs" />
     <Compile Include="Controllers\NewUserController.cs" />
     <Compile Include="Controllers\NodaTimeController.cs" />
+    <Compile Include="Controllers\NullablesController.cs" />
     <Compile Include="Controllers\NumCalcController.cs" />
     <Compile Include="Controllers\OAuthController.cs" />
     <Compile Include="Controllers\PagedListController.cs" />
