@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Swagger_Test
 {
@@ -6,8 +7,13 @@ namespace Swagger_Test
     {
         /// <summary>The Unique Company ID</summary>
         /// <example>123</example>
+        [Required]
         [DefaultValue(456)]
         public int Id { get; set; }
+
+        [Required]
+        [DefaultValue(null)]
+        public int? MyId { get; set; }
 
         /// <summary>The Company Name</summary>
         /// <example>Acme co</example>
