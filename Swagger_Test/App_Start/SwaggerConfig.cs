@@ -842,7 +842,8 @@ namespace Swagger_Test
                                     p.Value.example = 9858.216;
                                     break;
                                 case "date-time":
-                                    p.Value.example = DateTime.Now.ToString("yyyy-MM-dd");
+                                    if (p.Key[0] != 'D')
+                                        p.Value.example = DateTime.Now.ToString("yyyy-MM-dd");
                                     break;
                                 default:
                                     switch (p.Key)
