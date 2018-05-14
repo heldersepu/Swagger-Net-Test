@@ -134,7 +134,9 @@ namespace Swagger_Test
                     // complex Schema, use a Schema filter.
                     //
                     //c.MapType<ProductType>(() => new Schema { type = "integer", format = "int32" });
-                    c.MapType<NodaTime.LocalDate>(() => new Schema { type = "string", format = "date-time" });
+                    c.MapType<NodaTime.LocalDate>(() => new Schema { type = "string", format = "date" });
+                    c.MapType<NodaTime.LocalTime>(() => new Schema { type = "string", format = "date-time" });
+                    c.MapType<NodaTime.LocalDateTime>(() => new Schema { type = "string", format = "date-time" });
 
                     // If you want to post-modify "complex" Schemas once they've been generated, across the board or for a
                     // specific type, you can wire up one or more Schema filters.
