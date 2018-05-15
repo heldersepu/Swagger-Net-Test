@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using Swagger.Net;
 using Swagger.Net.Application;
 using Swagger_Test;
@@ -197,9 +198,11 @@ namespace Swagger_Test
                     c.DocumentFilter<TestDocumentFilter>();
                     c.DocumentFilter<DocumentFilterAddFakes>();
                     c.DocumentFilter<RouteTestDocumentFilter>();
+                    c.DocumentFilter<Flip2DateDocumentFilter>();
                     c.DocumentFilter<SortModelDocumentFilter>();
                     c.DocumentFilter<StringEnumDocumentFilter>();
                     c.DocumentFilter<AddExampleDocumentFilter>();
+
                     //c.DocumentFilter<ApplyDocumentVendorExtensions>();
                     c.DocumentFilter<ApplyDocumentFilter_ChangeCompany>();
                     c.DocumentFilter<AddImageResponseDocumentFilter>();
@@ -679,6 +682,31 @@ namespace Swagger_Test
         public static bool ResolveVersionSupportByRouteConstraint(ApiDescription apiDesc, string targetApiVersion)
         {
             return (apiDesc.Route.RouteTemplate.ToLower().Contains(targetApiVersion.ToLower()));
+        }
+
+        private class Flip2DateDocumentFilter : IDocumentFilter
+        {
+            private List<string> DateTypes(Type AttribType)
+            {
+                var list = new List<string>();
+                foreach (var p in AttribType.GetProperties())
+                    if (p.CustomAttributes?.Count() > 0)
+                        list.Add(p.Name);
+                return list;
+            }
+
+            public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry s, IApiExplorer a)
+            {
+                var t = typeof(Controllers.Dates);
+                if (swaggerDoc.definitions[t.Name] != null)
+                {
+                    var dates = DateTypes(t);
+                    if (dates.Count() > 0)
+                        foreach (var p in swaggerDoc.definitions[t.Name].properties)
+                            if (dates.Contains(p.Key) && p.Value.format == "date-time")
+                                p.Value.format = "date";
+                }
+            }
         }
 
         private class ApplyDocumentVendorExtensions : IDocumentFilter
