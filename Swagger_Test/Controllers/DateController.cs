@@ -7,7 +7,7 @@ namespace Swagger_Test.Controllers
 {
     public class DateController : ApiController
     {
-        public Dates Get(Dates d)
+        public Dates Post([FromBody] Dates d)
         {
             return d;
         }
