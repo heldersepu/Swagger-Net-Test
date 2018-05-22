@@ -5,5 +5,6 @@
 [![StackOverflow](http://img.shields.io/badge/stackoverflow-SWASHBUCKLE_TEST-blue.svg)]( http://stackoverflow.com/questions/tagged/SWASHBUCKLE_TEST ) 
 -->
 
-http://swagger-net-test.azurewebsites.net/swagger/ui/index
+http://swagger-net-test.azurewebsites.net/swagger
+http://swagger-net-test-multiapiversions.azurewebsites.net/swagger
 
