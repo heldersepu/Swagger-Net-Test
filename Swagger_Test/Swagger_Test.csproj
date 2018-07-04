@@ -242,6 +242,7 @@
     <Compile Include="Controllers\RoutesController.cs" />
     <Compile Include="Controllers\RouteTestController.cs" />
     <Compile Include="Controllers\SvgImageController.cs" />
+    <Compile Include="Controllers\SymbolsController.cs" />
     <Compile Include="Controllers\TestMultiGetController.cs" />
     <Compile Include="Controllers\TestStringEnumController.cs" />
     <Compile Include="Controllers\TestEnumController.cs" />
