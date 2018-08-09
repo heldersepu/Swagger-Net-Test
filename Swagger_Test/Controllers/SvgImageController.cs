@@ -31,5 +31,11 @@ namespace Swagger_Test.Controllers
         {
             return Image("text/html");
         }
+
+        [SwaggerResponse(200, "image.svg", mediaType: "image/svg")]
+        public HttpResponseMessage Put()
+        {
+            return Image("image/svg");
+        }
     }
 }
