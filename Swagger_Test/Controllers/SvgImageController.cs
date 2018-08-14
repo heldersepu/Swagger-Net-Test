@@ -8,11 +8,11 @@ namespace Swagger_Test.Controllers
 {
     public class SvgImageController : ApiController
     {
-        private HttpResponseMessage Image(string mediaType)
+        private HttpResponseMessage Image(string mediaType, string color = "red")
         {
             var response = new HttpResponseMessage();
             response.Content = new StringContent(
-                "<svg><circle cx='50' cy='50' r='40' fill='red' /></svg>",
+                "<svg><circle cx='50' cy='50' r='40' fill='" + color + "' /></svg>",
                 Encoding.UTF8, "text/html"
             );
             response.Content.Headers.ContentType = new MediaTypeHeaderValue(mediaType);
@@ -21,9 +21,9 @@ namespace Swagger_Test.Controllers
 
 
         [SwaggerResponse(200, "image.svg", mediaType: "image/svg+xml")]
-        public HttpResponseMessage Get()
+        public HttpResponseMessage Get(string color = "red")
         {
-            return Image("image/svg+xml");
+            return Image("image/svg+xml", color);
         }
 
         [SwaggerResponse(200, "image.svg", mediaType: "text/html")]
