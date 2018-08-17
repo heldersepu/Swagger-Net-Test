@@ -15,7 +15,8 @@ namespace Swagger_Test.Controllers
         public HttpResponseMessage Get(int z, int x, int y)
         {
             var response = new HttpResponseMessage();
-            response.Content = ImageStream(Color.White, Color.White, 256, 256);
+            var color = Color.FromArgb(100 + z*4, 0, 0)
+            response.Content = ImageStream(color, color, 256, 256);
             response.Content.Headers.ContentType = new MediaTypeHeaderValue("image/png");
             return response;
         }
