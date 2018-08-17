@@ -10,7 +10,7 @@ namespace Swagger_Test.Controllers
     [RoutePrefix("MapTiles")]
     public class MapTilesController : ImageBaseController
     {
-        [Route("{z}/{x}/{y}.png")]
+        [Route("{z}/{x}/{y}")]
         [SwaggerResponse(200, mediaType: "image/png")]
         public HttpResponseMessage Get(int z, int x, int y)
         {
