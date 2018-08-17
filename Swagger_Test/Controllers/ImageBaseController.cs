@@ -19,10 +19,10 @@ namespace Swagger_Test.Controllers
             }
         }
 
-        internal StreamContent ImageStream(Color color1, Color color2)
+        internal StreamContent ImageStream(Color color1, Color color2, int width=250, int height=50)
         {
             var rnd = new Random();
-            var bmp = new Bitmap(250, 50);
+            var bmp = new Bitmap(width, height);
             for (int y = 0; y < bmp.Height; ++y)
             {
                 int num = rnd.Next(1, 20);
@@ -36,4 +36,3 @@ namespace Swagger_Test.Controllers
         }
     }
 }
-
