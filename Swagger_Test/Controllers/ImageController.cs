@@ -30,7 +30,7 @@ namespace Swagger_Test.Controllers
         public HttpResponseMessage Post([FromBody] string data = "")
         {
             var response = new HttpResponseMessage();
-            if (data == "")
+            if (!data.StartsWith("data"))
                 response.Content = ImageStream(Color.White, Color.Blue);
             else
                 response.Content = ImageStream(data);
