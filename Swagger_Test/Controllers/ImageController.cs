@@ -20,10 +20,13 @@ namespace Swagger_Test.Controllers
 
         // POST: api/Image
         [SwaggerResponse(200, mediaType: "image/png")]
-        public HttpResponseMessage Post()
+        public HttpResponseMessage Post(string data = "")
         {
             var response = new HttpResponseMessage();
-            response.Content = ImageStream(Color.White, Color.Blue);
+            if (data = "")
+                response.Content = ImageStream(Color.White, Color.Blue);
+            else
+                response.Content = ImageStream(data);
             response.Content.Headers.ContentType = new MediaTypeHeaderValue("image/png");
             return response;
         }
@@ -55,4 +58,3 @@ namespace Swagger_Test.Controllers
         }
     }
 }
-
