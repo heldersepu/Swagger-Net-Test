@@ -1,4 +1,5 @@
 ﻿using Swagger.Net.Annotations;
+using System;
 using System.Drawing;
 using System.Web.Http;
 using System.Net.Http;
@@ -19,7 +20,7 @@ namespace Swagger_Test.Controllers
             if (memCache == null)
                 response.Content = ImageStream(Color.Red, Color.Cyan);
             else
-                response.Content = memCache;
+                response.Content = (HttpContent)memCache;
             response.Content.Headers.ContentType = new MediaTypeHeaderValue("image/png");
             return response;
         }
