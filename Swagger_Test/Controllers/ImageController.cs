@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Runtime.Caching;
 
 namespace Swagger_Test.Controllers
 {
@@ -13,20 +14,28 @@ namespace Swagger_Test.Controllers
         public HttpResponseMessage Get()
         {
             var response = new HttpResponseMessage();
-            response.Content = ImageStream(Color.Red, Color.Cyan);
+            var memCache = MemoryCache.Default.Get("image_data");
+            if (memCache == null)
+                response.Content = ImageStream(Color.Red, Color.Cyan);
+            else
+                response.Content = memCache
             response.Content.Headers.ContentType = new MediaTypeHeaderValue("image/png");
             return response;
         }
 
         // POST: api/Image
         [SwaggerResponse(200, mediaType: "image/png")]
-        public HttpResponseMessage Post(string data = "")
+        public HttpResponseMessage Post([FromBody] string data = "")
         {
             var response = new HttpResponseMessage();
             if (data == "")
                 response.Content = ImageStream(Color.White, Color.Blue);
             else
                 response.Content = ImageStream(data);
+
+            var policy = new CacheItemPolicy { SlidingExpiration = TimeSpan.FromMinutes(2) };
+            MemoryCache.Default.Add("image_data", response.Content, policy);
+
             response.Content.Headers.ContentType = new MediaTypeHeaderValue("image/png");
             return response;
         }
