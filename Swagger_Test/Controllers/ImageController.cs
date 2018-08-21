@@ -18,7 +18,7 @@ namespace Swagger_Test.Controllers
             if (memCache == null)
                 response.Content = ImageStream(Color.Red, Color.Cyan);
             else
-                response.Content = memCache
+                response.Content = memCache;
             response.Content.Headers.ContentType = new MediaTypeHeaderValue("image/png");
             return response;
         }
