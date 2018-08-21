@@ -27,7 +27,7 @@ namespace Swagger_Test.Controllers
 
         internal StreamContent ImageStream(string data)
         {
-            Byte[] bitmapData = Convert.FromBase64String(FixBase64ForImage(ImageText));
+            Byte[] bitmapData = Convert.FromBase64String(FixBase64ForImage(data));
             System.IO.MemoryStream streamBitmap = new System.IO.MemoryStream(bitmapData);
             Bitmap bitImage = new Bitmap((Bitmap)Image.FromStream(streamBitmap));
 
