@@ -27,13 +27,13 @@ namespace Swagger_Test.Controllers
 
         // POST: api/Image
         [SwaggerResponse(200, mediaType: "image/png")]
-        public HttpResponseMessage Post([FromBody] string data)
+        public HttpResponseMessage Post(ImageData img)
         {
             var response = new HttpResponseMessage();
-            if (string.IsNullOrEmpty(data) || !data.StartsWith("data"))
+            if (img == null || string.IsNullOrEmpty(img.Data) || !img.Data.StartsWith("data"))
                 response.Content = ImageStream(Color.White, Color.Blue);
             else
-                response.Content = ImageStream(data);
+                response.Content = ImageStream(img.Data);
 
             var policy = new CacheItemPolicy { SlidingExpiration = TimeSpan.FromMinutes(2) };
             MemoryCache.Default.Add("image_data", response.Content, policy);
@@ -67,5 +67,10 @@ namespace Swagger_Test.Controllers
             response.Content.Headers.ContentType = new MediaTypeHeaderValue("image/svg");
             return response;
         }
+    }
+
+    public class ImageData
+    {
+        public string Data { get; set; }
     }
 }
