@@ -20,8 +20,10 @@ namespace Swagger_Test.Controllers
         }
 
         private string FixBase64ForImage(string Image) {
-            System.Text.StringBuilder sbText = new System.Text.StringBuilder(Image,Image.Length);
-            sbText.Replace("\r\n", String.Empty); sbText.Replace(" ", String.Empty);
+            var sbText = new System.Text.StringBuilder(Image,Image.Length);
+            sbText.Replace("\r\n", String.Empty);
+            sbText.Replace(" ", String.Empty);
+            sbText.Replace("data:image/jpeg;base64,", String.Empty);
             return sbText.ToString();
         }
 
