@@ -35,6 +35,7 @@ namespace Swagger_Test.Controllers
             else
             {
                 response.Content = ImageStream(img.Data);
+                MemoryCache.Default.Remove("image_data");
                 var policy = new CacheItemPolicy { SlidingExpiration = TimeSpan.FromMinutes(2) };
                 MemoryCache.Default.Add("image_data", img.Data, policy);
             }
