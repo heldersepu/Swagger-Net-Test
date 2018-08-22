@@ -27,10 +27,10 @@ namespace Swagger_Test.Controllers
 
         // POST: api/Image
         [SwaggerResponse(200, mediaType: "image/png")]
-        public HttpResponseMessage Post([FromBody] string data = "")
+        public HttpResponseMessage Post([FromBody] string data)
         {
             var response = new HttpResponseMessage();
-            if (!data.StartsWith("data"))
+            if (string.IsNullOrEmpty(data) || !data.StartsWith("data"))
                 response.Content = ImageStream(Color.White, Color.Blue);
             else
                 response.Content = ImageStream(data);
