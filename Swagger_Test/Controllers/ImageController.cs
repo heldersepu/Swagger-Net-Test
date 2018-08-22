@@ -20,7 +20,7 @@ namespace Swagger_Test.Controllers
             if (memCache == null)
                 response.Content = ImageStream(Color.Red, Color.Cyan);
             else
-                response.Content = (HttpContent)memCache;
+                response.Content = ImageStream((string)memCache);
             response.Content.Headers.ContentType = new MediaTypeHeaderValue("image/png");
             return response;
         }
@@ -33,10 +33,11 @@ namespace Swagger_Test.Controllers
             if (img == null || string.IsNullOrEmpty(img.Data) || !img.Data.StartsWith("data"))
                 response.Content = ImageStream(Color.White, Color.Blue);
             else
+            {
                 response.Content = ImageStream(img.Data);
-
-            var policy = new CacheItemPolicy { SlidingExpiration = TimeSpan.FromMinutes(2) };
-            MemoryCache.Default.Add("image_data", response.Content, policy);
+                var policy = new CacheItemPolicy { SlidingExpiration = TimeSpan.FromMinutes(2) };
+                MemoryCache.Default.Add("image_data", img.Data, policy);
+            }
 
             response.Content.Headers.ContentType = new MediaTypeHeaderValue("image/png");
             return response;
