@@ -450,7 +450,11 @@ namespace Swagger_Test
         {
             public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
             {
-                swaggerDoc.info.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.";
+                swaggerDoc.info.description = "Lorem ipsum dolor sit amet, <b>consectetur adipiscing elit</b>, sed do eiusmod tempor incididunt ut <i>labore</i> et <i>dolore</i> magna aliqua. <br>Ut enim ad minim veniam, quis nostrud exercitation ullamco <i>laboris</i> nisi ut aliquip ex ea commodo consequat. " +
+                                              "<ul>" +
+                                              "<li>Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <i>dolore</i> eu fugiat nulla pariatur.</li>" +
+                                              "<li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</li>" +
+                                              "</ul>" ;
                 foreach (var path in swaggerDoc.paths)
                 {
                     if (path.Key.Contains("foo") && path.Value.get != null)
