@@ -1,4 +1,4 @@
-﻿using Swagger.Net.Annotations;
+﻿//using Swagger.Net.Annotations;
 using System;
 using System.Drawing;
 using System.Web.Http;
@@ -12,7 +12,7 @@ namespace Swagger_Test.Controllers
     public class ImageController : ImageBaseController
     {
         // GET: api/Image
-        [SwaggerResponse(200, mediaType: "image/png")]
+        //[SwaggerResponse(200, mediaType: "image/png")]
         public HttpResponseMessage Get()
         {
             var response = new HttpResponseMessage();
@@ -26,7 +26,7 @@ namespace Swagger_Test.Controllers
         }
 
         // POST: api/Image
-        [SwaggerResponse(200, mediaType: "image/png")]
+        //[SwaggerResponse(200, mediaType: "image/png")]
         public HttpResponseMessage Post(ImageData img)
         {
             var response = new HttpResponseMessage();
@@ -45,7 +45,7 @@ namespace Swagger_Test.Controllers
         }
 
         // PUT: api/Image
-        [SwaggerResponse(200, "Download an image", mediaType: "application/octet-stream")]
+        //[SwaggerResponse(200, "Download an image", mediaType: "application/octet-stream")]
         public HttpResponseMessage Put()
         {
             var response = new HttpResponseMessage();
@@ -58,7 +58,7 @@ namespace Swagger_Test.Controllers
         }
 
         // PATCH: api/Image
-        [SwaggerResponse(200, "image.svg", mediaType: "image/svg")]
+        //[SwaggerResponse(200, "image.svg", mediaType: "image/svg")]
         public HttpResponseMessage Patch()
         {
             var response = new HttpResponseMessage();

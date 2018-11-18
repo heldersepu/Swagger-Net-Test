@@ -1,4 +1,4 @@
-﻿using Swagger.Net.Annotations;
+﻿//using Swagger.Net.Annotations;
 using System;
 using System.Net;
 using System.Net.Http;
@@ -10,7 +10,7 @@ namespace Swagger_Test.Controllers
 {
     public class HtmlExampleController : ApiController
     {
-        [SwaggerResponse(HttpStatusCode.OK, type: typeof(string), mediaType: "text/html", examples: EXAMPLE)]
+        //[SwaggerResponse(HttpStatusCode.OK, type: typeof(string), mediaType: "text/html", examples: EXAMPLE)]
         public async Task<HttpResponseMessage> Get()
         {
             return new HttpResponseMessage

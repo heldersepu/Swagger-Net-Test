@@ -1,4 +1,4 @@
-﻿using Swagger.Net.Annotations;
+﻿//using Swagger.Net.Annotations;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Net.Http;
@@ -12,7 +12,7 @@ namespace Swagger_Test.Controllers
     public class MapTilesController : ImageBaseController
     {
         [Route("{z}/{x}/{y}")]
-        [SwaggerResponse(200, mediaType: "image/png")]
+        //[SwaggerResponse(200, mediaType: "image/png")]
         public HttpResponseMessage Get(int z, int x, int y)
         {
             var response = new HttpResponseMessage();

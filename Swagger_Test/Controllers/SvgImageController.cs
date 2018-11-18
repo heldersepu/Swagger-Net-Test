@@ -1,4 +1,4 @@
-﻿using Swagger.Net.Annotations;
+﻿//using Swagger.Net.Annotations;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -20,19 +20,19 @@ namespace Swagger_Test.Controllers
         }
 
 
-        [SwaggerResponse(200, "image.svg", mediaType: "image/svg+xml")]
+        //[SwaggerResponse(200, "image.svg", mediaType: "image/svg+xml")]
         public HttpResponseMessage Get(string color = "red")
         {
             return Image("image/svg+xml", color);
         }
 
-        [SwaggerResponse(200, "image.svg", mediaType: "text/html")]
+        //[SwaggerResponse(200, "image.svg", mediaType: "text/html")]
         public HttpResponseMessage Post()
         {
             return Image("text/html");
         }
 
-        [SwaggerResponse(200, "image.svg", mediaType: "image/svg")]
+        //[SwaggerResponse(200, "image.svg", mediaType: "image/svg")]
         public HttpResponseMessage Put()
         {
             return Image("image/svg");

@@ -1,4 +1,4 @@
-﻿using Swagger.Net.Annotations;
+﻿//using Swagger.Net.Annotations;
 using System.Collections.Generic;
 using System.Web.Http;
 
@@ -8,8 +8,8 @@ namespace Swagger_Test.Controllers
     {
         [HttpGet]
         [Route("/api/data")]
-        [SwaggerOperation("GetData")]
-        [SwaggerResponse(200, type: typeof(List<Data>))]
+        //[SwaggerOperation("GetData")]
+        //[SwaggerResponse(200, type: typeof(List<Data>))]
         public virtual IHttpActionResult GetData()
         {
             string exampleJson = null;

@@ -1,4 +1,4 @@
-﻿using Swagger.Net.Annotations;
+﻿//using Swagger.Net.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -18,12 +18,12 @@ namespace Swagger_Test.Controllers
         }
 
         // GET: api/IHttpActionResult/{id}
-        [SwaggerResponse(HttpStatusCode.OK, "List of customers", typeof(IEnumerable<int>))]
-        [SwaggerResponse(HttpStatusCode.BadRequest, Type = typeof(BadRequestErrorMessageResult))]
-        [SwaggerResponse(HttpStatusCode.Unauthorized, Type = typeof(UnauthorizedResult))]
-        [SwaggerResponse(HttpStatusCode.NotFound, Type = typeof(NotFoundResult))]
-        [SwaggerResponse(HttpStatusCode.InternalServerError, Type = typeof(InternalServerErrorResult))]
-        [SwaggerExample("id", "123456")]
+        //[SwaggerResponse(HttpStatusCode.OK, "List of customers", typeof(IEnumerable<int>))]
+        //[SwaggerResponse(HttpStatusCode.BadRequest, Type = typeof(BadRequestErrorMessageResult))]
+        //[SwaggerResponse(HttpStatusCode.Unauthorized, Type = typeof(UnauthorizedResult))]
+        //[SwaggerResponse(HttpStatusCode.NotFound, Type = typeof(NotFoundResult))]
+        //[SwaggerResponse(HttpStatusCode.InternalServerError, Type = typeof(InternalServerErrorResult))]
+        //[SwaggerExample("id", "123456")]
         public IHttpActionResult GetById(int id)
         {
             try
@@ -43,8 +43,8 @@ namespace Swagger_Test.Controllers
             }
         }
 
-        [SwaggerResponse(HttpStatusCode.OK, "List of customers", typeof(IEnumerable<int>))]
-        [SwaggerResponse(HttpStatusCode.NotFound, Type = typeof(NotFoundResult))]
+        //[SwaggerResponse(HttpStatusCode.OK, "List of customers", typeof(IEnumerable<int>))]
+        //[SwaggerResponse(HttpStatusCode.NotFound, Type = typeof(NotFoundResult))]
         public IHttpActionResult Post(MyData data)
         {
             throw new NotImplementedException();

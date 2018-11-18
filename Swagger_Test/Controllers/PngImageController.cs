@@ -1,4 +1,4 @@
-﻿using Swagger.Net.Annotations;
+﻿//using Swagger.Net.Annotations;
 using System;
 using System.Drawing;
 using System.Net;
@@ -21,9 +21,9 @@ namespace Swagger_Test.Controllers
         }
 
         [HttpPost, Route("api/upc-a")]
-        [SwaggerResponse(HttpStatusCode.InternalServerError, "Empty UPC code.")]
-        [SwaggerResponse(HttpStatusCode.ExpectationFailed, "Invalid UPC code.")]
-        [SwaggerResponse(HttpStatusCode.OK, "Image in image/png format", mediaType: "image/png")]
+        //[SwaggerResponse(HttpStatusCode.InternalServerError, "Empty UPC code.")]
+        //[SwaggerResponse(HttpStatusCode.ExpectationFailed, "Invalid UPC code.")]
+        //[SwaggerResponse(HttpStatusCode.OK, "Image in image/png format", mediaType: "image/png")]
         public HttpResponseMessage UPCA([FromBody]string value)
         {
             var response = new HttpResponseMessage(HttpStatusCode.OK);
