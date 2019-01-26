@@ -11,7 +11,7 @@ namespace Swagger_Test.Models
         /// The super ID that will be used
         /// </summary>
         /// <example>123</example>
-        public int Id { get; set; }
+        public int SuperId { get; set; }
 
         /// <summary>
         /// Who needs a name?

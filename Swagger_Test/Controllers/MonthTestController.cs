@@ -5,7 +5,7 @@ namespace Swagger_Test.Controllers
 {
     public class MData
     {
-        public int Id { get; set; }
+        public int NumId { get; set; }
         public MonthEnum Month { get; set; }
     }
 
