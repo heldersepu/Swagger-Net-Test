@@ -455,13 +455,13 @@ namespace Swagger_Test
                                               "<li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>" +
                                               "<li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</li>" +
                                               "</ul>" ;
-                foreach (var path in swaggerDoc.paths)
+                /*foreach (var path in swaggerDoc.paths)
                 {
                     if (path.Key.Contains("foo") && path.Value.get != null)
                     {
                         path.Value.put = path.Value.get;
                     }
-                }
+                }*/
             }
         }
 
