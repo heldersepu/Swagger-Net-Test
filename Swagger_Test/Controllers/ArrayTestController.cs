@@ -1,4 +1,5 @@
-﻿using Swagger_Test.Models;
+﻿using Newtonsoft.Json;
+using Swagger_Test.Models;
 using System;
 using System.Collections.Generic;
 using System.Web.Http;
@@ -58,6 +59,18 @@ namespace Swagger_Test.Controllers
         [Route("list_location")]
         public List<Location> Get3([FromUri] List<Location> p)
         {
+            return p;
+        }
+
+        /// <summary>
+        /// Getting a sample json as param
+        /// </summary>
+        /// <param name="locations">[{Lat:1,Lon:2},{Lat:4,Lon:5}]</param>
+        /// <returns></returns>
+        [Route("json_locations")]
+        public List<Location> Get3(string locations)
+        {
+            var p = JsonConvert.DeserializeObject<List<Location>>(locations);
             return p;
         }
 
