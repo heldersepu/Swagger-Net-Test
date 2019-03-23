@@ -67,6 +67,13 @@
              <a href="#/IntParam/IntParam_Get">See also the IntParam Get</a>
              </remarks>
         </member>
+        <member name="M:Swagger_Test.Controllers.ArrayTestController.Get3(System.String)">
+            <summary>
+            Getting a sample json as param
+            </summary>
+            <param name="locations">[{Lat:1,Lon:2},{Lat:4,Lon:5}]</param>
+            <returns></returns>
+        </member>
         <member name="M:Swagger_Test.Controllers.ArrayTestController.Put(Swagger_Test.Controllers.Arrays)">
             <summary>Put</summary>
              <remarks>
@@ -375,7 +382,7 @@
             Testing POCO model
             </summary>
         </member>
-        <member name="P:Swagger_Test.Models.ViewModelTest.Id">
+        <member name="P:Swagger_Test.Models.ViewModelTest.SuperId">
             <summary>
             The super ID that will be used
             </summary>
