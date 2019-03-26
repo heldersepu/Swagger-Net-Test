@@ -454,7 +454,8 @@ namespace Swagger_Test
                                               "<ul>" +
                                               "<li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>" +
                                               "<li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</li>" +
-                                              "</ul>" ;
+                                              "</ul>" +
+                                              "The code for this project is here: https://github.com/heldersepu/Swagger-Net-Test";
                 /*foreach (var path in swaggerDoc.paths)
                 {
                     if (path.Key.Contains("foo") && path.Value.get != null)
