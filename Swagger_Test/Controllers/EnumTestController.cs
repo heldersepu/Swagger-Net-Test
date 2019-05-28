@@ -10,7 +10,7 @@ namespace Swagger_Test.Controllers
             return rule;
         }
 
-        public ShiftDayOffRule Post(TestEnum data)
+        public ShiftDayOffRule Post([FromUri] TestEnum data)
         {
             return data.shift_day_off_rule;
         }
