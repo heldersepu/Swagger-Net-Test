@@ -1,5 +1,4 @@
 ﻿using Swagger.Net.Annotations;
-using System;
 using System.Net;
 using System.Net.Http;
 using System.Text;
