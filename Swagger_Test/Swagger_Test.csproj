@@ -185,6 +185,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Attributes\StringEnumAttribute.cs" />
     <Compile Include="Attributes\SwaggerFormAttribute.cs" />
+    <Compile Include="Controllers\ActionFilterController.cs" />
     <Compile Include="Controllers\ApiExplorerController.cs" />
     <Compile Include="Controllers\ArrayTestController.cs" />
     <Compile Include="Controllers\AsyncController.cs" />
