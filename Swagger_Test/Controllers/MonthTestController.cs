@@ -16,6 +16,20 @@ namespace Swagger_Test.Controllers
             return data;
         }
 
+        /// <summary>
+        /// This is a sumary.
+        /// </summary>
+        /// <remarks>
+        /// This is a test:
+        ///
+        ///     POST /Todo
+        ///     {
+        ///        "id": 1,
+        ///        "name": "Item1",
+        ///        "isComplete": true
+        ///     }
+        ///
+        /// </remarks>
         public MonthEnum Post(MonthEnum month = MonthEnum.July)
         {
             return month;
