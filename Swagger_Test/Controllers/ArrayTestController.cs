@@ -81,6 +81,15 @@ namespace Swagger_Test.Controllers
             return new Arrays();
         }
 
+        ///<summary>Post</summary>
+        /// <remarks>
+        /// Testing Markdown table
+        /// | a | b | c | d | e |
+        /// |---|---|---|---|---|
+        /// | 3 | 0 | 7 | 4 | 1 |
+        /// | 4 | 1 | 8 | 5 | 2 |
+        /// | 5 | 2 | 9 | 6 | 3 |
+        /// </remarks>
         [Route("Post Arrays")]
         public Arrays Post(Arrays arrays)
         {
