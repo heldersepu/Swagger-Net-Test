@@ -8,6 +8,7 @@ using WebApi.OutputCache.V2;
 
 namespace Swagger_Test
 {
+    [RoutePrefix("api/Random")]
     public class RandomController : ApiController
     {
         private static Random rnd = new Random();
@@ -20,12 +21,14 @@ namespace Swagger_Test
             }
         }
 
+        [Route("GetRandomColor")]
         [CacheOutput(ClientTimeSpan = 5, ServerTimeSpan = 5)]
         public Color GetRandomColor()
         {
             return RandomColor;
         }
 
+        [Route("GetRandomNumber")]
         [CacheOutput(ClientTimeSpan = 10, ServerTimeSpan = 10)]
         public int GetRandomNumber(int max)
         {
