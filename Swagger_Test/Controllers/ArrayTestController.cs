@@ -45,6 +45,7 @@ namespace Swagger_Test.Controllers
         ///     "demo2": "hello"
         /// }</pre>
         /// </remarks>
+        /// <param name="p">list of integers</param>
         [Route("list_int")]
         public List<int> Get2([FromUri] List<int> p)
         {
