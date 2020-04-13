@@ -13,4 +13,10 @@ namespace Swagger_Test.Models
         public int? MyId;
         public Guid data;
     }
+
+    public class rint
+    {
+        public int num;
+        public DateTime date;
+    }
 }

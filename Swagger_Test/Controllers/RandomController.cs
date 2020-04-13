@@ -30,9 +30,13 @@ namespace Swagger_Test
 
         [Route("GetRandomNumber")]
         [CacheOutput(ClientTimeSpan = 10, ServerTimeSpan = 10)]
-        public int GetRandomNumber(int max)
+        public rint GetRandomNumber(int max)
         {
-            return rnd.Next(max);
+            return new rint
+            {
+                num = rnd.Next(max),
+                date = DateTime.Now
+            };
         }
     }
 }
