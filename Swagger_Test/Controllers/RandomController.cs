@@ -5,6 +5,7 @@ using System.IO;
 using System.Net.Http;
 using System.Web.Http;
 using WebApi.OutputCache.V2;
+using Swagger_Test.Models;
 
 namespace Swagger_Test
 {
