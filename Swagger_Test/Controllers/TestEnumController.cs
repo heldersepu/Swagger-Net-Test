@@ -18,6 +18,13 @@ namespace Swagger_Test.Controllers
             Checkbox = 32
         }
 
+        public enum OrderType
+        {
+            ASC = 0,
+            DESC = 1,
+            None = 2,
+        }
+
         /// <summary>
         /// Simple GET echoing the given param
         /// </summary>
@@ -52,6 +59,11 @@ namespace Swagger_Test.Controllers
         public ViewModelTest Put([FromUri] ViewModelTest viewModelTest)
         {
             return viewModelTest;
+        }
+
+        public OrderType Delete(OrderType value)
+        {
+            return value;
         }
     }
 }
