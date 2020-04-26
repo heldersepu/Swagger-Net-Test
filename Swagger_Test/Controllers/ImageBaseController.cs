@@ -54,5 +54,38 @@ namespace Swagger_Test.Controllers
             memStream.Position = 0;
             return new StreamContent(memStream);
         }
+
+        internal double checkIfBelongsToMandelbrotSet(int x, int y, int iterations) {
+            var realComponentOfResult = x;
+            var imaginaryComponentOfResult = y;
+            
+            for (int i = 0; i < iterations; i++) {
+                var tempRealComponent = realComponentOfResult * realComponentOfResult - imaginaryComponentOfResult * imaginaryComponentOfResult + x;
+                var tempImaginaryComponent = realComponentOfResult * imaginaryComponentOfResult + y;
+                realComponentOfResult = tempRealComponent;
+                imaginaryComponentOfResult = tempImaginaryComponent;
+                // Return a number as a percentage
+                if (realComponentOfResult * imaginaryComponentOfResult > 5) {
+                    return (i / iterations * 100);
+                }
+            }
+            return 0;
+        }
+
+        internal StreamContent MandelbrotImageStream(int width, int height, int zoom, int iterations)
+        {
+            var bmp = new Bitmap(width, height);
+            for (int x = 0; x < width; x++) {
+                for (int y = 0; y < height; y++) {
+                    var belongsToSet = checkIfBelongsToMandelbrotSet(x / zoom - 1, y / zoom - 1, iterations);
+                    if (belongsToSet !== 0) {
+                        bmp.SetPixel(x, y, Color.FromArgb(belongsToSet, 0, 0));
+                }
+            }
+            var memStream = new MemoryStream();
+            bmp.Save(memStream, ImageFormat.Png);
+            memStream.Position = 0;
+            return new StreamContent(memStream);
+        }
     }
 }

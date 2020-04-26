@@ -200,6 +200,7 @@
     <Compile Include="Controllers\DateController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\FibonacciController.cs" />
+    <Compile Include="Controllers\FractalController.cs" />
     <Compile Include="Controllers\FromHeaderController.cs" />
     <Compile Include="Controllers\FromBodyController.cs" />
     <Compile Include="Controllers\LongProcessingController.cs" />
