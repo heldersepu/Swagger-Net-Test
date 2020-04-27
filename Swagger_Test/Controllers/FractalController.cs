@@ -9,6 +9,7 @@ namespace Swagger_Test.Controllers
     {
         // GET: api/Image
         [SwaggerResponse(200, mediaType: "image/png")]
+        [CacheOutput(ClientTimeSpan = 10, ServerTimeSpan = 10)]
         public HttpResponseMessage Get(int width = 800, int height = 800, int zoom = 5000, int iterations = 32)
         {
             var response = new HttpResponseMessage();
