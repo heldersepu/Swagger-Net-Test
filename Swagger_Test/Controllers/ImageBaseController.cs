@@ -78,7 +78,7 @@ namespace Swagger_Test.Controllers
             for (int x = 0; x < width; x++) {
                 for (int y = 0; y < height; y++) {
                     var belongsToSet = checkIfBelongsToMandelbrotSet(x / zoom - 1, y / zoom - 1, iterations);
-                    if (belongsToSet !== 0) {
+                    if (belongsToSet > 0) {
                         bmp.SetPixel(x, y, Color.FromArgb(belongsToSet, 0, 0));
                     }
                 }
