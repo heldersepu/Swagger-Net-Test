@@ -2,6 +2,7 @@
 using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using WebApi.OutputCache.V2;
 
 namespace Swagger_Test.Controllers
 {
@@ -9,7 +10,7 @@ namespace Swagger_Test.Controllers
     {
         // GET: api/Image
         [SwaggerResponse(200, mediaType: "image/png")]
-        [CacheOutput(ClientTimeSpan = 10, ServerTimeSpan = 10)]
+        [CacheOutput(ClientTimeSpan = 3600, ServerTimeSpan = 3600)]
         public HttpResponseMessage Get(int width = 800, int height = 800, int zoom = 5000, int iterations = 32)
         {
             var response = new HttpResponseMessage();
