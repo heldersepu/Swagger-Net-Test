@@ -55,10 +55,10 @@ namespace Swagger_Test.Controllers
             return new StreamContent(memStream);
         }
 
-        internal int checkIfBelongsToMandelbrotSet(int x, int y, int iterations) {
+        internal int checkIfBelongsToMandelbrotSet(double x, double y, int iterations) {
             var realComponentOfResult = x;
             var imaginaryComponentOfResult = y;
-            
+
             for (int i = 0; i < iterations; i++) {
                 var tempRealComponent = realComponentOfResult * realComponentOfResult - imaginaryComponentOfResult * imaginaryComponentOfResult + x;
                 var tempImaginaryComponent = realComponentOfResult * imaginaryComponentOfResult + y;
@@ -66,13 +66,13 @@ namespace Swagger_Test.Controllers
                 imaginaryComponentOfResult = tempImaginaryComponent;
                 // Return a number as a percentage
                 if (realComponentOfResult * imaginaryComponentOfResult > 5) {
-                    return (int)(i / iterations * 100);
+                    return (int)((float)i / iterations * 100);
                 }
             }
             return 0;
         }
 
-        internal StreamContent MandelbrotImageStream(int width, int height, int zoom, int iterations)
+        internal StreamContent MandelbrotImageStream(int width, int height, double zoom, int iterations)
         {
             var bmp = new Bitmap(width, height);
             for (int x = 0; x < width; x++) {
