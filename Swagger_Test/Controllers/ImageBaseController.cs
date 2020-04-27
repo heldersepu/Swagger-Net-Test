@@ -80,6 +80,7 @@ namespace Swagger_Test.Controllers
                     var belongsToSet = checkIfBelongsToMandelbrotSet(x / zoom - 1, y / zoom - 1, iterations);
                     if (belongsToSet !== 0) {
                         bmp.SetPixel(x, y, Color.FromArgb(belongsToSet, 0, 0));
+                    }
                 }
             }
             var memStream = new MemoryStream();
