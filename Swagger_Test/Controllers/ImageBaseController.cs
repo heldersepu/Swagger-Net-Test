@@ -55,7 +55,7 @@ namespace Swagger_Test.Controllers
             return new StreamContent(memStream);
         }
 
-        internal double checkIfBelongsToMandelbrotSet(int x, int y, int iterations) {
+        internal int checkIfBelongsToMandelbrotSet(int x, int y, int iterations) {
             var realComponentOfResult = x;
             var imaginaryComponentOfResult = y;
             
@@ -66,7 +66,7 @@ namespace Swagger_Test.Controllers
                 imaginaryComponentOfResult = tempImaginaryComponent;
                 // Return a number as a percentage
                 if (realComponentOfResult * imaginaryComponentOfResult > 5) {
-                    return (i / iterations * 100);
+                    return (int)(i / iterations * 100);
                 }
             }
             return 0;
@@ -79,7 +79,7 @@ namespace Swagger_Test.Controllers
                 for (int y = 0; y < height; y++) {
                     var belongsToSet = checkIfBelongsToMandelbrotSet(x / zoom - 1, y / zoom - 1, iterations);
                     if (belongsToSet > 0) {
-                        bmp.SetPixel(x, y, Color.FromArgb(belongsToSet, 0, 0));
+                        bmp.SetPixel(x, y, Color.FromArgb(0, belongsToSet*2, 0));
                     }
                 }
             }
