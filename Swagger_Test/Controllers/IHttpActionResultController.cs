@@ -37,7 +37,7 @@ namespace Swagger_Test.Controllers
                     return NotFound();
                 else if (id == 429)
                     return TooManyRequests();
-                else if (id == 500
+                else if (id == 500)
                     return InternalServerError();
                 else if (id > 0)
                     return Ok(new int[] { 1, 2 });
