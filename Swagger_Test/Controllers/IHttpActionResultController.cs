@@ -22,14 +22,23 @@ namespace Swagger_Test.Controllers
         [SwaggerResponse(HttpStatusCode.BadRequest, Type = typeof(BadRequestErrorMessageResult))]
         [SwaggerResponse(HttpStatusCode.Unauthorized, Type = typeof(UnauthorizedResult))]
         [SwaggerResponse(HttpStatusCode.NotFound, Type = typeof(NotFoundResult))]
+        [SwaggerResponse(HttpStatusCode.TooManyRequests, Type = typeof(NotFoundResult))]
         [SwaggerResponse(HttpStatusCode.InternalServerError, Type = typeof(InternalServerErrorResult))]
         [SwaggerExample("id", "123456")]
         public IHttpActionResult GetById(int id)
         {
             try
             {
-                if (id == 13)
+                if (id == 400)
+                    return BadRequest();
+                else if (id == 401)
                     return Unauthorized();
+                else if (id == 404)
+                    return NotFound();
+                else if (id == 429)
+                    return TooManyRequests();
+                else if (id == 500
+                    return InternalServerError();
                 else if (id > 0)
                     return Ok(new int[] { 1, 2 });
                 else if (id == 0)
