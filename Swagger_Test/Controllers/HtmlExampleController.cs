@@ -2,7 +2,6 @@
 using System.Net;
 using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Swagger_Test.Controllers
@@ -10,7 +9,7 @@ namespace Swagger_Test.Controllers
     public class HtmlExampleController : ApiController
     {
         [SwaggerResponse(HttpStatusCode.OK, type: typeof(string), mediaType: "text/html", examples: EXAMPLE)]
-        public async Task<HttpResponseMessage> Get()
+        public HttpResponseMessage Get()
         {
             return new HttpResponseMessage
             {
