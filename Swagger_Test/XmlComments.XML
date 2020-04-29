@@ -59,6 +59,7 @@
                  "demo2": "hello"
              }</pre>
              </remarks>
+             <param name="p">list of integers</param>
         </member>
         <member name="M:Swagger_Test.Controllers.ArrayTestController.Get3(System.Collections.Generic.List{Swagger_Test.Models.Location})">
             <summary>Get3 **Get3**</summary>
@@ -73,6 +74,17 @@
             </summary>
             <param name="locations">[{Lat:1,Lon:2},{Lat:4,Lon:5}]</param>
             <returns></returns>
+        </member>
+        <member name="M:Swagger_Test.Controllers.ArrayTestController.Post(Swagger_Test.Controllers.Arrays)">
+            <summary>Post</summary>
+             <remarks>
+             Testing Markdown table
+             | a | b | c | d | e |
+             |---|---|---|---|---|
+             | 3 | 0 | 7 | 4 | 1 |
+             | 4 | 1 | 8 | 5 | 2 |
+             | 5 | 2 | 9 | 6 | 3 |
+             </remarks>
         </member>
         <member name="M:Swagger_Test.Controllers.ArrayTestController.Put(Swagger_Test.Controllers.Arrays)">
             <summary>Put</summary>
@@ -217,6 +229,22 @@
         </member>
         <member name="P:Swagger_Test.Controllers.Payload.Timeout">
             <summary> Timeout in ms (Range 15000 to 60000. Default set to 50000) </summary>
+        </member>
+        <member name="M:Swagger_Test.Controllers.MonthTestController.Post(Swagger_Test.Models.MonthEnum)">
+             <summary>
+             This is a sumary.
+             </summary>
+             <remarks>
+             This is a test:
+            
+                 POST /Todo
+                 {
+                    "id": 1,
+                    "name": "Item1",
+                    "isComplete": true
+                 }
+            
+             </remarks>
         </member>
         <member name="M:Swagger_Test.Controllers.NestedEnum`1.PutEnumNull(System.Nullable{Swagger_Test.Controllers.NestedEnum{`0}.Giorno})">
             <summary> A nullable enum test </summary>

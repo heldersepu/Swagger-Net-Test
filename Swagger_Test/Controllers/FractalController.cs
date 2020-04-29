@@ -13,6 +13,7 @@ namespace Swagger_Test.Controllers
         [CacheOutput(ClientTimeSpan = 3600, ServerTimeSpan = 3600)]
         public HttpResponseMessage Get(int width = 800, int height = 800, int zoom = 5000, int iterations = 32)
         {
+            iterations = Math.Min(iterations, 64);
             var response = new HttpResponseMessage();
             var sTime = DateTime.Now;
             response.Content = MandelbrotImageStream(width, height, zoom, iterations);
