@@ -10,6 +10,11 @@ namespace Swagger_Test.Controllers
         {
             return data;
         }
+        
+        public int Post([FromUri] [Range(1, 10)] int value)
+        {
+            return value;
+        }
     }
 
     public class Payload
