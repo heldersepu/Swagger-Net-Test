@@ -17,7 +17,7 @@ namespace Swagger_Test.Controllers
     {
         [JsonConverter(typeof(DateFormatConverter))]
         public DateTime D0 { get; set; }
-
+        /// <example>2020-05-31</example>
         public DateTime D1 { get; set; }
         public NodaTime.LocalDate D2 { get; set; }
         public NodaTime.LocalTime D3 { get; set; }
