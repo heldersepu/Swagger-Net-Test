@@ -24,6 +24,7 @@ namespace Swagger_Test.Controllers
         [SwaggerResponse(HttpStatusCode.NotFound, Type = typeof(NotFoundResult))]
         //[SwaggerResponse(HttpStatusCode.TooManyRequests, Type = typeof(NotFoundResult))]
         [SwaggerResponse(HttpStatusCode.InternalServerError, Type = typeof(InternalServerErrorResult))]
+        [SwaggerResponse(HttpStatusCode.Forbidden, "Forbidden", typeof(void))]
         [SwaggerExample("id", "123456")]
         public IHttpActionResult GetById(int id)
         {
