@@ -19,4 +19,22 @@ namespace Swagger_Test.Models
         public int num;
         public DateTime date;
     }
+
+    public class EditModel
+    {
+        public class Command
+        {
+            public int Id { get; set; }
+            public string Info { get; set; }
+        }
+    }
+    
+    public class CreateModel
+    {
+        public class Command
+        {
+            public int Id { get; set; }
+            public string Info { get; set; }
+        }
+    }
 }
