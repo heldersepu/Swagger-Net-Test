@@ -7,6 +7,12 @@ namespace Swagger_Test.Controllers
 
     public class ActionFilterController : ApiController
     {
+        [AllowAnonymous]
+        public string Get(string x)
+        {
+            return x;
+        }
+
         [CustomAuthorize()]
         public string Post(string x)
         {
