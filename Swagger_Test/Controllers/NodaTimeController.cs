@@ -7,6 +7,7 @@ namespace Swagger_Test.Controllers
     [RoutePrefix("NodaTime")]
     public class NodaTimeController : ApiController
     {
+        [AllowAnonymous]
         [Route("")]
         public IHttpActionResult Get()
         {
