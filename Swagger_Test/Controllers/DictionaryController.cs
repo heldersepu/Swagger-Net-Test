@@ -8,8 +8,7 @@ namespace Swagger_Test.Controllers
 {
     public class DictionaryController : ApiController
     {
-        // GET: api/Dictionary
-        [ResponseType(typeof(Test))]
+        [AllowAnonymous]
         public Test Get()
         {
             var d = new Dictionary<string, int>();
