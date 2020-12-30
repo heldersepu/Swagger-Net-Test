@@ -8,9 +8,9 @@ namespace Swagger_Test.Controllers
     public class ActionFilterController : ApiController
     {
         [AllowAnonymous]
-        public string Get(string x)
+        public SummaryResult Get(string x)
         {
-            return x;
+            return null;
         }
 
         [CustomAuthorize()]
@@ -24,5 +24,24 @@ namespace Swagger_Test.Controllers
     public class CustomAuthorizeAttribute : ActionFilterAttribute
     {
         public int SecurityCheck { get; set; }
+    }
+    
+    public class SummaryResult
+    {
+        /// <summary>Total Cost.</summary>
+        /// <value>Total Cost.</value>
+        /// <example>6433.2</example>
+        public double TotalCost { get; set; }
+
+        /// <summary>Owner.</summary>
+        public Owner Owner { get; set; }
+    }
+
+    public class Owner
+    {
+        /// <summary>Owner Name.</summary>
+        /// <value>Owner Name.</value>
+        /// <example>Michael</example>
+        public string Name { get; set; }
     }
 }
